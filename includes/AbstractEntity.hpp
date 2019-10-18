@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AbstractEntity.hpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
+/*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 14:01:38 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/18 17:46:21 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/18 22:10:21 by lnicosia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,12 +31,13 @@ class AbstractEntity
 		virtual void process() = 0;
 		void render(void) const;
 
-		Vec2		getPosition(void);
-		Vec2		getDirection(void);
-		Blueprint	getBlueprint(void);
+		Vec2		getPosition(void) const;
+		Vec2		getDirection(void) const;
+		Blueprint*	getBlueprint(void) const;
 	
 		void	setPosition(Vec2 pos);
 		void	setDirection(Vec2 dir);
+		void	setBlueprint(Blueprint*);
 
 	private:
 		Vec2		_position;

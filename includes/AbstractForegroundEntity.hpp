@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AbstractForegroundEntity.hpp                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
+/*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 14:16:07 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/18 17:47:01 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/18 18:52:40 by lnicosia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class AbstractForegroundEntity : public AbstractEntity
 		AbstractForegroundEntity(AbstractForegroundEntity const &instance);
 		AbstractForegroundEntity &operator=(AbstractForegroundEntity const &rhs);
 		virtual ~AbstractForegroundEntity(void);
-		bool collide(const AbstractEntity &entity);
+		bool collide(const AbstractForegroundEntity &entity);
 
 	private:
 		

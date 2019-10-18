@@ -1,0 +1,101 @@
+assets/triangle.ascii image is [7][4]
+assets/droite.ascii image is [6][5]
+Bounding boxes do not intersect
+my pos = [153][14]
+my size = [7][4]
+its pos = [134][14]
+its size = [6][5]
+Bounding boxes do not intersect
+my pos = [152][14]
+my size = [7][4]
+its pos = [134][14]
+its size = [6][5]
+Bounding boxes do not intersect
+my pos = [151][14]
+my size = [7][4]
+its pos = [134][14]
+its size = [6][5]
+Bounding boxes do not intersect
+my pos = [150][14]
+my size = [7][4]
+its pos = [134][14]
+its size = [6][5]
+Bounding boxes do not intersect
+my pos = [149][14]
+my size = [7][4]
+its pos = [134][14]
+its size = [6][5]
+Bounding boxes do not intersect
+my pos = [148][14]
+my size = [7][4]
+its pos = [134][14]
+its size = [6][5]
+Bounding boxes do not intersect
+my pos = [147][14]
+my size = [7][4]
+its pos = [134][14]
+its size = [6][5]
+Bounding boxes do not intersect
+my pos = [146][14]
+my size = [7][4]
+its pos = [134][14]
+its size = [6][5]
+Bounding boxes do not intersect
+my pos = [145][14]
+my size = [7][4]
+its pos = [134][14]
+its size = [6][5]
+Bounding boxes do not intersect
+my pos = [144][14]
+my size = [7][4]
+its pos = [134][14]
+its size = [6][5]
+Bounding boxes do not intersect
+my pos = [143][14]
+my size = [7][4]
+its pos = [134][14]
+its size = [6][5]
+Bounding boxes do not intersect
+my pos = [142][14]
+my size = [7][4]
+its pos = [134][14]
+its size = [6][5]
+Bounding boxes do not intersect
+my pos = [141][14]
+my size = [7][4]
+its pos = [134][14]
+its size = [6][5]
+Bounding boxes do intersect
+Bounding boxes do intersect
+Bounding boxes do intersect
+Bounding boxes do intersect
+Bounding boxes do intersect
+Bounding boxes do intersect
+Bounding boxes do intersect
+Bounding boxes do intersect
+Bounding boxes do intersect
+Bounding boxes do intersect
+Bounding boxes do intersect
+Bounding boxes do intersect
+Bounding boxes do intersect
+Bounding boxes do intersect
+Bounding boxes do not intersect
+my pos = [126][14]
+my size = [7][4]
+its pos = [134][14]
+its size = [6][5]
+Bounding boxes do not intersect
+my pos = [125][14]
+my size = [7][4]
+its pos = [134][14]
+its size = [6][5]
+Bounding boxes do not intersect
+my pos = [124][14]
+my size = [7][4]
+its pos = [134][14]
+its size = [6][5]
+Bounding boxes do not intersect
+my pos = [123][14]
+my size = [7][4]
+its pos = [134][14]
+its size = [6][5]

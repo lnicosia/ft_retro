@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Blueprint.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
+/*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 13:40:33 by lnicosia          #+#    #+#             */
-/*   Updated: 2019/10/18 18:22:26 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/18 21:57:57 by lnicosia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,12 @@
 #include <unistd.h>
 #include <ncurses.h>
 
-Blueprint::Blueprint(void): _x(0), _y(0), _sizeX(0), _sizeY(0)
+Blueprint::Blueprint(void): _sizeX(0), _sizeY(0)
 {
 	
 }
 
-Blueprint::Blueprint(std::string f): _x(0), _y(0), _sizeX(0), _sizeY(0)
+Blueprint::Blueprint(std::string f): _sizeX(0), _sizeY(0)
 {
     parseBlueprint(f);
 }
@@ -54,20 +54,19 @@ std::string Blueprint::getImage() const
     return this->_image;
 }
 
-int         Blueprint::getX() const
+std::string Blueprint::getImageNoN() const
 {
-    return this->_x;
+    return this->_imageNoN;
 }
 
-int         Blueprint::getY() const
+size_t      Blueprint::getSizeX() const
 {
-    return this->_y;
+    return this->_sizeX;
 }
 
-void        Blueprint::setPos(int x, int y)
+size_t      Blueprint::getSizeY() const
 {
-    this->_x = x;
-    this->_y = y;
+    return this->_sizeY;
 }
 
 int	Blueprint::parseBlueprint(std::string f)
@@ -97,33 +96,41 @@ int	Blueprint::parseBlueprint(std::string f)
     while (std::getline(stream, buff))
     {
         this->_image += buff + '\n';
+        this->_imageNoN += buff;
         this->_sizeY++;
         if (buff.size() > this->_sizeX)
             this->_sizeX = buff.size();
     }
+    std::cerr << f << " image is [" << this->_sizeX << "][" << this->_sizeY << "]" << std::endl;
     return 0;
 }
 
-void    Blueprint::print() const
+void    Blueprint::print(Vec2 pos) const
 {
     std::stringstream   ss(this->_image);
     std::string         line;
     size_t screenX, screenY;
     getmaxyx(stdscr, screenY, screenX);
-    mvprintw(0, 0, "Screen size = [%d][%d]", screenX, screenY);
+    //mvprintw(0, 0, "Screen size = [%d][%d]", screenX, screenY);
     size_t  i = 0;
     while (i < this->_sizeY)
     {
         std::getline(ss, line);
-        if (this->_x + line.size() >= screenX)
-            line = line.substr(0, screenX - this->_x);
-        if (this->_x < 0)
+        if (pos.getX() + line.size() >= screenX)
+            line = line.substr(0, screenX - pos.getX());
+        if (pos.getX() < 0)
         {
-            line = line.substr(-this->_x);
-            mvprintw(this->_y + i, 0, line.c_str());
+            line = line.substr(-pos.getX());
+            mvprintw(pos.getY() + i, 0, line.c_str());
         }
         else
-            mvprintw(this->_y + i, this->_x, line.c_str());
+            mvprintw(pos.getY() + i, pos.getX(), line.c_str());
+        /*if (pos.getX() + line.size() >= screenX)
+            line = this->_image.substr(i * this->_sizeX, i * this->_sizeX + screenX - pos.getX());
+        else
+            line = this->_image.substr(i * this->_sizeX, i * this->_sizeX + this->_sizeX);
+        if (pos.getX() < 0)
+        mvprintw(pos.getY() + i, )*/
         i++;
     }
 }

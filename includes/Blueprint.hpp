@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Blueprint.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
+/*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 13:38:33 by lnicosia          #+#    #+#             */
-/*   Updated: 2019/10/18 18:21:57 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/18 21:40:54 by lnicosia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define Blueprint_HPP
 
 #include <fstream>
+#include "Vec2.hpp"
 
 class Blueprint
 {
@@ -25,16 +26,14 @@ class Blueprint
 		~Blueprint(void);
         int         parseBlueprint(std::string f);
 		std::string	getImage() const;
-		int			getX() const;
-		int			getY() const;
-		void		setPos(int x, int y);
-		void		print() const;
-		void		attemptToMove(int x, int y);
+		std::string	getImageNoN() const;
+		size_t		getSizeX() const;
+		size_t		getSizeY() const;
+		void		print(Vec2) const;
 
 	private:
         std::string     _image;
-		int				_x;
-		int				_y;
+		std::string		_imageNoN;
 		size_t			_sizeX;
 		size_t			_sizeY;
 
