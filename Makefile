@@ -3,59 +3,87 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+         #
+#    By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2019/10/10 11:52:54 by lnicosia          #+#    #+#              #
-#    Updated: 2019/10/18 10:33:52 by lnicosia         ###   ########.fr        #
+#    Created: 2019/04/11 23:08:04 by ldedier           #+#    #+#              #
+#    Updated: 2019/10/18 17:14:50 by ldedier          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ft_retro
+NAME	= ft_retro
 
-MAKEFILE = Makefile
-SRC_DIR = src
-INCLUDES_DIR = includes
-OBJ_DIR = obj
-BIN_DIR = .
+CC		= clang++
 
-SRC_RAW = main.cpp
+ECHO = echo
+MKDIR = mkdir
+RM = rm
 
-HEADERS_RAW = 
+DEBUG ?= 0
 
-SRC = $(addprefix $(SRC_DIR)/, $(SRC_RAW))
-OBJ = $(addprefix $(OBJ_DIR)/, $(SRC_RAW:.cpp=.o))
-INCLUDES = $(addprefix $(INCLUDES_DIR)/, $(HEADERS_RAW))
+SRCDIR			=	srcs/
+OBJ_DIR			=	objs/
+BINDIR			=	./
+INCLUDESDIR		=	includes/
 
-CFLAGS = -Wall -Wextra -Werror \
-		 -I $(INCLUDES_DIR)
+INCLUDES		=	AbstractEnemy.hpp \
+					AbstractEntity.hpp \
+					AbstractForegroundEntity.hpp \
+					AbstractProjectile.hpp \
+					Map.hpp \
+					Player.hpp \
+					PlayingScreen.hpp \
+					Vec2.hpp
 
-RED = "\033[0;31m"
-GREEN = "\033[0;32m"
-YELLOW = "\033[0;33m"
-BLUE = "\033[0;34m"
-CYAN = "\033[0;36m"
-RESET = "\033[0m"
+SRCS		=		main.cpp \
+					AbstractEnemy.cpp \
+					AbstractEntity.cpp \
+					AbstractForegroundEntitiy.cpp \
+					AbstractProjectile.cpp \
+					Map.cpp \
+					Player.cpp \
+					PlayingScreen.cpp \
+					Vec2.cpp
+
+VPATH			=	$(INCLUDESDIR) \
+					$(SRCDIR)
+
+OBJECTS			=	$(addprefix $(OBJ_DIR), $(SRCS:.cpp=.o))
+
+CFLAGS			= -I $(INCLUDESDIR) -Wall -Wextra -Werror 
+
+OK_COLOR	=	\x1b[32;01m
+EOC			=	\033[0m
+
+LFLAGS = -lncurses
+
+ifeq ($(DEBUG), 1)
+	CFLAGS += -fsanitize=address
+	CC += -g3
+endif
+	
+SPEED = -j8
 
 all: $(NAME)
 
+debug:
+	@$(MAKE) all DEBUG=1
+
+$(BINDIR)$(NAME): $(OBJ_DIR) $(OBJECTS)
+	$(CC) -o $@ $(OBJECTS) $(CFLAGS) $(LFLAGS)
+	@$(ECHO) "$(OK_COLOR)$(NAME) linked with success !$(EOC)"
+
 $(OBJ_DIR):
-	@mkdir -p $(OBJ_DIR)
+	@$(MKDIR) $@
 
-$(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp $(INCLUDES) $(MAKEFILE)
-	clang++ $(CFLAGS) -c $< -o $@ 
-
-$(NAME): $(OBJ_DIR) $(OBJ)
-	clang++ -lncurses -lpanel -lmenu $(CFLAGS) $(OBJ) -o $(NAME)
-	@echo $(GREEN)"[Compilation OK]" $(RESET)
+$(OBJ_DIR)%.o: $(SRC_DIR)%.cpp $(INCLUDES)
+	$(CC) -c $< -o $@ $(CFLAGS)
 
 clean:
-	@rm -Rf $(OBJ_DIR)
-	@echo $(YELLOW)"[Object files removed]" $(RESET)
+	@$(RM) -rf $(OBJ_DIR)
 
 fclean: clean
-	@rm -Rf $(NAME)
-	@echo $(YELLOW)"[$(BIN_DIR)/$(NAME) removed]" $(RESET)
+	@$(RM) -f $(BINDIR)$(NAME)
 
 re: fclean all
 
-.PHONY: all fclean clean
+.PHONY: all clean fclean re debug
