@@ -3,16 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   Player.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 16:00:22 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/18 17:28:11 by lnicosia         ###   ########.fr       */
+/*   Updated: 2019/10/18 21:01:07 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/Player.hpp"
+#include <ncurses.h>
 
-Player::Player(void) : AbstractForegroundEntity(Vec2(0, 0), Vec2(0, 0), Blueprint())
+Player::Player(void) : AbstractForegroundEntity(Vec2(0, 0), Vec2(0, 0), Blueprint()), _input(ERR)
 {
 	int i;
 
@@ -68,4 +69,14 @@ std::ostream &	operator<<(std::ostream &o, Player const &instance)
 {
 	(void)instance;
 	return o;
+}
+
+int	Player::getInput(void)
+{
+	return (this->_input);
+}
+
+void	Player::setInput(int input)
+{
+	this->_input = input;
 }

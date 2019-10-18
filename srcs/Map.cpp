@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Map.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 15:51:29 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/18 17:25:22 by lnicosia         ###   ########.fr       */
+/*   Updated: 2019/10/18 20:57:47 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,4 +47,47 @@ std::ostream &	operator<<(std::ostream &o, Map const &instance)
 {
 	(void)instance;
 	return o;
+}
+
+Player &	Map::getPlayer(void)
+{
+	return (this->_player);
+}
+
+void	Map::process(void)
+{
+	int i;
+
+	this->_player.process();
+	i = 0;
+	while (i < this->_nbBgEntities)
+	{
+		this->_backgroundEntities[i]->process();
+		i++;
+	}
+	i = 0;
+	while (i < this->_nbFgEntities)
+	{
+		this->_foregroundEntities[i]->process();
+		i++;
+	}
+}
+
+void	Map::render(void) const
+{
+	int i;
+
+	this->_player.render();
+	i = 0;
+	while (i < this->_nbBgEntities)
+	{
+		this->_backgroundEntities[i]->render();
+		i++;
+	}
+	i = 0;
+	while (i < this->_nbFgEntities)
+	{
+		this->_foregroundEntities[i]->render();
+		i++;
+	}
 }

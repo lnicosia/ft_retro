@@ -6,7 +6,7 @@
 /*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 14:41:08 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/18 14:55:19 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/18 20:36:13 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,13 @@ class Player : public AbstractForegroundEntity
 		AbstractWeapon	*getWeapon(int i);
 		int		getBoost(void);
 		void	setBoost(int boost);
+		int		getInput(void);
+		void	setInput(int input);
 
 	private:
 		AbstractWeapon *_weapons[2];
 		int				_boost;
+		int				_input;
 };
 
 std::ostream &operator<<(std::ostream &o, Player const &instance);

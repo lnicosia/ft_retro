@@ -6,7 +6,7 @@
 /*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 14:33:41 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/18 16:04:23 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/18 20:57:41 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,9 @@ class Map
 		Map(Map const &instance);
 		Map &operator=(Map const &rhs);
 		~Map(void);
+		Player &getPlayer(void);
+		void	process(void);
+		void	render(void) const;
 
 	private:
 

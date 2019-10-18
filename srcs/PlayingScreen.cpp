@@ -3,21 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   PlayingScreen.cpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 15:45:32 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/18 17:29:32 by lnicosia         ###   ########.fr       */
+/*   Updated: 2019/10/18 21:00:22 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/PlayingScreen.hpp"
+#include <unistd.h>
+#include <ncurses.h>
 
-PlayingScreen::PlayingScreen(void): _score(0), _highscore(0), _time(0), _map()
+PlayingScreen::PlayingScreen(void): _score(0), _highscore(nullptr), _time(0), _map()
 {
 	
 }
 
-PlayingScreen::PlayingScreen(int highscore):  _score(0), _highscore(highscore), _time(0), _map()
+PlayingScreen::PlayingScreen(int &highscore):  _score(0), _highscore(&highscore), _time(0), _map()
 {
 	
 }
@@ -35,13 +37,46 @@ PlayingScreen::~PlayingScreen(void)
 PlayingScreen &	PlayingScreen::operator=(PlayingScreen const &rhs)
 {
 	this->_highscore = rhs._highscore;
-	this->_score = rhs._highscore;
+	this->_score = rhs._score;
 	this->_map = rhs._map;
 	this->_time = rhs._time;
 	return *this;
 }
 
-void	PlayingScreen::gameLoop(Game &game)
+void	PlayingScreen::process(Game &game)
 {
 	(void)game;
+	//factory add randomly Entities;
+	this->_map.process();
+}
+
+void	PlayingScreen::_printHud(Game &game) const
+{
+		(void)game;
+}
+
+void	PlayingScreen::_print(Game &game) const
+{
+	this->_map.render();
+	this->_printHud(game);
+}
+
+void	PlayingScreen::gameLoop(Game &game)
+{
+	int input;
+
+	while (game.getPhase() == PHASE_PLAYING_SCREEN && !game.isDone())
+	{
+		input = getch();
+	
+		if (input == 27)
+			game.setPhase(PHASE_PAUSE);
+		else
+		{
+			this->_map.getPlayer().setInput(input);
+			this->process(game);
+			this->_print(game);
+			usleep(10000);
+		}
+	}
 }
