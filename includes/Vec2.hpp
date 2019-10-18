@@ -6,7 +6,7 @@
 /*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 14:05:57 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/18 17:07:39 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/18 18:12:26 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@ class Vec2
 		Vec2 &operator/(Vec2 const &rhs);
 		~Vec2(void);
 
-		int getX(void);
-		int getY(void);
+		int getX(void) const ;
+		int getY(void) const ;
 		void setX(int x);
 		void setY(int y);
 

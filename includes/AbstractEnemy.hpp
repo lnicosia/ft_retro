@@ -6,7 +6,7 @@
 /*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 14:20:54 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/18 17:07:26 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/18 17:36:42 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,4 @@ class AbstractEnemy : public AbstractForegroundEntity
 		int _health;
 		int _scoreOnDeath;
 };
-
-std::ostream &operator<<(std::ostream &o, AbstractEnemy const &instance);
 #endif

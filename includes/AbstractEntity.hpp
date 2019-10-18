@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AbstractEntity.hpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 14:01:38 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/18 17:18:44 by lnicosia         ###   ########.fr       */
+/*   Updated: 2019/10/18 17:46:21 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ class Blueprint;
 class AbstractEntity
 {
 	public:
+
+		AbstractEntity(void);
 		AbstractEntity(Vec2 pos, Vec2 dir, Blueprint &blueprint);
 		AbstractEntity(AbstractEntity const &instance);
 		AbstractEntity &operator=(AbstractEntity const &rhs);
@@ -37,9 +39,9 @@ class AbstractEntity
 		void	setDirection(Vec2 dir);
 
 	private:
-		Vec2	_position;
-		Vec2	_direction;
-		Blueprint	&_blueprint;
+		Vec2		_position;
+		Vec2		_direction;
+		Blueprint	*_blueprint;
 
 };
 

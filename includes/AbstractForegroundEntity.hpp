@@ -6,7 +6,7 @@
 /*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 14:16:07 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/18 16:50:22 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/18 17:47:01 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,4 @@ class AbstractForegroundEntity : public AbstractEntity
 	private:
 		
 };
-
-std::ostream &operator<<(std::ostream &o, AbstractForegroundEntity const &instance);
 #endif

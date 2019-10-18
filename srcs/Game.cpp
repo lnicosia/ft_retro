@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   Game.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 15:18:10 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/18 17:28:48 by lnicosia         ###   ########.fr       */
+/*   Updated: 2019/10/18 18:24:40 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Game.hpp"
 
-Game::Game(void): _phase(0), _playingScreen(nullptr), _done(false)
+Game::Game(void): _playingScreen(nullptr), _phase(0), _done(false)
 {
 	
 }

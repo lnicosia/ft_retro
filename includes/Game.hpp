@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Game.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 22:39:31 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/18 17:29:03 by lnicosia         ###   ########.fr       */
+/*   Updated: 2019/10/18 18:24:19 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@
 # include <iostream>
 # include "PlayingScreen.hpp"
 
-#define PHASE_PLAYING_SCREEN 0;
-#define PHASE_MENU 1;
-#define PHASE_PAUSE 2;
+#define PHASE_PLAYING_SCREEN 0
+#define PHASE_MENU 1
+#define PHASE_PAUSE 2
 
 class PlayingScreen;
 
