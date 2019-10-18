@@ -6,15 +6,31 @@
 /*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 15:15:46 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/18 21:46:32 by lnicosia         ###   ########.fr       */
+/*   Updated: 2019/10/18 22:23:07 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ncurses.h>
 #include "Blueprint.hpp"
 #include "Player.hpp"
+#include "Game.hpp"
 #include <iostream>
+/*
+int main()
+{
 
+	Game game;
+
+	try {
+		game.launch();
+	}
+	catch(std::exception e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
+	return 0;
+}
+*/
 int     main(int ac, char **av)
 {
     if (ac != 3)
