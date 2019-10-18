@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   Player.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
+/*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 16:00:22 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/18 17:14:11 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/18 17:28:11 by lnicosia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/Player.hpp"
 
-Player::Player(void) : AbstractEntity()
+Player::Player(void) : AbstractForegroundEntity(Vec2(0, 0), Vec2(0, 0), Blueprint())
 {
 	int i;
 
@@ -24,9 +24,11 @@ Player::Player(void) : AbstractEntity()
 	}	
 }
 
+//TODO
+
 Player::Player(Player const &instance)
 {
-	
+	*this = instance;
 }
 
 Player::~Player(void)
@@ -60,7 +62,10 @@ void	Player::setBoost(int boost)
 	this->_boost = boost;
 }
 
+//TODO
+
 std::ostream &	operator<<(std::ostream &o, Player const &instance)
 {
-	
+	(void)instance;
+	return o;
 }

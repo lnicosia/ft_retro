@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PlayingScreen.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
+/*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 15:06:21 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/18 15:50:55 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/18 17:21:22 by lnicosia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 # include <iostream>
 # include "Map.hpp"
 # include "Game.hpp"
+
+class Game;
 
 class PlayingScreen
 {

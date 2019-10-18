@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PlayingScreen.cpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
+/*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 15:45:32 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/18 15:59:01 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/18 17:29:32 by lnicosia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,5 +43,5 @@ PlayingScreen &	PlayingScreen::operator=(PlayingScreen const &rhs)
 
 void	PlayingScreen::gameLoop(Game &game)
 {
-	
+	(void)game;
 }

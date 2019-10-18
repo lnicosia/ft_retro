@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
+/*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 15:15:46 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/18 17:14:01 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/18 17:20:17 by lnicosia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/Game.hpp"
+#include "Game.hpp"
 
-int main()
+/*int main()
 {
 	Game game;
 
@@ -25,4 +25,4 @@ int main()
 		std::cerr << e.what() << std::endl;
 	}
 	return (0);
-}
+}*/

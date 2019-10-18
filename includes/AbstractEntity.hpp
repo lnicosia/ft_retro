@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AbstractEntity.hpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
+/*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 14:01:38 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/18 16:51:29 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/18 17:18:44 by lnicosia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <iostream>
 # include "Vec2.hpp"
+# include "Blueprint.hpp"
 
 class Blueprint;
 

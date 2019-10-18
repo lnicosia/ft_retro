@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   Map.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
+/*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 15:51:29 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/18 16:04:46 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/18 17:25:22 by lnicosia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/Map.hpp"
 
-Map::Map(void): _nbBgEntities(0), _nbFgEntities(0), _player()
+Map::Map(void): _nbFgEntities(0), _nbBgEntities(0), _player()
 {
 	int i;
 
@@ -45,5 +45,6 @@ Map &	Map::operator=(Map const &rhs)
 
 std::ostream &	operator<<(std::ostream &o, Map const &instance)
 {
+	(void)instance;
 	return o;
 }

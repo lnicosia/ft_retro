@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+         #
+#    By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/11 23:08:04 by ldedier           #+#    #+#              #
-#    Updated: 2019/10/18 17:14:50 by ldedier          ###   ########.fr        #
+#    Updated: 2019/10/18 17:29:43 by lnicosia         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,14 +35,10 @@ INCLUDES		=	AbstractEnemy.hpp \
 					Vec2.hpp
 
 SRCS		=		main.cpp \
-					AbstractEnemy.cpp \
 					AbstractEntity.cpp \
-					AbstractForegroundEntitiy.cpp \
-					AbstractProjectile.cpp \
 					Map.cpp \
 					Player.cpp \
 					PlayingScreen.cpp \
-					Vec2.cpp
 
 VPATH			=	$(INCLUDESDIR) \
 					$(SRCDIR)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Game.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
+/*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 22:39:31 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/18 15:42:41 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/18 17:29:03 by lnicosia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@
 #define PHASE_PLAYING_SCREEN 0;
 #define PHASE_MENU 1;
 #define PHASE_PAUSE 2;
+
+class PlayingScreen;
 
 class Game
 {

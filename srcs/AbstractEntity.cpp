@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AbstractEntity.cpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
+/*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 16:39:33 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/18 17:14:10 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/18 17:23:48 by lnicosia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,12 @@ AbstractEntity::~AbstractEntity(void)
 	
 }
 
+// TODO
+
 AbstractEntity &	AbstractEntity::operator=(AbstractEntity const &rhs)
 {
-	
+	(void)rhs;
+	return *this;
 }
 
 void	AbstractEntity::render(void) const
@@ -52,7 +55,10 @@ void	AbstractEntity::setDirection(Vec2 dir)
 	this->_direction = dir;
 }
 
+//TODO
+
 std::ostream &	operator<<(std::ostream &o, AbstractEntity const &instance)
 {
-	
+	(void)instance;
+	return o;
 }
