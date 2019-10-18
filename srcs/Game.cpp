@@ -6,13 +6,14 @@
 /*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 15:18:10 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/18 18:24:40 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/18 20:35:18 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Game.hpp"
+#include "../includes/Game.hpp"
+#include <ncurses.h>
 
-Game::Game(void): _playingScreen(nullptr), _phase(0), _done(false)
+Game::Game(void): _playingScreen(nullptr), _phase(0), _highscore(0), _done(false)
 {
 	
 }
@@ -43,7 +44,7 @@ void	Game::loopPlayingScreen(void)
 void	Game::loopMenuScreen(void)
 {
 	//loop (waiting for player to select PLAY)
-	this->_playingScreen = new PlayingScreen();
+	this->_playingScreen = new PlayingScreen(this->_highscore);
 	this->_phase = PHASE_PLAYING_SCREEN;
 }
 
@@ -56,8 +57,15 @@ void	Game::loopPauseScreen(void)
 
 void	Game::launch()
 {
+	//init (get highscore ...)
+
+	initscr();
+	nodelay(stdscr, TRUE);
+	keypad(stdscr, TRUE);
+	noecho();
 	while (!this->_done)
 		(this->*Game::loopArray[this->_phase])();
+	endwin();
 }
 
 void	Game::setDone(bool done)
@@ -86,3 +94,13 @@ void (Game::*Game::loopArray[3])(void) =
 	&Game::loopPlayingScreen,
 	&Game::loopPauseScreen
 };
+
+int		Game::getHighscore()
+{
+	return (this->_highscore);
+}
+
+void	Game::setHighscore(int highscore)
+{
+	this->_highscore = highscore;
+}

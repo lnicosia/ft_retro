@@ -84,18 +84,3 @@ my pos = [126][14]
 my size = [7][4]
 its pos = [134][14]
 its size = [6][5]
-Bounding boxes do not intersect
-my pos = [125][14]
-my size = [7][4]
-its pos = [134][14]
-its size = [6][5]
-Bounding boxes do not intersect
-my pos = [124][14]
-my size = [7][4]
-its pos = [134][14]
-its size = [6][5]
-Bounding boxes do not intersect
-my pos = [123][14]
-my size = [7][4]
-its pos = [134][14]
-its size = [6][5]

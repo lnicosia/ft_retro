@@ -6,7 +6,7 @@
 /*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 22:39:31 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/18 18:24:19 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/18 19:36:14 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@
 # include <iostream>
 # include "PlayingScreen.hpp"
 
-#define PHASE_PLAYING_SCREEN 0
-#define PHASE_MENU 1
+#define PHASE_MENU 0
+#define PHASE_PLAYING_SCREEN 1
 #define PHASE_PAUSE 2
 
 class PlayingScreen;
@@ -40,10 +40,13 @@ class Game
 		bool	isDone(void);
 		void	setPhase(int phase);
 		int		getPhase(void);
+		int		getHighscore(void);
+		void	setHighscore(int highscore);
 
 	private:
 		PlayingScreen	*_playingScreen;
 		int				_phase;
+		int				_highscore;
 		bool			_done;
 	
 		static void (Game::*loopArray[3])(void);
