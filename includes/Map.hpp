@@ -6,7 +6,7 @@
 /*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 14:33:41 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/19 09:56:55 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/19 15:07:29 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,22 @@
 # include <iostream>
 # include "AbstractForegroundEntity.hpp"
 # include "Player.hpp"
+# include "AbstractPickup.hpp"
+# include "EntityContainer.hpp"
 
-# define MAX_ENTITIES 500
+//collision type:
+
+//player - pickups
+//player - enemies
+//player - enemy Projectiles
+// (UPDATE PLAYER)
+
+//player own projectile - enemies
+//(UPDATE PROJECTILE)
+
+//-> will need a list of
+
+// pickups, enemies, enemy projectiles, own projectiles
 
 class Map
 {
@@ -26,20 +40,20 @@ class Map
 		Map(Map const &instance);
 		Map &operator=(Map const &rhs);
 		~Map(void);
-		Player &getPlayer(void);
-		void	process(void);
+		Player	&getPlayer(void);
+		void	update(void);
+		void	clean(void);
 		void	render(void) const;
 
 	private:
 
-		AbstractEntity				*_backgroundEntities[MAX_ENTITIES];
-		int							_nbBgEntities;
+		EntityContainer		_background;
+		EntityContainer		_enemies;
+		EntityContainer 	_playerProjectiles;
+		EntityContainer		_enemiesProjectiles;
+		EntityContainer		_pickups;
 
-//		AbstractForegroundEntity	*_foregroundEntities[MAX_ENTITIES];
-
-//		AbstractForegroundEntity	*_backgroundEntities[MAX_ENTITIES];
-//		int							_nbFgEntities;
-		Player						_player;
+		Player				_player;
 };
 
 std::ostream &operator<<(std::ostream &o, Map const &instance);

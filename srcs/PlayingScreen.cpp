@@ -6,7 +6,7 @@
 /*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 15:45:32 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/18 21:00:22 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/19 15:07:27 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,8 @@ void	PlayingScreen::process(Game &game)
 {
 	(void)game;
 	//factory add randomly Entities;
-	this->_map.process();
+	this->_map.update();
+	this->_map.clean();
 }
 
 void	PlayingScreen::_printHud(Game &game) const

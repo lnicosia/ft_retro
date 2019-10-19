@@ -6,7 +6,7 @@
 /*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 14:16:07 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/19 10:52:08 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/19 11:34:01 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ class AbstractForegroundEntity : public AbstractEntity
 		AbstractForegroundEntity(AbstractForegroundEntity const &instance);
 		AbstractForegroundEntity &operator=(AbstractForegroundEntity const &rhs);
 		virtual ~AbstractForegroundEntity(void);
+		void update() = 0;
 		bool collide(const AbstractForegroundEntity &entity);
 
 	private:

@@ -6,14 +6,14 @@
 /*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 16:00:22 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/19 11:03:07 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/19 14:57:08 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/Player.hpp"
 #include <ncurses.h>
 
-Player::Player(void) : AbstractForegroundEntity(Vec2(0, 0), Vec2(0, 0), Blueprint()), _input(ERR)
+Player::Player(void) : AbstractForegroundEntity(Vec2(0, 0), Vec2(0, 0), Blueprint("player.ascii")), _input(ERR)
 {
 	// int i;
 
@@ -77,11 +77,6 @@ void	Player::shoot(Map &map)
 			this->_weaponSlots[i].getWeapon->beShot(*this, map);
 		i++;
 	}
-}
-
-void	Player::shoot(Map &map)
-{
-	
 }
 
 WeaponSlot	Player::getWeaponSlot(int i)

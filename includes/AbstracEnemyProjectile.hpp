@@ -6,7 +6,7 @@
 /*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/19 08:51:27 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/19 08:58:18 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/19 14:45:08 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class AbstracEnemyProjectile
 		AbstracEnemyProjectile(Vec2 pos, Vec2 dir, Blueprint blueprint, int damage);
 		AbstracEnemyProjectile(AbstracEnemyProjectile const &instance);
 		AbstracEnemyProjectile &operator=(AbstracEnemyProjectile const &rhs);
-		~AbstracEnemyProjectile(void);
+		virtual ~AbstracEnemyProjectile(void);
 
 	private:
 

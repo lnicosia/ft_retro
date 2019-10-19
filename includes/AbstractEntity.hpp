@@ -6,7 +6,7 @@
 /*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 14:01:38 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/19 10:51:57 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/19 14:36:49 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <iostream>
 # include "Vec2.hpp"
 # include "Blueprint.hpp"
-
+# include "Map.hpp"
 class Blueprint;
 
 class AbstractEntity
@@ -28,9 +28,11 @@ class AbstractEntity
 		AbstractEntity(AbstractEntity const &instance);
 		AbstractEntity &operator=(AbstractEntity const &rhs);
 		virtual ~AbstractEntity(void);
-		virtual void process() = 0;
 		void render(void) const;
 
+		virtual void update(Map &map) = 0;
+		virtual bool shouldBeCleaned() = 0;
+	
 		Vec2		getPosition(void) const;
 		Vec2		getOrientation(void) const;
 		Vec2		getDirection(void) const;
