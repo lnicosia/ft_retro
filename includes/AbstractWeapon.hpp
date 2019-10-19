@@ -6,7 +6,7 @@
 /*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 14:46:02 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/19 16:18:44 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/19 17:03:36 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ class AbstractWeapon
 		int _fireRate;
 		int _level;
 
-		AbstractProjectile *_laser;
+		AbstractProjectile *_projectile;
 };
 
 std::ostream &operator<<(std::ostream &o, AbstractWeapon const &instance);
