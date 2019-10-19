@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+         #
+#    By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/11 23:08:04 by ldedier           #+#    #+#              #
-#    Updated: 2019/10/18 22:13:54 by lnicosia         ###   ########.fr        #
+#    Updated: 2019/10/19 15:17:39 by ldedier          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -54,7 +54,7 @@ VPATH			=	$(INCLUDESDIR) \
 
 OBJECTS			=	$(addprefix $(OBJ_DIR), $(SRCS:.cpp=.o))
 
-CFLAGS			= -I $(INCLUDESDIR) -Wall -Wextra -Werror
+CFLAGS			= -I $(INCLUDESDIR) -Wall -Wextra -Werror -std=c++98
 
 OK_COLOR	=	\x1b[32;01m
 EOC			=	\033[0m
