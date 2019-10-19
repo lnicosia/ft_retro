@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AbstractEntity.hpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 14:01:38 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/18 22:10:21 by lnicosia         ###   ########.fr       */
+/*   Updated: 2019/10/19 10:51:57 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,12 @@ class AbstractEntity
 		void render(void) const;
 
 		Vec2		getPosition(void) const;
+		Vec2		getOrientation(void) const;
 		Vec2		getDirection(void) const;
 		Blueprint*	getBlueprint(void) const;
 	
 		void	setPosition(Vec2 pos);
+		void	setOrientation(Vec2 orientation);
 		void	setDirection(Vec2 dir);
 		void	setBlueprint(Blueprint*);
 
@@ -45,6 +47,4 @@ class AbstractEntity
 		Blueprint	*_blueprint;
 
 };
-
-std::ostream &operator<<(std::ostream &o, AbstractEntity const &instance);
 #endif

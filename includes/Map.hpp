@@ -6,7 +6,7 @@
 /*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 14:33:41 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/18 20:57:41 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/19 09:56:55 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,13 @@ class Map
 
 	private:
 
-		AbstractForegroundEntity	*_foregroundEntities[MAX_ENTITIES];
-		AbstractForegroundEntity	*_backgroundEntities[MAX_ENTITIES];
-		int							_nbFgEntities;
+		AbstractEntity				*_backgroundEntities[MAX_ENTITIES];
 		int							_nbBgEntities;
+
+//		AbstractForegroundEntity	*_foregroundEntities[MAX_ENTITIES];
+
+//		AbstractForegroundEntity	*_backgroundEntities[MAX_ENTITIES];
+//		int							_nbFgEntities;
 		Player						_player;
 };
 

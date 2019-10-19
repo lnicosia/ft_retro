@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AbstractForegroundEntity.hpp                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 14:16:07 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/18 18:52:40 by lnicosia         ###   ########.fr       */
+/*   Updated: 2019/10/19 10:52:08 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,16 @@
 # include <iostream>
 # include "AbstractEntity.hpp"
 
+//collision type:
+
+//player - pickups
+//player - enemies
+//player - enemy Projectiles
+//player own lasers - enemies
+
+//-> will need a list of
+
+// pickups, enemies, enemy projectiles, own projectiles
 
 class AbstractForegroundEntity : public AbstractEntity
 {

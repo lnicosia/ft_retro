@@ -6,14 +6,14 @@
 /*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 15:18:10 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/18 20:35:18 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/19 08:56:37 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/Game.hpp"
 #include <ncurses.h>
 
-Game::Game(void): _playingScreen(nullptr), _phase(0), _highscore(0), _done(false)
+Game::Game(void): _playingScreen(nullptr), _phase(PHASE_MENU), _highscore(0), _done(false)
 {
 	
 }

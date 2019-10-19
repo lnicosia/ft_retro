@@ -6,7 +6,7 @@
 /*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 14:41:08 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/18 20:36:13 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/19 11:01:17 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,10 @@
 # include <iostream>
 # include "AbstractForegroundEntity.hpp"
 # include "AbstractWeapon.hpp"
+# include "Map.hpp"
+# include "IShooter.hpp"
 
-class Player : public AbstractForegroundEntity
+class Player : public AbstractForegroundEntity, public IShooter
 {
 	public:
 		Player(void);
@@ -26,15 +28,13 @@ class Player : public AbstractForegroundEntity
 		virtual ~Player(void);
 		virtual void process(void);
 	
-		AbstractWeapon	*getWeapon(int i);
-		int		getBoost(void);
-		void	setBoost(int boost);
-		int		getInput(void);
-		void	setInput(int input);
+		virtual void	shoot(Map &map);
+		WeaponSlot		getWeaponSlot(int i);
+		int				getInput(void);
+		void			setInput(int input);
 
 	private:
-		AbstractWeapon *_weapons[2];
-		int				_boost;
+		WeaponSlot		_weaponSlots[4];
 		int				_input;
 };
 

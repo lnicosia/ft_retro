@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AbstractEntity.cpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 16:39:33 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/18 22:13:32 by lnicosia         ###   ########.fr       */
+/*   Updated: 2019/10/19 10:52:39 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,8 @@ AbstractEntity::AbstractEntity(): _position(Vec2(0,0)), _direction(Vec2(0,0)), _
 	
 }
 
-AbstractEntity::AbstractEntity(Vec2 pos, Vec2 dir, Blueprint &blueprint):_position(pos), _direction(dir), _blueprint(&blueprint)
+AbstractEntity::AbstractEntity(Vec2 pos, Vec2 dir, Blueprint &blueprint):_position(pos),
+	 _direction(dir), _blueprint(&blueprint)
 {
 	
 }
@@ -33,7 +34,6 @@ AbstractEntity::~AbstractEntity(void)
 }
 
 // TODO
-
 AbstractEntity &	AbstractEntity::operator=(AbstractEntity const &rhs)
 {
 	(void)rhs;
@@ -73,12 +73,5 @@ void	AbstractEntity::setDirection(Vec2 dir)
 void	AbstractEntity::setBlueprint(Blueprint * b)
 {
 	this->_blueprint = b;
-}
 
-//TODO
-
-std::ostream &	operator<<(std::ostream &o, AbstractEntity const &instance)
-{
-	(void)instance;
-	return o;
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AbstractForegroundEntity.cpp                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 17:37:47 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/18 22:12:36 by lnicosia         ###   ########.fr       */
+/*   Updated: 2019/10/19 10:53:12 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
