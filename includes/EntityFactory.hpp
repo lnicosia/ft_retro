@@ -6,14 +6,14 @@
 /*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/19 17:25:42 by lnicosia          #+#    #+#             */
-/*   Updated: 2019/10/19 18:57:13 by lnicosia         ###   ########.fr       */
+/*   Updated: 2019/10/19 20:15:26 by lnicosia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ENTITYFACTORY_HPP
 # define ENTITYFACTORY_HPP
 
-#define MAX_BLUEPRINT 4
+#define MAX_BLUEPRINT 5
 #define MAX_ENEMIES 1
 
 #include "AbstractEnemy.hpp"

@@ -6,7 +6,7 @@
 /*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/19 17:37:54 by lnicosia          #+#    #+#             */
-/*   Updated: 2019/10/19 19:03:17 by lnicosia         ###   ########.fr       */
+/*   Updated: 2019/10/19 20:15:52 by lnicosia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,11 @@ EntityFactory::~EntityFactory(void)
 
 Blueprint* EntityFactory::_blueprints[MAX_BLUEPRINT] =
 {
-        new Blueprint("assets/carré.ascii"), new Blueprint("assets/droite.ascii"), new Blueprint("assets/créneauDroite.ascii"),
-        new Blueprint("assets/créneauGauche.ascii")
+    new Blueprint("assets/ship.ascii"),
+    new Blueprint("assets/carré.ascii"),
+    new Blueprint("assets/droite.ascii"),
+    new Blueprint("assets/créneauDroite.ascii"),
+    new Blueprint("assets/créneauGauche.ascii")
 };
 
 std::string EntityFactory::_blueprintsId[MAX_BLUEPRINT] =

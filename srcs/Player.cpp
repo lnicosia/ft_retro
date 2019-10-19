@@ -6,7 +6,7 @@
 /*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 16:00:22 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/19 20:04:13 by lnicosia         ###   ########.fr       */
+/*   Updated: 2019/10/19 20:18:41 by lnicosia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,19 +109,23 @@ void		Player::update(Map &map)
 	{
 		case 'a':
 		case KEY_LEFT:
-			this->setPosition(this->getPosition() + Vec2(-1, 0));
+			if (this->getPosition().getX() > 0)
+				this->setPosition(this->getPosition() + Vec2(-1, 0));
 			break;
 		case 'd':
 		case KEY_RIGHT:
-			this->setPosition(this->getPosition() + Vec2(1, 0));
+			if (this->getPosition().getX() + (int)this->getBlueprint()->getSizeX() < COLS)
+				this->setPosition(this->getPosition() + Vec2(1, 0));
 			break;
 		case 'w':
 		case KEY_UP:
-			this->setPosition(this->getPosition() + Vec2(0, -1));
+			if (this->getPosition().getY() > 0)
+				this->setPosition(this->getPosition() + Vec2(0, -1));
 			break;
 		case 's':
 		case KEY_DOWN:
-			this->setPosition(this->getPosition() + Vec2(0, 1));
+			if (this->getPosition().getY() + (int)this->getBlueprint()->getSizeY() < LINES)
+				this->setPosition(this->getPosition() + Vec2(0, 1));
 			break;
 
 	}

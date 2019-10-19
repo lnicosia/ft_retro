@@ -6,7 +6,7 @@
 /*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 15:18:10 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/19 19:18:16 by lnicosia         ###   ########.fr       */
+/*   Updated: 2019/10/19 20:13:05 by lnicosia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,7 @@ void	Game::launch()
 	initscr();
 	nodelay(stdscr, TRUE);
 	keypad(stdscr, TRUE);
+	curs_set(FALSE);
 	noecho();
 	while (!this->_done)
 		(this->*Game::loopArray[this->_phase])();
