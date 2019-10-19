@@ -6,7 +6,7 @@
 /*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/19 08:53:33 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/19 18:59:37 by lnicosia         ###   ########.fr       */
+/*   Updated: 2019/10/19 20:03:41 by lnicosia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 # include <iostream>
 # include "AbstractForegroundEntity.hpp"
 # include "Map.hpp"
-
 
 class Map;
 
@@ -29,6 +28,8 @@ class AbstractPickup : public AbstractForegroundEntity
 		AbstractPickup &operator=(AbstractPickup const &rhs);
 		~AbstractPickup(void);
 		virtual void update(Map &map) = 0;
+		virtual void onCollide(Player &player) = 0;
+		virtual void onCollide(AbstractEnemy &enemy);
 
 	private:
 

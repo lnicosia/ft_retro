@@ -6,7 +6,7 @@
 /*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 14:41:08 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/19 18:56:17 by lnicosia         ###   ########.fr       */
+/*   Updated: 2019/10/19 20:01:40 by lnicosia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ class Player : public AbstractForegroundEntity, public IShooter
 	public:
 		Player(void);
 		Player(Blueprint*);
+		Player(int *lives);
 		Player(Player const &instance);
 		Player &operator=(Player const &rhs);
 		virtual			~Player(void);
@@ -32,12 +33,16 @@ class Player : public AbstractForegroundEntity, public IShooter
 		virtual void	shoot(Map &map);
 		virtual void	update(Map &map);
 		virtual bool	shouldBeCleaned();
-		
+		virtual void	onCollide(Player &player);
+		virtual void	onCollide(AbstractEnemy &enemy);
+
+
 		WeaponSlot		getWeaponSlot(int i);
 		int				getInput(void);
 		void			setInput(int input);
 
 	private:
+		int				*_lives;
 		WeaponSlot		_weaponSlots[4];
 		int				_input;
 };

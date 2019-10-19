@@ -6,7 +6,7 @@
 /*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 15:51:29 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/19 19:20:21 by lnicosia         ###   ########.fr       */
+/*   Updated: 2019/10/19 20:10:08 by lnicosia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,13 @@
 // pickups, enemies, enemy projectiles, own projectiles
 
 Map::Map(void):  _factory(), _background(), _enemies(),
-	_playerProjectiles(), _pickups(), _player(nullptr)
+	_playerProjectiles(), _pickups(), _player(nullptr), _score(0)
+{
+	this->_player = this->_factory.createPlayer();
+}
+
+Map::Map(int *score_ptr):  _background(), _enemies(),
+	_playerProjectiles(), _pickups(), _player(), _score(*score_ptr)
 {
 	this->_player = this->_factory.createPlayer();
 }
@@ -55,6 +61,11 @@ Player &	Map::getPlayer(void)
 	return (*this->_player);
 }
 
+int		Map::getScore() const
+{
+	return this->_score;
+}
+
 void	Map::update()
 {
 // 	this->_background.update(*this);
@@ -84,4 +95,29 @@ void	Map::clean(void)
 	// this->_enemiesProjectiles.clean();
 	// this->_playerProjectiles.clean();
 	// this->_pickups.clean();
+}
+
+EntityContainer	&	Map::getBackground(void)
+{
+	return (this->_background);
+}
+
+EntityContainer	&	Map::getEnemies(void)
+{
+	return (this->_enemies);
+}
+
+EntityContainer	&	Map::getPlayerProjectiles(void)
+{
+	return (this->_playerProjectiles);
+}
+
+EntityContainer	&	Map::getEnemiesProjectiles(void)
+{
+	return (this->_enemiesProjectiles);
+}
+
+EntityContainer	&	Map::getPickups(void)
+{
+	return (this->_pickups);
 }

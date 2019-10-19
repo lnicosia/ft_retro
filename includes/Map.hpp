@@ -6,7 +6,7 @@
 /*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 14:33:41 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/19 18:25:37 by lnicosia         ###   ########.fr       */
+/*   Updated: 2019/10/19 20:09:53 by lnicosia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,13 +37,22 @@ class Map
 {
 	public:
 		Map(void);
+		Map(int *score_ptr);
 		Map(Map const &instance);
 		Map &operator=(Map const &rhs);
 		~Map(void);
-		Player	&getPlayer(void);
 		void	update(void);
 		void	clean(void);
 		void	render(void) const;
+
+		int		getScore() const;
+
+		EntityContainer	&getBackground(void);
+		EntityContainer	&getEnemies(void);
+		EntityContainer	&getPlayerProjectiles(void);
+		EntityContainer	&getEnemiesProjectiles(void);
+		EntityContainer	&getPickups(void);
+		Player			&getPlayer(void);
 
 	private:
 
@@ -56,6 +65,8 @@ class Map
 		EntityContainer		_pickups;
 
 		Player*				_player;
+
+		int					_score;
 };
 
 std::ostream &operator<<(std::ostream &o, Map const &instance);

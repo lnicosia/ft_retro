@@ -6,7 +6,7 @@
 /*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 15:45:32 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/19 19:19:02 by lnicosia         ###   ########.fr       */
+/*   Updated: 2019/10/19 20:02:46 by lnicosia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <unistd.h>
 #include <ncurses.h>
 
-PlayingScreen::PlayingScreen(void): _score(0), _highscore(nullptr), _time(0), _map()
+PlayingScreen::PlayingScreen(void): _score(0), _highscore(nullptr), _time(0), _map(&this->_score)
 {
 	
 }

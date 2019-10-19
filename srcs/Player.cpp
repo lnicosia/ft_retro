@@ -6,7 +6,7 @@
 /*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 16:00:22 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/19 19:16:40 by lnicosia         ###   ########.fr       */
+/*   Updated: 2019/10/19 20:04:13 by lnicosia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <ncurses.h>
 
 Player::Player(void):
-	AbstractForegroundEntity(Vec2(0, 0), Vec2(0, 0), nullptr), _input(ERR)
+	AbstractForegroundEntity(Vec2(0, 0), Vec2(0, 0), nullptr), _lives(nullptr), _input(ERR)
 {
 	// int i;
 
@@ -27,7 +27,13 @@ Player::Player(void):
 }
 
 Player::Player(Blueprint *blueprint):
-	AbstractForegroundEntity(Vec2(0, 0), Vec2(0, 0), blueprint), _input(ERR)
+	AbstractForegroundEntity(Vec2(0, 0), Vec2(0, 0), blueprint), _lives(nullptr), _input(ERR)
+{
+	
+}
+
+Player::Player(int *lives):
+	AbstractForegroundEntity(Vec2(0, 0), Vec2(0, 0), nullptr), _lives(lives), _input(ERR)
 {
 	
 }
@@ -119,4 +125,15 @@ void		Player::update(Map &map)
 			break;
 
 	}
+}
+
+void	Player::onCollide(Player &player)
+{
+	(void)player;
+}
+
+void	Player::onCollide(AbstractEnemy &enemy)
+{
+	(void)enemy;
+	this->_lives--;
 }

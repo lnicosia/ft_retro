@@ -6,7 +6,7 @@
 /*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/19 15:59:52 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/19 18:59:32 by lnicosia         ###   ########.fr       */
+/*   Updated: 2019/10/19 20:03:26 by lnicosia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,4 +37,9 @@ AbstractPickup &	AbstractPickup::operator=(AbstractPickup const &rhs)
 {
 	(void)rhs;
 	return *this;
+}
+
+void	AbstractPickup::onCollide(AbstractEnemy &enemy)
+{
+	(void)enemy;
 }
