@@ -6,7 +6,7 @@
 /*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/19 10:48:27 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/19 10:57:32 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/19 16:11:35 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,16 +35,11 @@ WeaponSlot::~WeaponSlot(void)
 WeaponSlot &	WeaponSlot::operator=(WeaponSlot const &rhs)
 {
 	this->_offset = rhs._offset;
-	this->_orientation = this->_orientation;
+	this->_orientation = rhs._orientation;
 	return *this;
 }
 
 AbstractWeapon	*WeaponSlot::getWeapon(void)
 {
 	return (this->_weapon);
-}
-
-std::ostream &	operator<<(std::ostream &o, WeaponSlot const &instance)
-{
-	
 }

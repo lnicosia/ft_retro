@@ -6,7 +6,7 @@
 /*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/19 10:41:06 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/19 10:53:51 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/19 15:25:27 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 # include <iostream>
 # include "AbstractWeapon.hpp"
+
+class AbstractWeapon;
 
 class WeaponSlot
 {

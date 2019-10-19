@@ -6,7 +6,7 @@
 /*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/19 14:12:33 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/19 14:47:37 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/19 16:08:58 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,11 @@
 # define ENTITYCONTAINER_HPP
 
 # define MAX_ENTITIES 500
+
 # include <iostream>
 # include "AbstractEntity.hpp"
-# include "Map.hpp"
+
+class AbstractEntity;
 
 class EntityContainer
 {

@@ -6,7 +6,7 @@
 /*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 14:33:41 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/19 15:07:29 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/19 16:09:29 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define MAP_HPP
 
 # include <iostream>
-# include "AbstractForegroundEntity.hpp"
 # include "Player.hpp"
 # include "AbstractPickup.hpp"
 # include "EntityContainer.hpp"

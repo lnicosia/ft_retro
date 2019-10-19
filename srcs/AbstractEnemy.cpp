@@ -6,7 +6,7 @@
 /*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 17:33:44 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/19 10:59:00 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/19 15:41:32 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,6 @@ void	AbstractEnemy::shoot(Map &map)
 {
 	if (this->_weaponSlot.getWeapon())
 	{
-		this->_weaponSlot.getWeapon()->beShot(*this, map);
+		this->_weaponSlot.getWeapon()->beShot(*this, this->_weaponSlot, map);
 	}
 }

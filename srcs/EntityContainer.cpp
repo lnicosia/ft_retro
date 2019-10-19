@@ -6,7 +6,7 @@
 /*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/19 14:19:43 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/19 15:09:52 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/19 16:25:25 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,11 +33,6 @@ EntityContainer &	EntityContainer::operator=(EntityContainer const &rhs)
 	return *this;
 }
 
-std::ostream &	operator<<(std::ostream &o, EntityContainer const &instance)
-{
-	
-}
-
 void	EntityContainer::update(Map &map) const
 {
 	size_t i;
@@ -46,6 +41,18 @@ void	EntityContainer::update(Map &map) const
 	while (i < this->_size)
 	{
 		this->_entities[i]->update(map);
+		i++;
+	}
+}
+
+void	EntityContainer::render() const
+{
+	size_t i;
+
+	i = 0;
+	while (i < this->_size)
+	{
+		this->_entities[i]->render();
 		i++;
 	}
 }

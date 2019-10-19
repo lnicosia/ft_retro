@@ -6,7 +6,7 @@
 /*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 14:57:41 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/19 11:35:01 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/19 15:59:33 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include "AbstractForegroundEntity.hpp"
 
 class Blueprint;
+class Map;
 
 class AbstractProjectile : public AbstractForegroundEntity
 {
@@ -27,11 +28,10 @@ class AbstractProjectile : public AbstractForegroundEntity
 		AbstractProjectile(AbstractProjectile const &instance);
 		AbstractProjectile &operator=(AbstractProjectile const &rhs);
 		~AbstractProjectile(void);
-		void update() = 0;
+		virtual void update(Map &map) = 0;
 
+		int getDamage(void);
 	private:
 		int _damage;
 };
-
-std::ostream &operator<<(std::ostream &o, AbstractProjectile const &instance);
 #endif

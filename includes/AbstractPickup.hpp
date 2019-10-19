@@ -6,7 +6,7 @@
 /*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/19 08:53:33 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/19 12:54:41 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/19 16:01:05 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,9 @@
 # include "AbstractForegroundEntity.hpp"
 # include "Map.hpp"
 
+
+class Map;
+
 class AbstractPickup : public AbstractForegroundEntity
 {
 	public:
@@ -25,11 +28,9 @@ class AbstractPickup : public AbstractForegroundEntity
 		AbstractPickup(AbstractPickup const &instance);
 		AbstractPickup &operator=(AbstractPickup const &rhs);
 		~AbstractPickup(void);
-		void update(Map &map) = 0;
+		virtual void update(Map &map) = 0;
 
 	private:
 
 };
-
-std::ostream &operator<<(std::ostream &o, AbstractPickup const &instance);
 #endif

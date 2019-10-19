@@ -6,7 +6,7 @@
 /*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 14:20:54 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/19 10:56:53 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/19 16:04:33 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,12 @@
 # include <iostream>
 # include "Vec2.hpp"
 # include "AbstractForegroundEntity.hpp"
-# include "AbstractWeapon.hpp"
 # include "WeaponSlot.hpp"
 # include "IShooter.hpp"
 
 class Blueprint;
+class Map;
+class WeaponSlot;
 
 class AbstractEnemy : public AbstractForegroundEntity, public IShooter
 {
@@ -35,8 +36,6 @@ class AbstractEnemy : public AbstractForegroundEntity, public IShooter
 		int				getHealth(void);
 		int				getScoreOnDeath(void);
 		WeaponSlot		getSlot(void);
-		int				getScoreOnDeath(void);
-
 	private:
 		int				_health;
 		int				_scoreOnDeath;

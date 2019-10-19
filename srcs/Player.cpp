@@ -6,7 +6,7 @@
 /*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 16:00:22 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/19 14:57:08 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/19 16:24:22 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ void	Player::shoot(Map &map)
 	while (i < 4)
 	{
 		if (this->_weaponSlots[i].getWeapon())
-			this->_weaponSlots[i].getWeapon->beShot(*this, map);
+			this->_weaponSlots[i].getWeapon()->beShot(*this, this->_weaponSlots[i], map);
 		i++;
 	}
 }
@@ -82,4 +82,14 @@ void	Player::shoot(Map &map)
 WeaponSlot	Player::getWeaponSlot(int i)
 {
 	return (this->_weaponSlots[i]);
+}
+
+bool		Player::shouldBeCleaned()
+{
+	return true;
+}
+
+void		Player::update(Map &map)
+{
+	(void)map;
 }
