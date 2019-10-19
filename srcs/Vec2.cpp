@@ -6,7 +6,7 @@
 /*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 17:47:15 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/18 18:18:09 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/19 22:03:56 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,13 @@ Vec2 &Vec2::operator*(Vec2 const &rhs)
 	Vec2 res(this->_x * rhs._x, this->_y * rhs._y);
 
 	*this = res;
+	return *this;
+}
+
+Vec2 &Vec2::operator+=(Vec2 const &rhs)
+{
+	this->_x += rhs._x;
+	this->_y += rhs._y;
 	return *this;
 }
 

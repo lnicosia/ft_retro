@@ -6,7 +6,7 @@
 /*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 14:05:57 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/18 18:12:26 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/19 22:02:05 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ class Vec2
 		Vec2(Vec2 const &instance);
 		Vec2 &operator=(Vec2 const &rhs);
 		Vec2 &operator+(Vec2 const &rhs);
+		Vec2 &operator+=(Vec2 const &rhs);
 		Vec2 &operator-(Vec2 const &rhs);
 		Vec2 &operator*(Vec2 const &rhs);
 		Vec2 &operator/(Vec2 const &rhs);

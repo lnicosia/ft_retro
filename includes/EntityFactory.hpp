@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   EntityFactory.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/19 17:25:42 by lnicosia          #+#    #+#             */
-/*   Updated: 2019/10/19 18:57:13 by lnicosia         ###   ########.fr       */
+/*   Updated: 2019/10/19 21:58:46 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ class EntityFactory
         AbstractEntity*         createEntity(std::string type);
         AbstractEnemy*          createEnemy();
         AbstractEnemy*          createRandomEnemy();
-        Player*         createPlayer();
+        Player*         		createPlayer();
         
 	private:
         static Blueprint*       _blueprints[MAX_BLUEPRINT];

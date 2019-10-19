@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AbstractProjectile.hpp                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 14:57:41 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/19 18:58:44 by lnicosia         ###   ########.fr       */
+/*   Updated: 2019/10/19 22:04:24 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,16 @@ class AbstractProjectile : public AbstractForegroundEntity
 		AbstractProjectile(AbstractProjectile const &instance);
 		AbstractProjectile &operator=(AbstractProjectile const &rhs);
 		~AbstractProjectile(void);
-		virtual void update(Map &map) = 0;
+
+		// virtual void update(Map &map) = 0;
+		
+		virtual bool shouldBeCleaned(void);
+		virtual void onCollide(Player &player);
+		virtual void onCollide(AbstractEnemy &enemy);
 
 		int getDamage(void);
 	private:
 		int _damage;
+		bool _exploded;
 };
 #endif

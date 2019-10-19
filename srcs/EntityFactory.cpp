@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   EntityFactory.cpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/19 17:37:54 by lnicosia          #+#    #+#             */
-/*   Updated: 2019/10/19 19:03:17 by lnicosia         ###   ########.fr       */
+/*   Updated: 2019/10/19 22:09:34 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,9 @@ EntityFactory::~EntityFactory(void)
 
 Blueprint* EntityFactory::_blueprints[MAX_BLUEPRINT] =
 {
-        new Blueprint("assets/carré.ascii"), new Blueprint("assets/droite.ascii"), new Blueprint("assets/créneauDroite.ascii"),
+        new Blueprint("assets/carré.ascii"),
+		new Blueprint("assets/droite.ascii"),
+		new Blueprint("assets/créneauDroite.ascii"),
         new Blueprint("assets/créneauGauche.ascii")
 };
 

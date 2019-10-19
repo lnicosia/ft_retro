@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Player.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 14:41:08 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/19 20:01:40 by lnicosia         ###   ########.fr       */
+/*   Updated: 2019/10/19 20:30:50 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ class Player : public AbstractForegroundEntity, public IShooter
 		WeaponSlot		getWeaponSlot(int i);
 		int				getInput(void);
 		void			setInput(int input);
+		void			looseLife();
 
 	private:
 		int				*_lives;

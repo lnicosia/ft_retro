@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AbstractEnemy.cpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 17:33:44 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/19 18:59:21 by lnicosia         ###   ########.fr       */
+/*   Updated: 2019/10/19 21:49:57 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,9 +45,21 @@ int	AbstractEnemy::getHealth(void)
 	return (this->_health);
 }
 
+
 int	AbstractEnemy::getScoreOnDeath(void)
 {
 	return (this->_scoreOnDeath);
+}
+
+void	AbstractEnemy::takeDamage(int damage)
+{
+	if (damage >= 0)
+		this->_health -= damage;
+}
+
+bool AbstractEnemy::shouldBeCleaned(void)
+{
+	return (this->_health <= 0 || !this->isOnScreen());
 }
 
 void	AbstractEnemy::shoot(Map &map)

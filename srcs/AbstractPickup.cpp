@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AbstractPickup.cpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/19 15:59:52 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/19 20:03:26 by lnicosia         ###   ########.fr       */
+/*   Updated: 2019/10/19 21:56:13 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ AbstractPickup::AbstractPickup(void)
 }
 
 AbstractPickup::AbstractPickup(Vec2 pos, Vec2 dir, Blueprint *blueprint):
-	AbstractForegroundEntity(pos, dir, blueprint)
+	AbstractForegroundEntity(pos, dir, blueprint), _used(false)
 {
 	
 }
@@ -42,4 +42,9 @@ AbstractPickup &	AbstractPickup::operator=(AbstractPickup const &rhs)
 void	AbstractPickup::onCollide(AbstractEnemy &enemy)
 {
 	(void)enemy;
+}
+
+bool AbstractPickup::shouldBeCleaned()
+{
+	return this->_used || !this->isOnScreen();
 }
