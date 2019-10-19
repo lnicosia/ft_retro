@@ -43,6 +43,10 @@ class Game
 		int		getHighscore(void);
 		void	setHighscore(int highscore);
 
+		/* Functions to Print menus loop */
+		void	printMenus();
+		void	printMenusRectangle();
+		void	printMenusText();
 	private:
 		PlayingScreen	*_playingScreen;
 		int				_phase;

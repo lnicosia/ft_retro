@@ -48,20 +48,7 @@ void	Game::loopMenuScreen(void)
 	int i = 0;
 	while (!this->_done)
 	{	
-		if (LINES/2-5 > 0 && COLS / 2 - 5)
-		{
-			mvprintw(LINES / 2 - 5, COLS / 2, "--------------------------------------------------");
-			mvprintw(LINES / 2 + 5, COLS / 2, "--------------------------------------------------");
-			while (i < 5)
-			{
-				mvprintw(LINES / 2 + i, COLS / 2, "|");
-				mvprintw(LINES / 2 - i, COLS / 2, "|");
-				mvprintw(LINES / 2 - i, COLS / 2 + 49, "|");
-				mvprintw(LINES / 2 + i, COLS / 2 + 49, "|");
-				i++;
-			}
-			mvprintw(LINES / 2 , COLS / 2 + 1, "Welcome, Press ESC to quit, Press ENTER to play");
-		}
+		printMenus();
 		refresh();
 		input = getch();
 		if (input == 10)
@@ -144,4 +131,34 @@ int		Game::getHighscore()
 void	Game::setHighscore(int highscore)
 {
 	this->_highscore = highscore;
+}
+/* --------------------------------- Functions to Print menus loop --------------------------- */
+
+void	Game::printMenus()
+{
+	printMenusRectangle();
+	printMenusText();
+}
+
+void	Game::printMenusRectangle()
+{
+	int i = 0;
+	if (LINES/2-5 > 0 && COLS / 2 - 5)
+	{
+		mvprintw(LINES / 2 - 5, COLS / 2, "--------------------------------------------------");
+		mvprintw(LINES / 2 + 5, COLS / 2, "--------------------------------------------------");
+		while (i < 5)
+		{
+			mvprintw(LINES / 2 + i, COLS / 2, "|");
+			mvprintw(LINES / 2 - i, COLS / 2, "|");
+			mvprintw(LINES / 2 - i, COLS / 2 + 49, "|");
+			mvprintw(LINES / 2 + i, COLS / 2 + 49, "|");
+			i++;
+		}
+	}
+}
+
+void	Game::printMenusText()
+{
+	mvprintw(LINES / 2 , COLS / 2 + 1, "Welcome, Press ESC to quit, Press ENTER to play");
 }
