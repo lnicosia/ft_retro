@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   EntityContainer.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
+/*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/19 14:19:43 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/19 16:25:25 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/19 21:42:23 by lnicosia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "EntityContainer.hpp"
+#include <ctime>
 
 EntityContainer::EntityContainer(void): _size(0)
 {
@@ -48,7 +49,7 @@ void	EntityContainer::update(Map &map) const
 void	EntityContainer::render() const
 {
 	size_t i;
-
+	
 	i = 0;
 	while (i < this->_size)
 	{

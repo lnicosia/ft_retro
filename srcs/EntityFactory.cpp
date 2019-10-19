@@ -6,12 +6,13 @@
 /*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/19 17:37:54 by lnicosia          #+#    #+#             */
-/*   Updated: 2019/10/19 20:15:52 by lnicosia         ###   ########.fr       */
+/*   Updated: 2019/10/19 21:45:03 by lnicosia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "EntityFactory.hpp"
 #include "Player.hpp"
+#include "LaserThrower.hpp"
 #include <ncurses.h>
 
 EntityFactory::EntityFactory(void)
@@ -45,12 +46,12 @@ std::string EntityFactory::_blueprintsId[MAX_BLUEPRINT] =
 
 std::string EntityFactory::_enemyTypes[MAX_ENEMIES] =
 {
-    "asteroid",
+    "alien",
 };
 
-AbstractEnemy*    (EntityFactory::*EntityFactory::createFunc[1])(void) = 
+AbstractEnemy*    (EntityFactory::*EntityFactory::_createFunc[1])(void) = 
 {
-	&EntityFactory::createRandomEnemy,
+	&EntityFactory::createAlien,
 };
 
 EntityFactory &	EntityFactory::operator=(EntityFactory const &rhs)
@@ -61,13 +62,26 @@ EntityFactory &	EntityFactory::operator=(EntityFactory const &rhs)
 
 AbstractEntity*	EntityFactory::createEntity(std::string type)
 {
-	(void)type;
+    size_t  i = 0;
+    while (i < MAX_ENEMIES)
+    {
+        if (!this->_enemyTypes[i].compare(type))
+            return (this->*_createFunc[i])();
+        i++;
+    }
     return 0;
 }
 
 AbstractEnemy*	EntityFactory::createEnemy()
 {
 	return 0;
+}
+
+AbstractEnemy*  EntityFactory::createAlien()
+{
+    Alien* alien = new Alien(Vec2(COLS / 2 - this->_blueprints[1]->getSizeX() / 2, 0),
+        Vec2(0, 1), this->_blueprints[1], 50, 50, WeaponSlot());
+	return alien;
 }
 
 AbstractEnemy*	EntityFactory::createRandomEnemy()

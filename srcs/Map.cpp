@@ -6,11 +6,12 @@
 /*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 15:51:29 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/19 20:10:08 by lnicosia         ###   ########.fr       */
+/*   Updated: 2019/10/19 21:37:36 by lnicosia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/Map.hpp"
+#include "Alien.hpp"
 
 //collision type:
 
@@ -23,13 +24,16 @@
 // pickups, enemies, enemy projectiles, own projectiles
 
 Map::Map(void):  _factory(), _background(), _enemies(),
-	_playerProjectiles(), _pickups(), _player(nullptr), _score(0)
+	_playerProjectiles(), _pickups(), _player(nullptr), _score(0),
+	_enemySpawnRate(0.1), _enemySpawnTimer(0)
 {
 	this->_player = this->_factory.createPlayer();
+	//this->_enemies.add(new Alien());
 }
 
 Map::Map(int *score_ptr):  _background(), _enemies(),
-	_playerProjectiles(), _pickups(), _player(), _score(*score_ptr)
+	_playerProjectiles(), _pickups(), _player(), _score(*score_ptr),
+	_enemySpawnRate(0.1), _enemySpawnTimer(0)
 {
 	this->_player = this->_factory.createPlayer();
 }
@@ -68,8 +72,15 @@ int		Map::getScore() const
 
 void	Map::update()
 {
-// 	this->_background.update(*this);
-// 	this->_enemies.update(*this);
+ 	this->_background.update(*this);
+	//Generate new enemy
+	//std::cerr << "Time = " << ((double)clock() / CLOCKS_PER_SEC) << std::endl;
+	if ((double)clock() / CLOCKS_PER_SEC - this->_enemySpawnTimer > this->_enemySpawnRate)
+	{
+		this->_enemySpawnTimer = (double)clock() / CLOCKS_PER_SEC;
+		this->_enemies.add(this->_factory.createEntity("alien"));
+	}
+ 	this->_enemies.update(*this);
 // 	this->_enemiesProjectiles.update(*this);
  	this->_player->update(*this);
 // 	this->_playerProjectiles.update(*this);
@@ -79,7 +90,7 @@ void	Map::update()
 void	Map::render(void) const
 {
 	// this->_background.render();
-	// this->_enemies.render();
+	this->_enemies.render();
 	// this->_enemiesProjectiles.render();
 	//std::cerr << "trying to render player" << std::endl;
 	this->_player->render();

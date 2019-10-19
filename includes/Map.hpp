@@ -6,7 +6,7 @@
 /*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 14:33:41 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/19 20:09:53 by lnicosia         ###   ########.fr       */
+/*   Updated: 2019/10/19 20:50:13 by lnicosia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,8 @@ class Map
 		Player*				_player;
 
 		int					_score;
+		double				_enemySpawnRate;
+		double				_enemySpawnTimer;
 };
 
 std::ostream &operator<<(std::ostream &o, Map const &instance);

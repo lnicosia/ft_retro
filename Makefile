@@ -6,7 +6,7 @@
 #    By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/11 23:08:04 by ldedier           #+#    #+#              #
-#    Updated: 2019/10/19 20:03:15 by lnicosia         ###   ########.fr        #
+#    Updated: 2019/10/19 20:56:32 by lnicosia         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,7 +42,8 @@ INCLUDES		=	AbstractEnemy.hpp \
 					IShooter.hpp \
 					EntityFactory.hpp \
 					WeaponFactory.hpp \
-					LaserThrower.hpp
+					LaserThrower.hpp \
+					Alien.hpp \
 
 SRCS		=		main.cpp \
 					AbstractEnemy.cpp \
@@ -61,7 +62,8 @@ SRCS		=		main.cpp \
 					EntityContainer.cpp \
 					EntityFactory.cpp \
 					WeaponFactory.cpp \
-					LaserThrower.cpp
+					LaserThrower.cpp \
+					Alien.cpp \
 
  
 

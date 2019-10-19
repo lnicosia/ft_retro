@@ -6,7 +6,7 @@
 /*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 17:33:44 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/19 18:59:21 by lnicosia         ###   ########.fr       */
+/*   Updated: 2019/10/19 21:43:38 by lnicosia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,4 +56,11 @@ void	AbstractEnemy::shoot(Map &map)
 	{
 		this->_weaponSlot.getWeapon()->beShot(*this, this->_weaponSlot, map);
 	}
+}
+
+void	AbstractEnemy::update(Map &map)
+{
+	(void)map;
+	std::cerr << "Updating position" << std::endl;
+	this->setPosition(this->getPosition() + this->getDirection());
 }
