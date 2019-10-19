@@ -6,7 +6,7 @@
 /*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 15:51:29 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/19 18:54:18 by lnicosia         ###   ########.fr       */
+/*   Updated: 2019/10/19 19:20:21 by lnicosia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,12 +57,12 @@ Player &	Map::getPlayer(void)
 
 void	Map::update()
 {
-	this->_background.update(*this);
-	this->_enemies.update(*this);
-	this->_enemiesProjectiles.update(*this);
-	this->_player->update(*this);
-	this->_playerProjectiles.update(*this);
-	this->_pickups.update(*this);
+// 	this->_background.update(*this);
+// 	this->_enemies.update(*this);
+// 	this->_enemiesProjectiles.update(*this);
+ 	this->_player->update(*this);
+// 	this->_playerProjectiles.update(*this);
+// 	this->_pickups.update(*this);
 }
 
 void	Map::render(void) const
@@ -79,9 +79,9 @@ void	Map::render(void) const
 
 void	Map::clean(void)
 {
-	this->_background.clean();
-	this->_enemies.clean();
-	this->_enemiesProjectiles.clean();
-	this->_playerProjectiles.clean();
-	this->_pickups.clean();
+	// this->_background.clean();
+	// this->_enemies.clean();
+	// this->_enemiesProjectiles.clean();
+	// this->_playerProjectiles.clean();
+	// this->_pickups.clean();
 }

@@ -6,7 +6,7 @@
 /*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 15:45:32 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/19 19:01:26 by lnicosia         ###   ########.fr       */
+/*   Updated: 2019/10/19 19:19:02 by lnicosia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ void	PlayingScreen::gameLoop(Game &game)
 			mvprintw(0, 0, "Game playing...");
 			this->_map.getPlayer().setInput(input);
 			//std::cerr << "Inputs ok" << std::endl;
-			//this->process(game);
+			this->process(game);
 			//std::cerr << "Game process ok" << std::endl;
 			this->_print(game);
 			//std::cerr << "Game print ok" << std::endl;

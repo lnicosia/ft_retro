@@ -6,7 +6,7 @@
 /*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 16:00:22 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/19 19:00:12 by lnicosia         ###   ########.fr       */
+/*   Updated: 2019/10/19 19:16:40 by lnicosia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,4 +99,24 @@ bool		Player::shouldBeCleaned()
 void		Player::update(Map &map)
 {
 	(void)map;
+	switch(this->_input)
+	{
+		case 'a':
+		case KEY_LEFT:
+			this->setPosition(this->getPosition() + Vec2(-1, 0));
+			break;
+		case 'd':
+		case KEY_RIGHT:
+			this->setPosition(this->getPosition() + Vec2(1, 0));
+			break;
+		case 'w':
+		case KEY_UP:
+			this->setPosition(this->getPosition() + Vec2(0, -1));
+			break;
+		case 's':
+		case KEY_DOWN:
+			this->setPosition(this->getPosition() + Vec2(0, 1));
+			break;
+
+	}
 }
