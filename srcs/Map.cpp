@@ -6,23 +6,26 @@
 /*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 15:51:29 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/18 20:57:47 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/19 14:56:49 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/Map.hpp"
 
-Map::Map(void): _nbFgEntities(0), _nbBgEntities(0), _player()
-{
-	int i;
+//collision type:
 
-	i = 0;
-	while (i < MAX_ENTITIES)
-	{
-		this->_foregroundEntities[i] = nullptr;
-		this->_backgroundEntities[i] = nullptr;
-		i++;
-	}
+//player - pickups
+//player - enemies
+//player - enemy Projectiles
+//player own lasers - enemies
+
+//-> will need a list of
+// pickups, enemies, enemy projectiles, own projectiles
+
+Map::Map(void):  _background(), _enemies(),
+	_playerProjectiles(), _pickups(), _player()
+{
+	
 }
 
 Map::Map(Map const &instance)
@@ -37,8 +40,6 @@ Map::~Map(void)
 
 Map &	Map::operator=(Map const &rhs)
 {
-	this->_nbBgEntities = rhs._nbBgEntities;
-	this->_nbFgEntities = rhs._nbFgEntities;
 	this->_player = rhs._player;
 	return *this;
 }
@@ -54,40 +55,31 @@ Player &	Map::getPlayer(void)
 	return (this->_player);
 }
 
-void	Map::process(void)
+void	Map::update()
 {
-	int i;
-
-	this->_player.process();
-	i = 0;
-	while (i < this->_nbBgEntities)
-	{
-		this->_backgroundEntities[i]->process();
-		i++;
-	}
-	i = 0;
-	while (i < this->_nbFgEntities)
-	{
-		this->_foregroundEntities[i]->process();
-		i++;
-	}
+	this->_background.update(*this);
+	this->_enemies.update(*this);
+	this->_enemiesProjectiles.update(*this);
+	this->_player.update(*this);
+	this->_playerProjectiles.update(*this);
+	this->_pickups.update(*this);
 }
 
 void	Map::render(void) const
 {
-	int i;
-
+	this->_background.render();
+	this->_enemies.render();
+	this->_enemiesProjectiles.render();
 	this->_player.render();
-	i = 0;
-	while (i < this->_nbBgEntities)
-	{
-		this->_backgroundEntities[i]->render();
-		i++;
-	}
-	i = 0;
-	while (i < this->_nbFgEntities)
-	{
-		this->_foregroundEntities[i]->render();
-		i++;
-	}
+	this->_playerProjectiles.render();
+	this->_pickups.render();
+}
+
+void	Map::clean(void)
+{
+	this->_background.clean();
+	this->_enemies.clean();
+	this->_enemiesProjectiles.clean();
+	this->_playerProjectiles.clean();
+	this->_pickups.clean();
 }

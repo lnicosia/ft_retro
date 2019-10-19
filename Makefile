@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+         #
+#    By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/11 23:08:04 by ldedier           #+#    #+#              #
-#    Updated: 2019/10/18 22:13:54 by lnicosia         ###   ########.fr        #
+#    Updated: 2019/10/19 16:18:10 by ldedier          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,22 +29,34 @@ INCLUDES		=	AbstractEnemy.hpp \
 					AbstractEntity.hpp \
 					AbstractForegroundEntity.hpp \
 					AbstractProjectile.hpp \
+					AbstractPickup.hpp \
+					WeaponSlot.hpp \
+					AbstractWeapon.hpp \
 					Map.hpp \
 					Game.hpp \
 					Player.hpp \
 					PlayingScreen.hpp \
-					Vec2.hpp
+					Blueprint.hpp \
+					Vec2.hpp \
+					EntityContainer.hpp \
+					IShooter.hpp
 
 SRCS		=		main.cpp \
 					AbstractEnemy.cpp \
 					AbstractEntity.cpp \
 					AbstractForegroundEntity.cpp \
+					AbstractProjectile.cpp \
+					AbstractPickup.cpp \
+					WeaponSlot.cpp \
+					AbstractWeapon.cpp \
 					Map.cpp \
+					Game.cpp \
 					Player.cpp \
 					PlayingScreen.cpp \
-					Vec2.cpp \
 					Blueprint.cpp \
-					Game.cpp 
+					Vec2.cpp \
+					EntityContainer.cpp 
+
 
 
 
@@ -54,7 +66,7 @@ VPATH			=	$(INCLUDESDIR) \
 
 OBJECTS			=	$(addprefix $(OBJ_DIR), $(SRCS:.cpp=.o))
 
-CFLAGS			= -I $(INCLUDESDIR) -Wall -Wextra -Werror
+CFLAGS			= -I $(INCLUDESDIR) -Wall -Wextra -Werror -std=c++98
 
 OK_COLOR	=	\x1b[32;01m
 EOC			=	\033[0m
@@ -82,6 +94,7 @@ $(OBJ_DIR):
 
 $(OBJ_DIR)%.o: $(SRC_DIR)%.cpp $(INCLUDES)
 	$(CC) -c $< -o $@ $(CFLAGS)
+	@echo $@ OK !
 
 clean:
 	@$(RM) -rf $(OBJ_DIR)
