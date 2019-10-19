@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AbstractProjectile.hpp                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
+/*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 14:57:41 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/19 15:59:33 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/19 18:58:44 by lnicosia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class AbstractProjectile : public AbstractForegroundEntity
 {
 	public:
 		AbstractProjectile(void);
-		AbstractProjectile(Vec2 pos, Vec2 dir, Blueprint blueprint, int damage);
+		AbstractProjectile(Vec2 pos, Vec2 dir, Blueprint *blueprint, int damage);
 		AbstractProjectile(AbstractProjectile const &instance);
 		AbstractProjectile &operator=(AbstractProjectile const &rhs);
 		~AbstractProjectile(void);

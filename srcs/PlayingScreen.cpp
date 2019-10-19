@@ -6,7 +6,7 @@
 /*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 15:45:32 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/19 16:58:35 by lnicosia         ###   ########.fr       */
+/*   Updated: 2019/10/19 19:19:02 by lnicosia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,13 +74,18 @@ void	PlayingScreen::gameLoop(Game &game)
 			game.setPhase(PHASE_PAUSE);
 		else
 		{
+			clear();
+			//std::cerr << "trying to print game" << std::endl;
+			mvprintw(0, 0, "Game playing...");
 			this->_map.getPlayer().setInput(input);
+			//std::cerr << "Inputs ok" << std::endl;
 			this->process(game);
+			//std::cerr << "Game process ok" << std::endl;
 			this->_print(game);
+			//std::cerr << "Game print ok" << std::endl;
+			refresh();
 			usleep(10000);
 		}
-		clear();
-		mvprintw(0, 0, "Game playing...");
-		refresh();
+		
 	}
 }

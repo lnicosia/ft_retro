@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AbstractForegroundEntity.hpp                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
+/*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 14:16:07 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/19 15:55:58 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/19 18:58:14 by lnicosia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ class AbstractForegroundEntity : public AbstractEntity
 {
 	public:
 		AbstractForegroundEntity(void);
-		AbstractForegroundEntity(Vec2 pos, Vec2 dir, Blueprint blueprint);
+		AbstractForegroundEntity(Vec2 pos, Vec2 dir, Blueprint *blueprint);
 		AbstractForegroundEntity(AbstractForegroundEntity const &instance);
 		AbstractForegroundEntity &operator=(AbstractForegroundEntity const &rhs);
 		virtual ~AbstractForegroundEntity(void);

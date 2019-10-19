@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Player.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
+/*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 14:41:08 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/19 16:03:45 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/19 18:56:17 by lnicosia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ class Player : public AbstractForegroundEntity, public IShooter
 {
 	public:
 		Player(void);
+		Player(Blueprint*);
 		Player(Player const &instance);
 		Player &operator=(Player const &rhs);
 		virtual			~Player(void);

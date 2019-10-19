@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AbstractEntity.cpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
+/*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 16:39:33 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/19 10:52:39 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/19 18:57:49 by lnicosia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ AbstractEntity::AbstractEntity(): _position(Vec2(0,0)), _direction(Vec2(0,0)), _
 	
 }
 
-AbstractEntity::AbstractEntity(Vec2 pos, Vec2 dir, Blueprint &blueprint):_position(pos),
-	 _direction(dir), _blueprint(&blueprint)
+AbstractEntity::AbstractEntity(Vec2 pos, Vec2 dir, Blueprint *blueprint):_position(pos),
+	 _direction(dir), _blueprint(blueprint)
 {
 	
 }

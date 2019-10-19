@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Map.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
+/*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 14:33:41 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/19 16:09:29 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/19 18:25:37 by lnicosia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include "Player.hpp"
 # include "AbstractPickup.hpp"
 # include "EntityContainer.hpp"
+# include "EntityFactory.hpp"
 
 //collision type:
 
@@ -46,13 +47,15 @@ class Map
 
 	private:
 
+		EntityFactory		_factory;
+
 		EntityContainer		_background;
 		EntityContainer		_enemies;
 		EntityContainer 	_playerProjectiles;
 		EntityContainer		_enemiesProjectiles;
 		EntityContainer		_pickups;
 
-		Player				_player;
+		Player*				_player;
 };
 
 std::ostream &operator<<(std::ostream &o, Map const &instance);

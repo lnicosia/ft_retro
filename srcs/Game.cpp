@@ -6,7 +6,7 @@
 /*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 15:18:10 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/19 16:56:28 by lnicosia         ###   ########.fr       */
+/*   Updated: 2019/10/19 19:18:16 by lnicosia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,12 +54,13 @@ void	Game::loopPauseScreen(void)
 	int	input = 0;
 	//loop (waiting for player to select RESUME OR QUIT)
 	//delete this->_playingScreen;
-	mvprintw(0, 0, "Pres ESC to quit, 'P' to resume game");
-	refresh();
 	while (this->_phase == PHASE_PAUSE && !this->_done)
 	{
 		input = getch();
 	
+		clear();
+		mvprintw(0, 0, "Pres ESC to quit, 'P' to resume game");
+		refresh();
 		if (input == 27)
 			this->_done = 1;
 		else if (input == 'p')

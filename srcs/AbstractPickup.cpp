@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AbstractPickup.cpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
+/*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/19 15:59:52 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/19 16:00:48 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/19 18:59:32 by lnicosia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ AbstractPickup::AbstractPickup(void)
 	
 }
 
-AbstractPickup::AbstractPickup(Vec2 pos, Vec2 dir, Blueprint blueprint):
+AbstractPickup::AbstractPickup(Vec2 pos, Vec2 dir, Blueprint *blueprint):
 	AbstractForegroundEntity(pos, dir, blueprint)
 {
 	

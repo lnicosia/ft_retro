@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AbstractEnemy.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
+/*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 14:20:54 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/19 16:04:33 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/19 18:59:08 by lnicosia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class AbstractEnemy : public AbstractForegroundEntity, public IShooter
 {
 	public:
 		AbstractEnemy(void);
-		AbstractEnemy(Vec2 pos, Vec2 dir, Blueprint blueprint, int health, int scoreOnDeath, WeaponSlot ws);
+		AbstractEnemy(Vec2 pos, Vec2 dir, Blueprint *blueprint, int health, int scoreOnDeath, WeaponSlot ws);
 		AbstractEnemy(AbstractEnemy const &instance);
 		AbstractEnemy &operator=(AbstractEnemy const &rhs);
 		virtual ~AbstractEnemy(void);
