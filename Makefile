@@ -6,7 +6,7 @@
 #    By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/11 23:08:04 by ldedier           #+#    #+#              #
-#    Updated: 2019/10/19 16:18:10 by ldedier          ###   ########.fr        #
+#    Updated: 2019/10/19 16:56:50 by ldedier          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -58,9 +58,6 @@ SRCS		=		main.cpp \
 					EntityContainer.cpp 
 
 
-
-
-
 VPATH			=	$(INCLUDESDIR) \
 					$(SRCDIR)
 
@@ -94,7 +91,6 @@ $(OBJ_DIR):
 
 $(OBJ_DIR)%.o: $(SRC_DIR)%.cpp $(INCLUDES)
 	$(CC) -c $< -o $@ $(CFLAGS)
-	@echo $@ OK !
 
 clean:
 	@$(RM) -rf $(OBJ_DIR)
