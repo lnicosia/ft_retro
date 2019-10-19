@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AbstractForegroundEntity.hpp                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 14:16:07 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/19 19:58:05 by lnicosia         ###   ########.fr       */
+/*   Updated: 2019/10/19 21:59:16 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,11 +41,10 @@ class AbstractForegroundEntity : public AbstractEntity
 		AbstractForegroundEntity(AbstractForegroundEntity const &instance);
 		AbstractForegroundEntity &operator=(AbstractForegroundEntity const &rhs);
 		virtual ~AbstractForegroundEntity(void);
-		
 
 		virtual void onCollide(Player &player) = 0;
 		virtual void onCollide(AbstractEnemy &enemy) = 0;
-		virtual void update(Map &map) = 0;
+		// virtual void update(Map &map) = 0;
 
 		bool collide(const AbstractForegroundEntity &entity);
 

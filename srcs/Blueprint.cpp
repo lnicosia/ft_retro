@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Blueprint.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 13:40:33 by lnicosia          #+#    #+#             */
-/*   Updated: 2019/10/19 16:55:40 by lnicosia         ###   ########.fr       */
+/*   Updated: 2019/10/19 22:09:15 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,7 @@ int	Blueprint::parseBlueprint(std::string f)
     std::string         buff;
     std::string         tmp;
     int                 fd;
+
     size_t              i = 0;
 
     // Checks if the extension is ".ascii"

@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   Player.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 16:00:22 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/19 20:18:41 by lnicosia         ###   ########.fr       */
+/*   Updated: 2019/10/19 22:14:04 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/Player.hpp"
+#include "../includes/AbstractEnemy.hpp"
 #include <ncurses.h>
 
 Player::Player(void):
@@ -61,6 +62,11 @@ void	Player::process(void)
 	
 }
 
+void	Player::looseLife()
+{
+	(*this->_lives)--;
+}
+
 //TODO
 
 std::ostream &	operator<<(std::ostream &o, Player const &instance)
@@ -99,7 +105,7 @@ WeaponSlot	Player::getWeaponSlot(int i)
 
 bool		Player::shouldBeCleaned()
 {
-	return true;
+	return false;
 }
 
 void		Player::update(Map &map)
@@ -138,6 +144,6 @@ void	Player::onCollide(Player &player)
 
 void	Player::onCollide(AbstractEnemy &enemy)
 {
-	(void)enemy;
+	enemy.takeDamage(100);
 	this->_lives--;
 }

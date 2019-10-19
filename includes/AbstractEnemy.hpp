@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AbstractEnemy.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 14:20:54 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/19 21:50:52 by lnicosia         ###   ########.fr       */
+/*   Updated: 2019/10/19 22:19:23 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,12 @@ class AbstractEnemy : public AbstractForegroundEntity, public IShooter
 		AbstractEnemy(Vec2 pos, Vec2 dir, Blueprint *blueprint, int health, int scoreOnDeath, WeaponSlot ws);
 		AbstractEnemy(AbstractEnemy const &instance);
 		AbstractEnemy &operator=(AbstractEnemy const &rhs);
+		
+		void	takeDamage(int damage);
 		virtual ~AbstractEnemy(void);
+
+		virtual bool shouldBeCleaned(void);
 		virtual void shoot(Map &map);
-		virtual void update(Map &map);
-		virtual bool shouldBeCleaned();
 
 		int				getHealth(void);
 		int				getScoreOnDeath(void);
