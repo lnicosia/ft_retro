@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AbstractEntity.hpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
+/*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 14:01:38 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/19 15:52:32 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/19 18:57:33 by lnicosia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class AbstractEntity
 	public:
 
 		AbstractEntity(void);
-		AbstractEntity(Vec2 pos, Vec2 dir, Blueprint &blueprint);
+		AbstractEntity(Vec2 pos, Vec2 dir, Blueprint *blueprint);
 		AbstractEntity(AbstractEntity const &instance);
 		AbstractEntity &operator=(AbstractEntity const &rhs);
 		virtual ~AbstractEntity(void);

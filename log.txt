@@ -1,0 +1,4 @@
+assets/carré.ascii image is [8][4]
+assets/droite.ascii image is [6][5]
+assets/créneauDroite.ascii image is [5][5]
+assets/créneauGauche.ascii image is [5][5]
