@@ -6,7 +6,7 @@
 /*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 14:33:41 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/19 16:09:29 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/19 18:10:35 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,12 +39,20 @@ class Map
 		Map(Map const &instance);
 		Map &operator=(Map const &rhs);
 		~Map(void);
-		Player	&getPlayer(void);
 		void	update(void);
 		void	clean(void);
 		void	render(void) const;
 
+
+		EntityContainer	&getBackground(void);
+		EntityContainer	&getEnemies(void);
+		EntityContainer	&getPlayerProjectiles(void);
+		EntityContainer	&getEnemiesProjectiles(void);
+		EntityContainer	&getPickups(void);
+		Player			&getPlayer(void);
+
 	private:
+
 
 		EntityContainer		_background;
 		EntityContainer		_enemies;

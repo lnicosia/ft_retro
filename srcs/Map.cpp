@@ -6,7 +6,7 @@
 /*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 15:51:29 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/19 14:56:49 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/19 17:51:10 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,4 +82,29 @@ void	Map::clean(void)
 	this->_enemiesProjectiles.clean();
 	this->_playerProjectiles.clean();
 	this->_pickups.clean();
+}
+
+EntityContainer	&	Map::getBackground(void)
+{
+	return (this->_background);
+}
+
+EntityContainer	&	Map::getEnemies(void)
+{
+	return (this->_enemies);
+}
+
+EntityContainer	&	Map::getPlayerProjectiles(void)
+{
+	return (this->_playerProjectiles);
+}
+
+EntityContainer	&	Map::getEnemiesProjectiles(void)
+{
+	return (this->_enemiesProjectiles);
+}
+
+EntityContainer	&	Map::getPickups(void)
+{
+	return (this->_pickups);
 }
