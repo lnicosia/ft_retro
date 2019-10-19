@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PlayingScreen.cpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
+/*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 15:45:32 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/19 15:07:27 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/19 16:58:35 by lnicosia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,5 +79,8 @@ void	PlayingScreen::gameLoop(Game &game)
 			this->_print(game);
 			usleep(10000);
 		}
+		clear();
+		mvprintw(0, 0, "Game playing...");
+		refresh();
 	}
 }

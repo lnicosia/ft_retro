@@ -6,7 +6,7 @@
 /*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 13:40:33 by lnicosia          #+#    #+#             */
-/*   Updated: 2019/10/19 12:49:44 by lnicosia         ###   ########.fr       */
+/*   Updated: 2019/10/19 16:55:40 by lnicosia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -129,7 +129,7 @@ void    Blueprint::print(Vec2 pos) const
     std::string         line;
     size_t screenX, screenY;
     getmaxyx(stdscr, screenY, screenX);
-    mvprintw(0, 0, "My pos = [%d][%d]", pos.getX(), pos.getY());
+    //mvprintw(0, 0, "My pos = [%d][%d]", pos.getX(), pos.getY());
     size_t  i = 0;
     size_t  x;
     while (i < this->_sizeY)
