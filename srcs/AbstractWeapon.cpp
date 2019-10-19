@@ -6,20 +6,20 @@
 /*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/19 11:04:25 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/19 16:23:20 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/19 17:04:25 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AbstractWeapon.hpp"
 
 AbstractWeapon::AbstractWeapon(int fireRate, AbstractProjectile *projectile):
-	_fireRate(fireRate), _level(0), _laser(projectile)
+	_fireRate(fireRate), _level(0), _projectile(projectile)
 {
 	
 }
 
 AbstractWeapon::AbstractWeapon(AbstractWeapon const &instance):
-	_fireRate(instance._fireRate), _level(instance._level), _laser(instance._laser)
+	_fireRate(instance._fireRate), _level(instance._level), _projectile(instance._projectile)
 {
 	
 }
@@ -30,7 +30,7 @@ AbstractWeapon::~AbstractWeapon(void)
 }
 
 AbstractWeapon::AbstractWeapon(void):
-	_fireRate(0), _level(0), _laser(nullptr)
+	_fireRate(0), _level(0), _projectile(nullptr)
 {
 	
 }

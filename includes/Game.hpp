@@ -48,7 +48,6 @@ class Game
 		int				_phase;
 		int				_highscore;
 		bool			_done;
-	
 		static void (Game::*loopArray[3])(void);
 		
 };

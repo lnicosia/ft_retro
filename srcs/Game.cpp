@@ -3,15 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   Game.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
+/*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 15:18:10 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/19 08:56:37 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/19 16:56:28 by lnicosia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/Game.hpp"
 #include <ncurses.h>
+#include <unistd.h>
 
 Game::Game(void): _playingScreen(nullptr), _phase(PHASE_MENU), _highscore(0), _done(false)
 {
@@ -43,6 +44,31 @@ void	Game::loopPlayingScreen(void)
 
 void	Game::loopMenuScreen(void)
 {
+	int input = 0;
+	int i = 0;
+	while (!this->_done)
+	{	
+		if (LINES/2-5 > 0 && COLS / 2 - 5)
+		{
+			mvprintw(LINES / 2 - 5, COLS / 2, "--------------------------------------------------");
+			mvprintw(LINES / 2 + 5, COLS / 2, "--------------------------------------------------");
+			while (i < 5)
+			{
+				mvprintw(LINES / 2 + i, COLS / 2, "|");
+				mvprintw(LINES / 2 - i, COLS / 2, "|");
+				mvprintw(LINES / 2 - i, COLS / 2 + 49, "|");
+				mvprintw(LINES / 2 + i, COLS / 2 + 49, "|");
+				i++;
+			}
+			mvprintw(LINES / 2 , COLS / 2 + 1, "Welcome, Press ESC to quit, Press ENTER to play");
+		}
+		refresh();
+		input = getch();
+		if (input == 10)
+		{
+			//START GAME
+		}
+	}
 	//loop (waiting for player to select PLAY)
 	this->_playingScreen = new PlayingScreen(this->_highscore);
 	this->_phase = PHASE_PLAYING_SCREEN;
@@ -50,9 +76,24 @@ void	Game::loopMenuScreen(void)
 
 void	Game::loopPauseScreen(void)
 {
+	int	input = 0;
 	//loop (waiting for player to select RESUME OR QUIT)
-	delete this->_playingScreen;
-	this->_phase = PHASE_MENU;
+	//delete this->_playingScreen;
+	mvprintw(0, 0, "Pres ESC to quit, 'P' to resume game");
+	refresh();
+	while (this->_phase == PHASE_PAUSE && !this->_done)
+	{
+		input = getch();
+	
+		if (input == 27)
+			this->_done = 1;
+		else if (input == 'p')
+			this->_phase = PHASE_PLAYING_SCREEN;
+		else
+		{
+			usleep(10000);
+		}
+	}
 }
 
 void	Game::launch()
