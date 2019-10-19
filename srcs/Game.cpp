@@ -3,15 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   Game.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
+/*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 15:18:10 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/19 08:56:37 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/19 16:43:50 by lnicosia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/Game.hpp"
 #include <ncurses.h>
+#include <unistd.h>
 
 Game::Game(void): _playingScreen(nullptr), _phase(PHASE_MENU), _highscore(0), _done(false)
 {
@@ -50,9 +51,22 @@ void	Game::loopMenuScreen(void)
 
 void	Game::loopPauseScreen(void)
 {
+	int	input = 0;
 	//loop (waiting for player to select RESUME OR QUIT)
-	delete this->_playingScreen;
-	this->_phase = PHASE_MENU;
+	//delete this->_playingScreen;
+	while (this->_phase == PHASE_PAUSE && !this->_done)
+	{
+		input = getch();
+	
+		if (input == 27)
+			this->_done = 1;
+		else if (input == 'p')
+			this->_phase = PHASE_PLAYING_SCREEN;
+		else
+		{
+			usleep(10000);
+		}
+	}
 }
 
 void	Game::launch()
