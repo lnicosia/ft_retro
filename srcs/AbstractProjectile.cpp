@@ -6,7 +6,7 @@
 /*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/19 15:56:57 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/19 21:49:15 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/20 01:36:04 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,8 +57,8 @@ void	AbstractProjectile::onCollide(Player &player)
 	this->_exploded = true;
 }
 
-void	AbstractProjectile::onCollide(AbstractEnemy &enemy)
+void	AbstractProjectile::onCollide(AbstractEnemy &enemy, Map &map)
 {
-	enemy.takeDamage(this->_damage);
+	enemy.takeDamage(this->_damage, map);
 	this->_exploded = true;
 }

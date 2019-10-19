@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Alien.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/19 20:34:27 by lnicosia          #+#    #+#             */
-/*   Updated: 2019/10/19 22:02:09 by lnicosia         ###   ########.fr       */
+/*   Updated: 2019/10/20 01:11:18 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@ class Alien : public AbstractEnemy
 	public:
 		Alien(void);
 		//Alien(** replace parameters **);
-        Alien(Vec2 pos, Vec2 dir, Blueprint *blueprint, int health, int scoreOnDeath, WeaponSlot ws);
+        Alien(Vec2 pos, Vec2 dir, Blueprint *blueprint);
+        // Alien(Vec2 pos, Vec2 dir, Blueprint *blueprint, int health, int scoreOnDeath, WeaponSlot ws);
 		Alien(Alien const &instance);
 		Alien &operator=(Alien const &rhs);
 		~Alien(void);
@@ -30,8 +31,8 @@ class Alien : public AbstractEnemy
 		//virtual bool    shouldBeCleaned();
 
 
-        virtual void    onCollide(Player &player);
-        virtual void    onCollide(AbstractEnemy &enemy);
+        // virtual void    onCollide(Player &player);
+        // virtual void    onCollide(AbstractEnemy &enemy, Map &map);
 	private:
 
 };

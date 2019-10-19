@@ -6,7 +6,7 @@
 /*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/19 17:37:54 by lnicosia          #+#    #+#             */
-/*   Updated: 2019/10/19 22:15:50 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/20 00:37:40 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ std::string EntityFactory::_enemyTypes[MAX_ENEMIES] =
     "alien",
 };
 
-AbstractEnemy*    (EntityFactory::*EntityFactory::_createFunc[1])(void) = 
+AbstractEnemy*    (EntityFactory::*EntityFactory::_createFunc[1])(Vec2 pos, Vec2 dir) = 
 {
 	&EntityFactory::createAlien,
 };
@@ -60,32 +60,39 @@ EntityFactory &	EntityFactory::operator=(EntityFactory const &rhs)
     return *this;
 }
 
-AbstractEntity*	EntityFactory::createEntity(std::string type)
+AbstractEntity*	EntityFactory::createEntity(std::string type, Vec2 pos, Vec2 dir)
 {
     size_t  i = 0;
     while (i < MAX_ENEMIES)
     {
         if (!this->_enemyTypes[i].compare(type))
-            return (this->*_createFunc[i])();
+            return (this->*_createFunc[i])(pos, dir);
         i++;
     }
     return 0;
 }
 
-AbstractEnemy*	EntityFactory::createEnemy()
+AbstractEnemy*	EntityFactory::createEnemy(Vec2 pos, Vec2 dir)
 {
+	(void)pos;
+	(void)dir;
 	return 0;
 }
 
-AbstractEnemy*  EntityFactory::createAlien()
+AbstractEnemy*  EntityFactory::createAlien(Vec2 pos, Vec2 dir)
 {
-    Alien* alien = new Alien(Vec2(COLS / 2 - this->_blueprints[1]->getSizeX() / 2, 0),
-        Vec2(0, 1), this->_blueprints[1], 50, 50, WeaponSlot());
+    // Alien* alien = new Alien(Vec2(COLS / 2 - this->_blueprints[1]->getSizeX() / 2, 0),
+    //     Vec2(0, 1), this->_blueprints[1], 50, 50, WeaponSlot());
+    Alien* alien = new Alien(pos, dir, this->_blueprints[1]);
 	return alien;
 }
 
-AbstractEnemy*	EntityFactory::createRandomEnemy()
+
+
+AbstractEnemy*	EntityFactory::createRandomEnemy(Vec2 pos, Vec2 dir)
 {
+	(void)pos;
+	(void)dir;
 	return 0;
 }
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   EntityContainer.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/19 14:19:43 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/19 22:02:44 by lnicosia         ###   ########.fr       */
+/*   Updated: 2019/10/20 01:23:22 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,4 +93,14 @@ void	EntityContainer::add(AbstractEntity *entity)
 	{
 		//throw Exception();
 	}
+}
+
+int	EntityContainer::getSize(void)
+{
+	return (this->_size);
+}
+
+AbstractEntity	*	EntityContainer::getEntity(int i)
+{
+	return (this->_entities[i]);
 }

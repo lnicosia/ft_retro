@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Map.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 14:33:41 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/19 20:50:13 by lnicosia         ###   ########.fr       */
+/*   Updated: 2019/10/20 01:06:21 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ class Map
 {
 	public:
 		Map(void);
-		Map(int *score_ptr);
 		Map(Map const &instance);
 		Map &operator=(Map const &rhs);
 		~Map(void);
@@ -56,6 +55,8 @@ class Map
 
 	private:
 
+		Vec2				_randomPos(void);
+
 		EntityFactory		_factory;
 
 		EntityContainer		_background;
@@ -63,7 +64,6 @@ class Map
 		EntityContainer 	_playerProjectiles;
 		EntityContainer		_enemiesProjectiles;
 		EntityContainer		_pickups;
-
 		Player*				_player;
 
 		int					_score;

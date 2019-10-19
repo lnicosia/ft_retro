@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PlayingScreen.cpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 15:45:32 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/19 20:02:46 by lnicosia         ###   ########.fr       */
+/*   Updated: 2019/10/20 00:57:37 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 #include <unistd.h>
 #include <ncurses.h>
 
-PlayingScreen::PlayingScreen(void): _score(0), _highscore(nullptr), _time(0), _map(&this->_score)
+PlayingScreen::PlayingScreen(void): _highscore(nullptr), _time(0), _map()
 {
 	
 }
 
-PlayingScreen::PlayingScreen(int &highscore):  _score(0), _highscore(&highscore), _time(0), _map()
+PlayingScreen::PlayingScreen(int &highscore): _highscore(&highscore), _time(0), _map()
 {
 	
 }
@@ -37,7 +37,6 @@ PlayingScreen::~PlayingScreen(void)
 PlayingScreen &	PlayingScreen::operator=(PlayingScreen const &rhs)
 {
 	this->_highscore = rhs._highscore;
-	this->_score = rhs._score;
 	this->_map = rhs._map;
 	this->_time = rhs._time;
 	return *this;

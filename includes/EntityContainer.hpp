@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   EntityContainer.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/19 14:12:33 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/19 17:38:02 by lnicosia         ###   ########.fr       */
+/*   Updated: 2019/10/20 01:22:43 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,9 @@ class EntityContainer
 		void clean(void);
 		void render(void) const;
 		void add(AbstractEntity *entity);
+
+		int				getSize(void);
+		AbstractEntity	*getEntity(int);
 
 	private:
 		

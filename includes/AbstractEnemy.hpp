@@ -6,7 +6,7 @@
 /*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 14:20:54 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/19 22:19:23 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/20 01:17:43 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,19 +31,26 @@ class AbstractEnemy : public AbstractForegroundEntity, public IShooter
 		AbstractEnemy(AbstractEnemy const &instance);
 		AbstractEnemy &operator=(AbstractEnemy const &rhs);
 		
-		void	takeDamage(int damage);
+		void	takeDamage(int damage, Map &map);
 		virtual ~AbstractEnemy(void);
-
-		virtual bool shouldBeCleaned(void);
-		virtual void shoot(Map &map);
 
 		int				getHealth(void);
 		int				getScoreOnDeath(void);
 		WeaponSlot		getSlot(void);
+		bool			isDead(void);
+		void			die(Player &player);
+		void			drop(Map &map);
+
+		virtual void	shoot(Map &map);
+		virtual bool	shouldBeCleaned(void);
+		virtual void	onCollide(Player &player);
+		virtual void	onCollide(AbstractEnemy &enemy, Map &map);
 	private:
+
 		int				_health;
 		int				_scoreOnDeath;
 		WeaponSlot		_weaponSlot;
+		bool			_dead;
 
 };
 #endif

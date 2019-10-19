@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PlayingScreen.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 15:06:21 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/19 20:08:13 by lnicosia         ###   ########.fr       */
+/*   Updated: 2019/10/20 00:57:08 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,6 @@ class PlayingScreen
 		PlayingScreen(void);
 		void	process(Game &game);
 
-		int		_score;
 		int		*_highscore;
 		time_t	_time;
 		Map		_map;

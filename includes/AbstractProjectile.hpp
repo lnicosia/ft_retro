@@ -6,7 +6,7 @@
 /*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 14:57:41 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/19 22:04:24 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/20 01:10:07 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ class AbstractProjectile : public AbstractForegroundEntity
 		
 		virtual bool shouldBeCleaned(void);
 		virtual void onCollide(Player &player);
-		virtual void onCollide(AbstractEnemy &enemy);
+		virtual void onCollide(AbstractEnemy &enemy, Map &map);
 
 		int getDamage(void);
 	private:

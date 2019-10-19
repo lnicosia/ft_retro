@@ -6,16 +6,17 @@
 /*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 16:00:22 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/19 22:14:04 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/20 01:35:14 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/Player.hpp"
 #include "../includes/AbstractEnemy.hpp"
 #include <ncurses.h>
+#include "Map.hpp"
 
 Player::Player(void):
-	AbstractForegroundEntity(Vec2(0, 0), Vec2(0, 0), nullptr), _lives(nullptr), _input(ERR)
+	AbstractForegroundEntity(Vec2(0, 0), Vec2(0, 0), nullptr), _lives(5), _score(0), _input(ERR), _acceleration(0.3)
 {
 	// int i;
 
@@ -28,13 +29,7 @@ Player::Player(void):
 }
 
 Player::Player(Blueprint *blueprint):
-	AbstractForegroundEntity(Vec2(0, 0), Vec2(0, 0), blueprint), _lives(nullptr), _input(ERR)
-{
-	
-}
-
-Player::Player(int *lives):
-	AbstractForegroundEntity(Vec2(0, 0), Vec2(0, 0), nullptr), _lives(lives), _input(ERR)
+	AbstractForegroundEntity(Vec2(0, 0), Vec2(0, 0), blueprint), _lives(5), _score(0), _input(ERR), _acceleration(0.3)
 {
 	
 }
@@ -64,11 +59,20 @@ void	Player::process(void)
 
 void	Player::looseLife()
 {
-	(*this->_lives)--;
+	this->_lives--;
+}
+
+void	Player::gainLife()
+{
+	this->_lives++;
+}
+
+void	Player::incScore(int scoreToAdd)
+{
+	this->_score += scoreToAdd;
 }
 
 //TODO
-
 std::ostream &	operator<<(std::ostream &o, Player const &instance)
 {
 	(void)instance;
@@ -111,29 +115,96 @@ bool		Player::shouldBeCleaned()
 void		Player::update(Map &map)
 {
 	(void)map;
-	switch(this->_input)
+	switch (this->_input)
 	{
 		case 'a':
 		case KEY_LEFT:
-			if (this->getPosition().getX() > 0)
-				this->setPosition(this->getPosition() + Vec2(-1, 0));
+			this->setDirection(this->getDirection() - Vec2(this->_acceleration, 0));
 			break;
 		case 'd':
 		case KEY_RIGHT:
-			if (this->getPosition().getX() + (int)this->getBlueprint()->getSizeX() < COLS)
-				this->setPosition(this->getPosition() + Vec2(1, 0));
+				this->setDirection(this->getDirection() + Vec2(this->_acceleration, 0));
 			break;
 		case 'w':
 		case KEY_UP:
-			if (this->getPosition().getY() > 0)
-				this->setPosition(this->getPosition() + Vec2(0, -1));
+				this->setDirection(this->getDirection() - Vec2(0, this->_acceleration));
 			break;
 		case 's':
 		case KEY_DOWN:
-			if (this->getPosition().getY() + (int)this->getBlueprint()->getSizeY() < LINES)
-				this->setPosition(this->getPosition() + Vec2(0, 1));
+				this->setDirection(this->getDirection() + Vec2(0, this->_acceleration));
 			break;
+	}
 
+	if (this->getDirection().getNorm() > 1.2)
+	{
+		this->setDirection(this->getDirection().normed() * 1.2);
+	}
+	else if (this->getDirection().getNorm() < 0.1)
+		this->setDirection(Vec2(0,0));
+	this->setDirection(this->getDirection() * 0.95);
+	Vec2 newPos = this->getPosition() + this->getDirection();
+
+	this->setDirection(this->getDirection());
+	std::cerr << this->getDirection() << std::endl;
+	this->AbstractEntity::update(map);
+
+	if (this->getPosition().getX() + this->getBlueprint()->getSizeX() > COLS)
+	{
+		this->setDirection(Vec2(0, this->getDirection().getY()));
+		this->setPosition(Vec2(COLS - this->getBlueprint()->getSizeX() - 1, this->getPosition().getY()));
+	}
+	else if (this->getPosition().getX() < 0)
+	{
+		this->setDirection(Vec2(0, this->getDirection().getY()));
+		this->setPosition(Vec2(0, this->getPosition().getY()));
+	}
+	if (this->getPosition().getY() + this->getBlueprint()->getSizeY() > LINES)
+	{
+		this->setDirection(Vec2(this->getDirection().getX(), 0));
+		this->setPosition(Vec2(this->getPosition().getX(), LINES - this->getBlueprint()->getSizeY() - 1));
+	}
+	else if (this->getPosition().getY() < 0)
+	{
+		this->setDirection(Vec2(this->getDirection().getX(), 0));
+		this->setPosition(Vec2(this->getPosition().getX(), 0));
+	}
+	int i;
+
+	i = 0;
+	while (i < map.getEnemies().getSize())
+	{
+		if (this->collide(*(AbstractForegroundEntity *)(map.getEnemies().getEntity(i))))
+		{
+			this->onCollide(*(AbstractEnemy *)map.getEnemies().getEntity(i), map);
+		}
+		i++;
+	}
+	i = 0;
+	while (i < map.getPickups().getSize())
+	{
+		if (this->collide(*(AbstractPickup *)(map.getPickups().getEntity(i))))
+		{
+			((AbstractPickup *)map.getPickups().getEntity(i))->onCollide(*this);
+		}
+		i++;
+	}
+	i = 0;
+	while (i < map.getPickups().getSize())
+	{
+		if (this->collide(*(AbstractPickup *)(map.getPickups().getEntity(i))))
+		{
+			((AbstractPickup *)map.getPickups().getEntity(i))->onCollide(*this);
+		}
+		i++;
+	}
+	i = 0;
+	while (i < map.getEnemiesProjectiles().getSize())
+	{
+		if (this->collide(*(AbstractProjectile *)(map.getEnemiesProjectiles().getEntity(i))))
+		{
+			((AbstractProjectile *)map.getEnemiesProjectiles().getEntity(i))->onCollide(*this);
+		}
+		i++;
 	}
 }
 
@@ -142,8 +213,9 @@ void	Player::onCollide(Player &player)
 	(void)player;
 }
 
-void	Player::onCollide(AbstractEnemy &enemy)
+void	Player::onCollide(AbstractEnemy &enemy, Map &map)
 {
-	enemy.takeDamage(100);
+	enemy.takeDamage(200, map);
+	this->setDirection(this->getDirection() * 0.6);
 	this->_lives--;
 }
