@@ -6,7 +6,7 @@
 /*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/19 14:19:43 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/19 21:42:23 by lnicosia         ###   ########.fr       */
+/*   Updated: 2019/10/19 22:02:44 by lnicosia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,7 @@ void	EntityContainer::render() const
 
 void	EntityContainer::_shiftContainer(size_t i)
 {
+	std::cerr << "destroying entity #" << i << std::endl;
 	delete this->_entities[i];
 	while (i < this->_size)
 	{

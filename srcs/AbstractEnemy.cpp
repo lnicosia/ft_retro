@@ -6,11 +6,12 @@
 /*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 17:33:44 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/19 21:43:38 by lnicosia         ###   ########.fr       */
+/*   Updated: 2019/10/19 22:02:37 by lnicosia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/AbstractEnemy.hpp"
+#include <ncurses.h>
 
 AbstractEnemy::AbstractEnemy(void)
 {
@@ -58,9 +59,15 @@ void	AbstractEnemy::shoot(Map &map)
 	}
 }
 
+bool	AbstractEnemy::shouldBeCleaned()
+{
+	if (this->getPosition().getY() > LINES)
+		return true;
+	return false;
+}
+
 void	AbstractEnemy::update(Map &map)
 {
 	(void)map;
-	std::cerr << "Updating position" << std::endl;
 	this->setPosition(this->getPosition() + this->getDirection());
 }

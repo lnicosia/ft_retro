@@ -6,7 +6,7 @@
 /*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 15:51:29 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/19 21:37:36 by lnicosia         ###   ########.fr       */
+/*   Updated: 2019/10/19 21:58:52 by lnicosia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@
 
 Map::Map(void):  _factory(), _background(), _enemies(),
 	_playerProjectiles(), _pickups(), _player(nullptr), _score(0),
-	_enemySpawnRate(0.1), _enemySpawnTimer(0)
+	_enemySpawnRate(0.02), _enemySpawnTimer(0)
 {
 	this->_player = this->_factory.createPlayer();
 	//this->_enemies.add(new Alien());
@@ -33,7 +33,7 @@ Map::Map(void):  _factory(), _background(), _enemies(),
 
 Map::Map(int *score_ptr):  _background(), _enemies(),
 	_playerProjectiles(), _pickups(), _player(), _score(*score_ptr),
-	_enemySpawnRate(0.1), _enemySpawnTimer(0)
+	_enemySpawnRate(0.02), _enemySpawnTimer(0)
 {
 	this->_player = this->_factory.createPlayer();
 }
@@ -102,7 +102,7 @@ void	Map::render(void) const
 void	Map::clean(void)
 {
 	// this->_background.clean();
-	// this->_enemies.clean();
+	this->_enemies.clean();
 	// this->_enemiesProjectiles.clean();
 	// this->_playerProjectiles.clean();
 	// this->_pickups.clean();

@@ -6,7 +6,7 @@
 /*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/19 20:34:27 by lnicosia          #+#    #+#             */
-/*   Updated: 2019/10/19 21:46:45 by lnicosia         ###   ########.fr       */
+/*   Updated: 2019/10/19 22:02:09 by lnicosia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,9 @@ class Alien : public AbstractEnemy
 
 		//Override la fonction si on veut donner un comportement particulier a l'alien
         //virtual void    update(Map &map);
+		//virtual bool    shouldBeCleaned();
 
-        virtual bool    shouldBeCleaned();
+
         virtual void    onCollide(Player &player);
         virtual void    onCollide(AbstractEnemy &enemy);
 	private:

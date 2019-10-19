@@ -6,7 +6,7 @@
 /*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/19 20:53:25 by lnicosia          #+#    #+#             */
-/*   Updated: 2019/10/19 21:46:54 by lnicosia         ###   ########.fr       */
+/*   Updated: 2019/10/19 22:02:14 by lnicosia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,10 +49,10 @@ Alien &	Alien::operator=(Alien const &rhs)
     (void)map;
 }*/
 
-bool    Alien::shouldBeCleaned()
+/*bool    Alien::shouldBeCleaned()
 {
     return false;
-}
+}*/
 
 void    Alien::onCollide(Player &player)
 {

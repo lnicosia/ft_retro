@@ -6,7 +6,7 @@
 /*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 14:20:54 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/19 21:40:50 by lnicosia         ###   ########.fr       */
+/*   Updated: 2019/10/19 21:50:52 by lnicosia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ class AbstractEnemy : public AbstractForegroundEntity, public IShooter
 		virtual ~AbstractEnemy(void);
 		virtual void shoot(Map &map);
 		virtual void update(Map &map);
+		virtual bool shouldBeCleaned();
 
 		int				getHealth(void);
 		int				getScoreOnDeath(void);
