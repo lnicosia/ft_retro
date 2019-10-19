@@ -10,26 +10,27 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ncurses.h>
 // #include "Blueprint.hpp"
 // #include "Player.hpp"
 #include "Game.hpp"
 #include <iostream>
+#include "TitleMap.hpp"
+#include "GameMap.hpp"
 
-int main()
-{
+// int main()
+// {
 
-	Game game;
+// 	Game game;
 
-	try {
-		game.launch();
-	}
-	catch(std::exception e)
-	{
-		std::cerr << e.what() << std::endl;
-	}
-	return 0;
-}
+// 	try {
+// 		game.launch();
+// 	}
+// 	catch(std::exception e)
+// 	{
+// 		std::cerr << e.what() << std::endl;
+// 	}
+// 	return 0;
+// }
 
 // int     main(int ac, char **av)
 // {
@@ -95,3 +96,29 @@ int main()
 //     endwin();
 //     return 0;
 // }
+
+
+int main() // Main from Kevin
+{
+
+	int x = (50 / 2) - (41 / 2);
+	int y = 0;
+	//Init and set up Game Map
+	GameMap Map;
+	Map.init_ncurse();
+	// Init and set up Title Screen
+	TitleMap TitleScreen;
+
+	TitleScreen.init_title_window();
+	while (1)
+	{
+		TitleScreen.title_screen_display();
+
+		// Add TitleScreen state to General Game Map;
+		copywin(TitleScreen.getWindow(), Map.getWindow(), 0, 0, y, x, y + 3, x + 40, 0);
+
+		//display
+		wrefresh(Map.getWindow());
+	}
+	return (0);
+}

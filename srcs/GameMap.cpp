@@ -4,58 +4,22 @@
 
 GameMap::GameMap()
 {
-    m_width = 15;
-    m_height = 40;
-}
-
-GameMap::GameMap(unsigned int width, unsigned int height)
-{
-    m_width = width;
-    m_height = height;
 }
 
 GameMap::GameMap(GameMap &copy)
 {
-    m_width = copy.m_width;
-    m_height = copy.m_height;
 }
 
 GameMap::~GameMap()
 {
     kill_ncurses();
 }
-
-/* -------------------------- Getter -------------------------- */
-unsigned int        GameMap::getHeight()
-{
-    return (m_height);
-}
-
-unsigned int        GameMap::getWidth()
-{
-    return (m_width);
-}
-
-/* -------------------------- Setter -------------------------- */
-void                GameMap::setHeight(unsigned int height)
-{
-    m_height = height;
-}
-
 /* -------------------------- Operation Overload -------------------------- */
-
-void                GameMap::setWidth(unsigned int width)
-{
-    m_width = width;
-}
 
 GameMap&            GameMap::operator=(const GameMap & var)
 {
-    std::cout << "Assignation operator called" << std::endl;
     if(this == &var)
 		return (*this);
-    m_height = var.m_height;
-    m_width = var.m_width;
     return(*this);
 }
 
@@ -71,9 +35,9 @@ void                GameMap::init_ncurse()
     timeout(0);             /* Sets blocking or non-blocking read behavior for the window. If delay is negative, blocking read is used (which will wait indefinitely for input). */
     refresh();              // Rafraîchit la fenêtre courante afin de voir le message apparaître
 
-    map = newwin(m_height, m_width, 0, 0);
-    box(map, 0, 0);
-    refresh();
+    map = newwin(50, 50, 0, 0);	// new window
+	wclear(map);						// clear window
+	mvwin(map, 0, 0);					// move window
     //endwin(); 			/* End curses mode		  */
 
 }
@@ -81,4 +45,9 @@ void                GameMap::init_ncurse()
 void                GameMap::kill_ncurses()
 {
     endwin(); 			/* End curses mode		  */
+}
+
+WINDOW      *GameMap::getWindow()
+{
+    return map;
 }

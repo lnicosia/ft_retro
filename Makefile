@@ -39,7 +39,9 @@ INCLUDES		=	AbstractEnemy.hpp \
 					Blueprint.hpp \
 					Vec2.hpp \
 					EntityContainer.hpp \
-					IShooter.hpp
+					IShooter.hpp \
+					GameMap.hpp	\
+					Titlemap.hpp
 
 SRCS		=		main.cpp \
 					AbstractEnemy.cpp \
@@ -55,7 +57,9 @@ SRCS		=		main.cpp \
 					PlayingScreen.cpp \
 					Blueprint.cpp \
 					Vec2.cpp \
-					EntityContainer.cpp 
+					EntityContainer.cpp \
+					GameMap.cpp \
+					Titlemap.cpp
 
 
 
