@@ -6,7 +6,7 @@
 /*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 15:15:46 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/19 15:09:14 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/19 15:11:56 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 // #include "Player.hpp"
 #include "Game.hpp"
 #include <iostream>
-
 
 int main()
 {
