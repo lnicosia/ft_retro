@@ -6,7 +6,7 @@
 /*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 14:46:02 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/19 18:02:00 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/19 18:49:23 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,19 +26,18 @@ class WeaponSlot;
 class AbstractWeapon
 {
 	public:
-		AbstractWeapon(int fireRate, AbstractProjectile *projectile);
+		AbstractWeapon(void);
+		AbstractWeapon(int fireRate, std::string projectileName);
 		AbstractWeapon(AbstractWeapon const &instance);
 		AbstractWeapon &operator=(AbstractWeapon const &rhs);
 		virtual ~AbstractWeapon(void);
-		virtual void processBeShot(AbstractEntity &entity, WeaponSlot ws, EntityContainer &container) = 0;
+		virtual void processBeShot(AbstractEntity &entity, WeaponSlot ws, EntityContainer &container, Map &map) = 0;
 
 		virtual void beShot(AbstractEnemy &enemy, WeaponSlot ws, Map &map);
 		virtual void beShot(Player &player, WeaponSlot ws, Map &map);
 	private:
-		AbstractWeapon(void);
 		int _fireRate;
-
-		AbstractProjectile *_projectile;
+		std::string _projectileName;
 };
 
 std::ostream &operator<<(std::ostream &o, AbstractWeapon const &instance);

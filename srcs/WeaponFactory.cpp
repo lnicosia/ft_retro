@@ -1,45 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AbstractPickup.cpp                                 :+:      :+:    :+:   */
+/*   WeaponFactory.cpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/19 15:59:52 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/19 19:14:36 by ldedier          ###   ########.fr       */
+/*   Created: 2019/10/19 18:31:05 by ldedier           #+#    #+#             */
+/*   Updated: 2019/10/19 18:42:52 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "AbstractPickup.hpp"
+#include "WeaponFactory.hpp"
+#include "LaserThrower.hpp"
 
-AbstractPickup::AbstractPickup(void)
+WeaponFactory::WeaponFactory(void)
 {
-	
+
 }
 
-AbstractPickup::AbstractPickup(Vec2 pos, Vec2 dir, Blueprint blueprint):
-	AbstractForegroundEntity(pos, dir, blueprint)
-{
-	
-}
-
-AbstractPickup::AbstractPickup(AbstractPickup const &instance)
+WeaponFactory::WeaponFactory(WeaponFactory const &instance)
 {
 	*this = instance;
 }
 
-AbstractPickup::~AbstractPickup(void)
+WeaponFactory::~WeaponFactory(void)
 {
 	
 }
 
-AbstractPickup &	AbstractPickup::operator=(AbstractPickup const &rhs)
+WeaponFactory &	WeaponFactory::operator=(WeaponFactory const &rhs)
 {
 	(void)rhs;
 	return *this;
 }
 
-void	AbstractPickup::onCollide(AbstractEnemy &enemy)
+std::string WeaponFactory::_factoryIdentifiers[NB_WEAPONS] =
 {
-	(void)enemy;
+	"laser thrower"
+};
+
+
+AbstractWeapon *	WeaponFactory::_createLaserThrower(void)
+{
+	return new LaserThrower();
 }

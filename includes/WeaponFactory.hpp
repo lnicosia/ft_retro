@@ -1,39 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WeaponSlot.hpp                                     :+:      :+:    :+:   */
+/*   WeaponFactory.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/19 10:41:06 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/19 19:22:33 by ldedier          ###   ########.fr       */
+/*   Created: 2019/10/19 18:12:49 by ldedier           #+#    #+#             */
+/*   Updated: 2019/10/19 18:42:48 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WEAPONSLOT_HPP
-# define WEAPONSLOT_HPP
+#ifndef WEAPONFACTORY_HPP
+# define WEAPONFACTORY_HPP
 
 # include <iostream>
 # include "AbstractWeapon.hpp"
 
-class AbstractWeapon;
 
-class WeaponSlot
+# define NB_WEAPONS 1
+
+class WeaponFactory
 {
 	public:
-		WeaponSlot(void);
-		WeaponSlot(Vec2 offset, Vec2 orientation);
-		WeaponSlot(WeaponSlot const &instance);
-		WeaponSlot &operator=(WeaponSlot const &rhs);
-		~WeaponSlot(void);
+		WeaponFactory(void);
+		WeaponFactory(WeaponFactory const &instance);
+		WeaponFactory &operator=(WeaponFactory const &rhs);
+		~WeaponFactory(void);
 
-		AbstractWeapon	*getWeapon(void);
-		Vec2			getOffset(void);
-		Vec2			getOrientation(void);
-
+				
 	private:
-		Vec2			_offset;
-		Vec2			_orientation;
-		AbstractWeapon	*_weapon;
+
+		AbstractWeapon *_createLaserThrower(void);
+
+		static std::string _factoryIdentifiers[NB_WEAPONS];
+		static AbstractWeapon *(WeaponFactory::*_factoryFuncs[NB_WEAPONS])(void);
 };
 #endif

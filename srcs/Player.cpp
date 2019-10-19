@@ -6,14 +6,14 @@
 /*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 16:00:22 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/19 16:24:22 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/19 19:08:37 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/Player.hpp"
 #include <ncurses.h>
 
-Player::Player(void) : AbstractForegroundEntity(Vec2(0, 0), Vec2(0, 0), Blueprint("player.ascii")), _input(ERR)
+Player::Player(void) : AbstractForegroundEntity(Vec2(0, 0), Vec2(0, 0), Blueprint("player.ascii")), _lives(nullptr), _input(ERR)
 {
 	// int i;
 
@@ -23,6 +23,11 @@ Player::Player(void) : AbstractForegroundEntity(Vec2(0, 0), Vec2(0, 0), Blueprin
 	// 	this->_weaponSlots[i].setWeapon = nullptr;
 	// 	i++;
 	// }	
+}
+
+Player::Player(int *lives): AbstractForegroundEntity(Vec2(0, 0), Vec2(0, 0), Blueprint("player.ascii")), _lives(lives), _input(ERR)
+{
+	
 }
 
 //TODO
@@ -92,4 +97,15 @@ bool		Player::shouldBeCleaned()
 void		Player::update(Map &map)
 {
 	(void)map;
+}
+
+void	Player::onCollide(Player &player)
+{
+	(void)player;
+}
+
+void	Player::onCollide(AbstractEnemy &enemy)
+{
+	(void)enemy;
+	this->_lives--;
 }

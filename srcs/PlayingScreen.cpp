@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PlayingScreen.cpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 15:45:32 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/19 16:58:35 by lnicosia         ###   ########.fr       */
+/*   Updated: 2019/10/19 19:17:45 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <unistd.h>
 #include <ncurses.h>
 
-PlayingScreen::PlayingScreen(void): _score(0), _highscore(nullptr), _time(0), _map()
+PlayingScreen::PlayingScreen(void): _score(0), _highscore(nullptr), _time(0), _map(&this->_score)
 {
 	
 }

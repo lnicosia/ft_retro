@@ -6,7 +6,7 @@
 #    By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/11 23:08:04 by ldedier           #+#    #+#              #
-#    Updated: 2019/10/19 16:56:50 by ldedier          ###   ########.fr        #
+#    Updated: 2019/10/19 18:43:38 by ldedier          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,7 +39,9 @@ INCLUDES		=	AbstractEnemy.hpp \
 					Blueprint.hpp \
 					Vec2.hpp \
 					EntityContainer.hpp \
-					IShooter.hpp
+					IShooter.hpp \
+					WeaponFactory.hpp\
+					LaserThrower.hpp
 
 SRCS		=		main.cpp \
 					AbstractEnemy.cpp \
@@ -55,7 +57,11 @@ SRCS		=		main.cpp \
 					PlayingScreen.cpp \
 					Blueprint.cpp \
 					Vec2.cpp \
-					EntityContainer.cpp 
+					EntityContainer.cpp \
+					WeaponFactory.cpp \
+					LaserThrower.cpp
+
+ 
 
 
 VPATH			=	$(INCLUDESDIR) \

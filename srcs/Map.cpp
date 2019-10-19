@@ -6,7 +6,7 @@
 /*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 15:51:29 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/19 17:51:10 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/19 19:17:41 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,12 @@
 
 Map::Map(void):  _background(), _enemies(),
 	_playerProjectiles(), _pickups(), _player()
+{
+	
+}
+
+Map::Map(int *score_ptr):  _background(), _enemies(),
+	_playerProjectiles(), _pickups(), _player(score_ptr)
 {
 	
 }

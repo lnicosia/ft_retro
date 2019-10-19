@@ -6,7 +6,7 @@
 /*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 14:33:41 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/19 18:10:35 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/19 19:17:31 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ class Map
 {
 	public:
 		Map(void);
+		Map(int *score_ptr);
 		Map(Map const &instance);
 		Map &operator=(Map const &rhs);
 		~Map(void);

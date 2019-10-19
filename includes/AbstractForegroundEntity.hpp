@@ -6,7 +6,7 @@
 /*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 14:16:07 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/19 15:55:58 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/19 19:12:31 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 # include <iostream>
 # include "AbstractEntity.hpp"
+// # include "AbstractEnemy.hpp"
+// # include "Player.hpp"
 
 //collision type:
 
@@ -28,6 +30,8 @@
 // pickups, enemies, enemy projectiles, own projectiles
 
 class Map;
+class Player;
+class AbstractEnemy;
 
 class AbstractForegroundEntity : public AbstractEntity
 {
@@ -37,7 +41,12 @@ class AbstractForegroundEntity : public AbstractEntity
 		AbstractForegroundEntity(AbstractForegroundEntity const &instance);
 		AbstractForegroundEntity &operator=(AbstractForegroundEntity const &rhs);
 		virtual ~AbstractForegroundEntity(void);
+		
+
+		virtual void onCollide(Player &player) = 0;
+		virtual void onCollide(AbstractEnemy &enemy) = 0;
 		virtual void update(Map &map) = 0;
+
 		bool collide(const AbstractForegroundEntity &entity);
 
 	private:
