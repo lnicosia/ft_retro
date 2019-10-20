@@ -6,7 +6,7 @@
 /*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/19 11:04:25 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/20 10:08:01 by lnicosia         ###   ########.fr       */
+/*   Updated: 2019/10/20 11:02:54 by lnicosia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 #include "Map.hpp"
 
 AbstractWeapon::AbstractWeapon(double fireRate, std::string projectileName):
-	_fireRate(fireRate), _projectileName(projectileName)
+	_fireRate(fireRate), _fireTimer(0), _projectileName(projectileName)
 {
 	
 }
 
 AbstractWeapon::AbstractWeapon(AbstractWeapon const &instance):
-	_fireRate(instance._fireRate), _projectileName(instance._projectileName)
+	_fireRate(instance._fireRate), _fireTimer(0), _projectileName(instance._projectileName)
 {
 	
 }
@@ -61,9 +61,5 @@ void	AbstractWeapon::beShot(Player &player, WeaponSlot ws, Map &map)
 	{
 		this->_fireTimer = (double)clock() / CLOCKS_PER_SEC;
 		this->processBeShot(player, ws, map.getPlayerProjectiles(), map);
-	}
-	else
-	{
-		this->_fireRate++;
 	}
 }
