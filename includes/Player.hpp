@@ -43,6 +43,7 @@ class Player : public AbstractForegroundEntity, public IShooter
 		void			looseLife();
 		void			gainLife();
 		int				getLives();
+		int				getScore();
 		void			incScore(int score);
 		
 	private:

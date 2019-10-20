@@ -267,6 +267,12 @@ int		Player::getLives()
 {
 	return (_lives);
 }
+
+int		Player::getScore()
+{
+	return (_score);
+}
+
 int		Player::getColor() const
 {
 	return COLOR_WHITE;

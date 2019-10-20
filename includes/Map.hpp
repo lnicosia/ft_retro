@@ -57,6 +57,7 @@ class Map
 
 		/* For Printing Purpose */
 		int				getPlayerLive();
+		int				getPlayerScore();
 
 	private:
 

@@ -34,6 +34,7 @@ class PlayingScreen
 		void		printGameBorder();
 		void		printScoreBorder();
 		void		printScoreInfo(int life, int score, int maxscore);
+		int			getHighScore();
 	private:
 		PlayingScreen(void);
 		void	process(Game &game);

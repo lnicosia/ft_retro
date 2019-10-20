@@ -217,3 +217,8 @@ int		Map::getPlayerLive()
 {
 	return (_player->getLives());
 }
+
+int		Map::getPlayerScore()
+{
+	return (_player->getScore());
+}

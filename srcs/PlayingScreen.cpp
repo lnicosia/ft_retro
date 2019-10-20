@@ -64,8 +64,6 @@ void	PlayingScreen::_print(Game &game) const
 void	PlayingScreen::gameLoop(Game &game)
 {
 	int input;
-	int game_score = 99999;
-	int max_score = 99999;
 	while (game.getPhase() == PHASE_PLAYING_SCREEN && !game.isDone())
 	{
 		input = getch();
@@ -79,7 +77,7 @@ void	PlayingScreen::gameLoop(Game &game)
 			//mvprintw(0, 0, "Game playing...");
 			printGameBorder();
 			printScoreBorder();
-			printScoreInfo(_map.getPlayerLive(), game_score, max_score);
+			printScoreInfo(_map.getPlayerLive(), _map.getPlayerScore(), getHighScore());
 			this->_map.getPlayer().setInput(input);
 			//std::cerr << "Inputs ok" << std::endl;
 			this->process(game);
@@ -150,4 +148,9 @@ void	PlayingScreen::printScoreInfo(int life, int score, int maxscore)
 	mvprintw(3, 40, "MAXSCORE = ");
 	mvprintw(3, 52, tmp.c_str());
 	attrset(COLOR_PAIR(0));
+}
+
+int			PlayingScreen::getHighScore()
+{
+	return (*_highscore);
 }
