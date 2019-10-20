@@ -6,7 +6,7 @@
 /*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 17:37:47 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/20 10:15:44 by lnicosia         ###   ########.fr       */
+/*   Updated: 2019/10/20 15:17:02 by lnicosia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,22 +48,22 @@ bool	AbstractForegroundEntity::collide(const AbstractForegroundEntity &entity)
 	Vec2		itsPos = entity.getPosition();
 
 	//If bounding boxes do not intersect, no collision is possible
-	if (myPos.getX() + (int)me->getSizeX() - 1 < itsPos.getX()
-		|| myPos.getY() + (int)me->getSizeY() - 1 < itsPos.getY()
-		|| myPos.getX() > itsPos.getX() + (int)it->getSizeX() - 1
-		|| myPos.getY() > itsPos.getY() + (int)it->getSizeY() - 1)
+	if ((int)myPos.getX() + (int)me->getSizeX() - 1 < (int)itsPos.getX()
+		|| (int)myPos.getY() + (int)me->getSizeY() - 1 < (int)itsPos.getY()
+		|| (int)myPos.getX() > (int)itsPos.getX() + (int)it->getSizeX() - 1
+		|| (int)myPos.getY() > (int)itsPos.getY() + (int)it->getSizeY() - 1)
 	{
-		//std::cerr << "Bounding boxes do not intersect" << std::endl;
+		// std::cerr << "Bounding boxes do not intersect" << std::endl;
 		return false;
 	}
-	//std::cerr << "Bounding boxes do intersect" << std::endl;
+	// std::cerr << "Bounding boxes do intersect" << std::endl;
 	int	mapStartX = fmax(myPos.getX(), itsPos.getX());
 	int	mapStartY = fmax(myPos.getY(), itsPos.getY());
 	int	mapEndX = fmin(myPos.getX() + me->getSizeX() - 1, itsPos.getX() + it->getSizeX() - 1);
 	int	mapEndY = fmin(myPos.getY() + me->getSizeY() - 1, itsPos.getY() + it->getSizeY() - 1);
 	int	sharedSizeX = mapEndX - mapStartX + 1;
-	int	sharedSizeY = mapEndY - mapStartY + 1;
-	int	myStartX, myEndX, myStartY, myEndY, itsStartX, itsEndX, itsStartY, itsEndY;
+	// int	sharedSizeY = mapEndY - mapStartY + 1;
+	int	myStartX, myStartY, itsStartX, itsStartY;
 	if (myPos.getX() < itsPos.getX())
 	{
 		myStartX = itsPos.getX() - myPos.getX();
@@ -84,35 +84,31 @@ bool	AbstractForegroundEntity::collide(const AbstractForegroundEntity &entity)
 		itsStartY = myPos.getY() - itsPos.getY();
 		myStartY = 0;
 	}
-	myEndX = myStartX + sharedSizeX;
-	myEndY = myStartY + sharedSizeY;
-	itsEndX = itsStartX + sharedSizeX;
-	itsEndY = itsStartY + sharedSizeY;
 	int	y = 0, x;
 	int	maxY = mapEndY - mapStartY, maxX = mapEndX - mapStartX;
 	std::string	myString, itsString;
-	/*std::cerr << "Zone commune : de [" << mapStartX << "][" << mapStartY << "]";
-	std::cerr << " à [" << mapEndX << "][" << mapEndY << "]";
-	std::cerr << " (size = [" << sharedSizeX << "][" << sharedSizeY << "])" << std::endl;
-	std::cerr << "My pos = [" << myPos.getX() << "][" << myPos.getY() << "]" << std::endl;
-	std::cerr << "My end = [" << myPos.getX() + me->getSizeX() - 1 << "][" << myPos.getY() + me->getSizeY() - 1 << "]" << std::endl;
-	std::cerr << "Its pos = [" << itsPos.getX() << "][" << itsPos.getY() << "]" << std::endl;
-	std::cerr << "Its end = [" << itsPos.getX() + it->getSizeX() - 1 << "][" << itsPos.getY() + it->getSizeY() - 1 << "]" << std::endl;
-	std::cerr << "My start = [" << myStartX << "][" << myStartY << "]" << std::endl;
-	std::cerr << "My size = [" << me->getSizeX() << "][" << me->getSizeY() << "]" << std::endl;
-	std::cerr << "Its start = [" << itsStartX << "][" << itsStartY << "]" << std::endl;
-	std::cerr << "Its size = [" << it->getSizeX() << "][" << it->getSizeY() << "]" << std::endl;
-	std::cerr << "Starting to check" << std::endl;*/
+	// std::cerr << "Zone commune : de [" << mapStartX << "][" << mapStartY << "]";
+	// std::cerr << " à [" << mapEndX << "][" << mapEndY << "]";
+	// std::cerr << " (size = [" << sharedSizeX << "][" << sharedSizeY << "])" << std::endl;
+	// std::cerr << "My pos = [" << myPos.getX() << "][" << myPos.getY() << "]" << std::endl;
+	// std::cerr << "My end = [" << myPos.getX() + me->getSizeX() - 1 << "][" << myPos.getY() + me->getSizeY() - 1 << "]" << std::endl;
+	// std::cerr << "Its pos = [" << itsPos.getX() << "][" << itsPos.getY() << "]" << std::endl;
+	// std::cerr << "Its end = [" << itsPos.getX() + it->getSizeX() - 1 << "][" << itsPos.getY() + it->getSizeY() - 1 << "]" << std::endl;
+	// std::cerr << "My start = [" << myStartX << "][" << myStartY << "]" << std::endl;
+	// std::cerr << "My size = [" << me->getSizeX() << "][" << me->getSizeY() << "]" << std::endl;
+	// std::cerr << "Its start = [" << itsStartX << "][" << itsStartY << "]" << std::endl;
+	// std::cerr << "Its size = [" << it->getSizeX() << "][" << it->getSizeY() << "]" << std::endl;
+	// std::cerr << "Starting to check" << std::endl;
 	while (y <= maxY)
 	{
-		//std::cerr << "y = " << y << std::endl;
-		/*std::cerr << "Attempting to create a string from me of size " << sharedSizeX;
-		std::cerr << " at index [" << myStartX << "][" << y + myStartY << "]" << std::endl;*/
+		// std::cerr << "y = " << y << std::endl;
+		// std::cerr << "Attempting to create a string from me of size " << sharedSizeX;
+		// std::cerr << " at index [" << myStartX << "][" << y + myStartY << "]" << std::endl;
 		myString = me->getImageNoN().substr(myStartX + (y + myStartY) * me->getSizeX(), sharedSizeX);
-		/*std::cerr << "Attempting to create a string from it of size " << sharedSizeX;
-		std::cerr << " at index [" << itsStartX << "][" << y + itsStartY << "]" << std::endl;*/
+		// std::cerr << "Attempting to create a string from it of size " << sharedSizeX;
+		// std::cerr << " at index [" << itsStartX << "][" << y + itsStartY << "]" << std::endl;
 		itsString = it->getImageNoN().substr(itsStartX + (y + itsStartY) * it->getSizeX(), sharedSizeX);
-		//std::cerr << "Comparing \"" << myString << "\" and \"" << itsString << "\"" << std::endl;
+		// std::cerr << "Comparing \"" << myString << "\" and \"" << itsString << "\"" << std::endl;
 		x = 0;
 		while (x <= maxX)
 		{
@@ -125,8 +121,9 @@ bool	AbstractForegroundEntity::collide(const AbstractForegroundEntity &entity)
 			}
 			x++;
 		}
+		// std::cerr << "Line ok" << std::endl;
 		y++;
 	}
-	//std::cerr << std::endl << "No collision" << std::endl;
+	// std::cerr << std::endl << "No collision" << std::endl;
 	return false;
 }

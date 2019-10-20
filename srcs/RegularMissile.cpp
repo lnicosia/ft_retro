@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   RegularMissile.cpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
+/*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/19 20:37:10 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/20 12:25:27 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/20 16:52:11 by lnicosia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ RegularMissile::RegularMissile(void)
 	
 }
 
-RegularMissile::RegularMissile(Vec2 pos, Vec2 dir, Blueprint *blueprint): AbstractProjectile(pos, dir, blueprint, 35)
+RegularMissile::RegularMissile(Vec2 pos, Vec2 dir, Blueprint *blueprint): AbstractProjectile(pos, dir, blueprint, 500)
 {
 	
 }

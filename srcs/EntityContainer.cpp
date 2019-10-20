@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   EntityContainer.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
+/*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/19 14:19:43 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/20 12:26:01 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/20 16:51:19 by lnicosia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,8 +60,9 @@ void	EntityContainer::render() const
 
 void	EntityContainer::_shiftContainer(size_t i)
 {
+	//std::cerr << "Deleting entity " << i << " (" << this->_entities[i] << ")" << std::endl;
 	delete this->_entities[i];
-	while (i < this->_size)
+	while (i < this->_size && i < MAX_ENTITIES)
 	{
 		this->_entities[i] = this->_entities[i + 1];
 		i++;

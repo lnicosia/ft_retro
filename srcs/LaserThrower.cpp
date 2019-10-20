@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   LaserThrower.cpp                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
+/*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/19 18:17:12 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/20 13:00:50 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/20 16:52:01 by lnicosia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "LaserThrower.hpp"
 #include "RegularMissile.hpp"
 
-LaserThrower::LaserThrower(void): AbstractWeapon(0.01, "laser thrower")
+LaserThrower::LaserThrower(void): AbstractWeapon(300, "laser thrower")
 {
 	
 }

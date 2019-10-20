@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AbstractEntity.cpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
+/*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 16:39:33 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/19 22:17:38 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/20 15:49:31 by lnicosia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,9 @@ AbstractEntity::~AbstractEntity(void)
 AbstractEntity &	AbstractEntity::operator=(AbstractEntity const &rhs)
 {
 	(void)rhs;
+	this->_position = rhs._position;
+	this->_direction = rhs._direction;
+	this->_blueprint = rhs._blueprint;
 	return *this;
 }
 

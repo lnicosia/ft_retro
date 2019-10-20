@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Player.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
+/*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 16:00:22 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/20 14:53:28 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/20 16:51:15 by lnicosia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -140,8 +140,27 @@ void		Player::update(Map &map)
 		case ' ':
 			this->shoot(map);
 			break;
+		/*case 'a':
+		case KEY_LEFT:
+			this->setPosition(this->getPosition() + Vec2(-1, 0));
+			break;
+		case 'd':
+		case KEY_RIGHT:
+			this->setPosition(this->getPosition() + Vec2(1, 0));
+			break;
+		case 'w':
+		case KEY_UP:
+			this->setPosition(this->getPosition() + Vec2(0, -1));
+			break;
+		case 's':
+		case KEY_DOWN:
+				this->setPosition(this->getPosition() + Vec2(0, 1));
+			break;
+		case ' ':
+			this->shoot(map);
+			break;*/
 	}
-
+	//(void)this->_acceleration;
 	if (this->getDirection().getNorm() > 1.2)
 	{
 		this->setDirection(this->getDirection().normed() * 1.2);
@@ -180,8 +199,10 @@ void		Player::update(Map &map)
 	i = 0;
 	while (i < map.getEnemies().getSize())
 	{
+		//std::cerr << "Checking collisions with enemy " << i << std::endl;
 		if (this->collide(*(AbstractForegroundEntity *)(map.getEnemies().getEntity(i))))
 		{
+			//std::cerr << "Collision with enemy " << i << std::endl;
 			this->onCollide(*(AbstractEnemy *)map.getEnemies().getEntity(i), map);
 		}
 		i++;

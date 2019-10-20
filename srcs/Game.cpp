@@ -6,7 +6,7 @@
 /*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 15:18:10 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/19 20:45:30 by lnicosia         ###   ########.fr       */
+/*   Updated: 2019/10/20 15:17:21 by lnicosia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 #include <unistd.h>
 #include <string>
 
-
 #define RED 1
 #define GREEN 2
 #define YELLOW 3
@@ -23,8 +22,6 @@
 #define CYAN 5
 #define MAGENTA 6
 #define WHITE 7
-
-double	currentTime;
 
 Game::Game(void): _playingScreen(nullptr), _phase(PHASE_MENU), _highscore(0), _done(false)
 {
@@ -143,7 +140,6 @@ void	Game::launch()
 	while (!this->_done)
 	{
 		(this->*Game::loopArray[this->_phase])();
-		currentTime = clock() / CLOCKS_PER_SEC;
 	}
 	endwin();
 }

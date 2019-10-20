@@ -6,7 +6,7 @@
 /*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 15:15:46 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/20 09:06:00 by lnicosia         ###   ########.fr       */
+/*   Updated: 2019/10/20 15:13:21 by lnicosia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 // #include "Player.hpp"
 #include "Game.hpp"
 #include <iostream>
+#include <time.h>
+
 
 int test_collide(char **av)
 {

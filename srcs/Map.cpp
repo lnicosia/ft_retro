@@ -3,16 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   Map.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
+/*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 15:51:29 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/20 14:22:00 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/20 16:51:04 by lnicosia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/Map.hpp"
 #include "Alien.hpp"
 #include <ncurses.h>
+#include <sys/time.h>
 
 //collision type:
 
@@ -26,8 +27,11 @@
 
 Map::Map(void):  _factory(), _background(), _enemies(),
 	_playerProjectiles(), _pickups(), _player(nullptr),
-	_enemySpawnRate(0.02), _enemySpawnTimer(0)
+	_enemySpawnRate(1000), _enemySpawnTimer(0)
 {
+	struct timeval startTime;
+	gettimeofday(&startTime, NULL);
+	this->_startTime = startTime.tv_sec * 1000 + startTime.tv_usec / 1000.0;
 	this->_player = this->_factory.createPlayerAtMapCreation();
 	//this->_enemies.add(new Alien());
 }
@@ -73,25 +77,52 @@ Vec2	Map::_randomPos()
 	return res;
 }
 
+//Use to debug one enemy at a time
+// size_t count = 0;
+
 void	Map::update()
 {
+	struct timeval currTime;
+	gettimeofday(&currTime, NULL);
+	this->_time = currTime.tv_sec * 1000 + currTime.tv_usec / 1000.0;
+	//std::cerr << "time = " << this->_time << std::endl;
  	this->_background.update(*this);
 	//Generate new enemy
-	//std::cerr << "Time = " << ((double)clock() / CLOCKS_PER_SEC) << std::endl;
-	if ((double)clock() / CLOCKS_PER_SEC - this->_enemySpawnTimer > this->_enemySpawnRate)
+	//std::cerr << "Time = " << difftime(time(NULL), this->_time) << std::endl;
+	if (this->_time - this->_enemySpawnTimer > this->_enemySpawnRate)
 	{
-		this->_enemySpawnTimer = (double)clock() / CLOCKS_PER_SEC;
-		this->_enemies.add(this->_factory.createEntity("alien", Map::_randomPos(), Vec2(0, 0.08)));
-		// this->_enemies.add(this->_factory.createRandomEnemy(Map::_randomPos(), Vec2(0, 0.08)));
-		// this->_enemies.add(this->_factory.createEntity("asteroid", Map::_randomPos(), Vec2(0, 0.3)));
-		// this->_pickups.add(this->_factory.createEntity("life", Map::_randomPos(), Vec2(0, 0.02)));
-		// this->_pickups.add(this->_factory.createEntity("cash", Map::_randomPos(), Vec2(0, 0.03)));
+		this->_enemySpawnTimer = this->_time;
+		this->_enemies.add(this->_factory.createRandomEnemy(Map::_randomPos(), Vec2(0, 0.08)));
+		//this->_enemies.add(this->_factory.createRandomEnemy(Vec2(this->_player->getPosition().getX(), 0), Vec2(0, 0.08)));
+		//this->_enemies.add(this->_factory.createEntity("asteroid", Map::_randomPos(), Vec2(0, 0.02)));
 	}
+	// Use to debug one enemy at a time (uncomment global var count)
+	// if (!count)
+	// {
+	// 	this->_enemies.add(this->_factory.createEntity("asteroid", Vec2(this->_player->getPosition().getX(), 0), Vec2(0, 0.02)));
+	// 	count++;
+	// }
  	this->_enemies.update(*this);
  	this->_enemiesProjectiles.update(*this);
  	this->_player->update(*this);
  	this->_playerProjectiles.update(*this);
  	this->_pickups.update(*this);
+	int	i = 0, j;
+	AbstractEnemy *currEnemy;
+	AbstractProjectile *currProjectile;
+	while (i < this->_playerProjectiles.getSize())
+	{
+		j = 0;
+		currProjectile = (AbstractProjectile *)this->_playerProjectiles.getEntity(i);
+		while (j < this->_enemies.getSize())
+		{
+			currEnemy = (AbstractEnemy *)this->_enemies.getEntity(j);
+			if (currProjectile->collide(*currEnemy))
+				currProjectile->onCollide(*currEnemy, *this);
+			j++;
+		}
+		i++;
+	}
 }
 
 void	Map::render(void) const
@@ -143,4 +174,9 @@ EntityContainer	&	Map::getPickups(void)
 EntityFactory	&	Map::getEntityFactory(void)
 {
 	return (this->_factory);
+}
+
+long				Map::getTime() const
+{
+	return this->_time;
 }
