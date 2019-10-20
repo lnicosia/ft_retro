@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AbstractProjectile.cpp                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
+/*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/19 15:56:57 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/20 01:36:04 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/20 12:14:32 by lnicosia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,3 +62,8 @@ void	AbstractProjectile::onCollide(AbstractEnemy &enemy, Map &map)
 	enemy.takeDamage(this->_damage, map);
 	this->_exploded = true;
 }
+
+/*void	AbstractProjectile::update(Map &map)
+{
+	
+}*/

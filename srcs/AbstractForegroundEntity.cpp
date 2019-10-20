@@ -6,7 +6,7 @@
 /*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 17:37:47 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/20 10:15:44 by lnicosia         ###   ########.fr       */
+/*   Updated: 2019/10/20 12:08:01 by lnicosia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,8 +62,7 @@ bool	AbstractForegroundEntity::collide(const AbstractForegroundEntity &entity)
 	int	mapEndX = fmin(myPos.getX() + me->getSizeX() - 1, itsPos.getX() + it->getSizeX() - 1);
 	int	mapEndY = fmin(myPos.getY() + me->getSizeY() - 1, itsPos.getY() + it->getSizeY() - 1);
 	int	sharedSizeX = mapEndX - mapStartX + 1;
-	int	sharedSizeY = mapEndY - mapStartY + 1;
-	int	myStartX, myEndX, myStartY, myEndY, itsStartX, itsEndX, itsStartY, itsEndY;
+	int	myStartX, myStartY, itsStartX, itsStartY;
 	if (myPos.getX() < itsPos.getX())
 	{
 		myStartX = itsPos.getX() - myPos.getX();
@@ -84,10 +83,6 @@ bool	AbstractForegroundEntity::collide(const AbstractForegroundEntity &entity)
 		itsStartY = myPos.getY() - itsPos.getY();
 		myStartY = 0;
 	}
-	myEndX = myStartX + sharedSizeX;
-	myEndY = myStartY + sharedSizeY;
-	itsEndX = itsStartX + sharedSizeX;
-	itsEndY = itsStartY + sharedSizeY;
 	int	y = 0, x;
 	int	maxY = mapEndY - mapStartY, maxX = mapEndX - mapStartX;
 	std::string	myString, itsString;

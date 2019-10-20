@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Alien.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
+/*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/19 20:53:25 by lnicosia          #+#    #+#             */
-/*   Updated: 2019/10/20 01:00:13 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/20 12:48:13 by lnicosia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ Alien::Alien(void): AbstractEnemy()
 Alien::Alien(Vec2 pos, Vec2 dir, Blueprint *blueprint):
     AbstractEnemy(pos, dir, blueprint, 50, 100, WeaponSlot())
 {
-    std::cerr << "New alien spawned" << std::endl;
+    
 }
 
 Alien::Alien(Alien const &instance)

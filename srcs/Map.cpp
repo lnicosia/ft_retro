@@ -6,7 +6,7 @@
 /*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 15:51:29 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/20 11:26:55 by lnicosia         ###   ########.fr       */
+/*   Updated: 2019/10/20 12:50:52 by lnicosia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,14 +81,30 @@ void	Map::update()
 	if ((double)clock() / CLOCKS_PER_SEC - this->_enemySpawnTimer > this->_enemySpawnRate)
 	{
 		this->_enemySpawnTimer = (double)clock() / CLOCKS_PER_SEC;
-		//this->_enemies.add(this->_factory.createEntity("alien", Map::_randomPos(), Vec2(0, 0.08)));
-		this->_enemies.add(this->_factory.createRandomEnemy(Map::_randomPos(), Vec2(0, 0.08)));
+		//this->_enemies.add(this->_factory.createRandomEnemy(Map::_randomPos(), Vec2(0, 0.08)));
+		this->_enemies.add(this->_factory.createRandomEnemy(Vec2(this->_player->getPosition().getX(), 0), Vec2(0, 0.08)));
 	}
  	this->_enemies.update(*this);
  	this->_enemiesProjectiles.update(*this);
  	this->_player->update(*this);
  	this->_playerProjectiles.update(*this);
  	this->_pickups.update(*this);
+	int	i = 0, j;
+	AbstractEnemy *currEnemy;
+	AbstractProjectile *currProjectile;
+	while (i < this->_playerProjectiles.getSize())
+	{
+		j = 0;
+		currProjectile = (AbstractProjectile *)this->_playerProjectiles.getEntity(i);
+		while (j < this->_enemies.getSize())
+		{
+			currEnemy = (AbstractEnemy *)this->_enemies.getEntity(i);
+			if (currProjectile->collide(*currEnemy))
+				currProjectile->onCollide(*currEnemy, *this);
+			j++;
+		}
+		i++;
+	}
 }
 
 void	Map::render(void) const

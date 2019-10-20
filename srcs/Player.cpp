@@ -6,7 +6,7 @@
 /*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 16:00:22 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/20 11:03:07 by lnicosia         ###   ########.fr       */
+/*   Updated: 2019/10/20 13:02:12 by lnicosia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -192,6 +192,7 @@ void		Player::update(Map &map)
 	{
 		if (this->collide(*(AbstractForegroundEntity *)(map.getEnemies().getEntity(i))))
 		{
+			std::cerr << "Collision with enemy " << i << std::endl;
 			this->onCollide(*(AbstractEnemy *)map.getEnemies().getEntity(i), map);
 		}
 		i++;

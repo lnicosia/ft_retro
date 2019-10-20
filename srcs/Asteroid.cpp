@@ -6,7 +6,7 @@
 /*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/20 08:52:21 by lnicosia          #+#    #+#             */
-/*   Updated: 2019/10/20 08:52:55 by lnicosia         ###   ########.fr       */
+/*   Updated: 2019/10/20 12:48:25 by lnicosia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ Asteroid::Asteroid(void): AbstractEnemy()
 Asteroid::Asteroid(Vec2 pos, Vec2 dir, Blueprint *blueprint):
     AbstractEnemy(pos, dir, blueprint, 50, 100, WeaponSlot())
 {
-    std::cerr << "New Asteroid spawned" << std::endl;
+    
 }
 
 Asteroid::Asteroid(Asteroid const &instance)

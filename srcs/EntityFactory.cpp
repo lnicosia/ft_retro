@@ -6,7 +6,7 @@
 /*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/19 17:37:54 by lnicosia          #+#    #+#             */
-/*   Updated: 2019/10/20 11:30:34 by lnicosia         ###   ########.fr       */
+/*   Updated: 2019/10/20 11:48:42 by lnicosia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,7 @@ AbstractEntity*    (EntityFactory::*EntityFactory::_createFunc[ENTITY_TYPES])(Ve
 	&EntityFactory::createAlien,
 	&EntityFactory::createAsteroid,
     &EntityFactory::createRegularMissile,
+    &EntityFactory::createRandomEnemy,
 };
 
 EntityFactory &	EntityFactory::operator=(EntityFactory const &rhs)
