@@ -49,20 +49,41 @@ void	Game::loopMenuScreen(void)
 {
 	int input = 0;
 	int i = 0;
+	int c_lines = (LINES / 2) +1; // (LINES / 2) + x, x = number of options, 1 being the first one;
+	int c_cols  = (COLS / 2) - 27;
 	std::string tmp;
-	while (!this->_done)
-	{	
+	while (this->_phase == PHASE_MENU && !this->_done)
+	{
+		clear();
 		printMenus();
+		printMenusCursor(c_lines, c_cols);
 		refresh();
 		input = getch();
 		tmp = std::to_string(input);
 		mvprintw(0,50,tmp.c_str());
 		if (input == 10)
 		{
-			clear();
-			this->_playingScreen = new PlayingScreen(this->_highscore);
-			this->_phase = PHASE_PLAYING_SCREEN;
+			if (c_lines == (LINES / 2) +1)
+				this->_done = true;
+			if (c_lines == (LINES / 2) +2)
+			{
+				this->_playingScreen = new PlayingScreen(this->_highscore);
+				this->_phase = PHASE_PLAYING_SCREEN;
+			}
 		}
+		if (input == KEY_DOWN)
+		{
+			c_lines++;
+			if (c_lines > (LINES / 2) +2)
+				c_lines = (LINES / 2) +1;
+		}
+		if (input == KEY_UP)
+		{
+			c_lines--;
+			if (c_lines < (LINES / 2) +1)
+				c_lines = (LINES / 2) +2;
+		}
+		
 	}
 	//loop (waiting for player to select PLAY)
 	//this->_playingScreen = new PlayingScreen(this->_highscore);
@@ -191,4 +212,15 @@ void	Game::printMenusText()
 
 	/* Print Actions Message */
 	mvprintw(LINES / 2 , (COLS / 2) - 23, "Welcome, Press ESC to quit, Press Enter to play");
+	mvprintw(LINES / 2 +1, (COLS / 2) - 23, "quit");
+	mvprintw(LINES / 2 +2, (COLS / 2) - 23, "play");
+
+}
+
+int		Game::printMenusCursor(int x, int y)
+{
+
+	mvprintw(x, y, "-->");
+		
+	return (-1);
 }

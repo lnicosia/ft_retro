@@ -47,6 +47,7 @@ class Game
 		void	printMenus();
 		void	printMenusBorder();
 		void	printMenusText();
+		int		printMenusCursor(int x, int y);
 
 	private:
 		PlayingScreen	*_playingScreen;

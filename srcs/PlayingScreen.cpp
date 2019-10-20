@@ -64,11 +64,13 @@ void	PlayingScreen::_print(Game &game) const
 void	PlayingScreen::gameLoop(Game &game)
 {
 	int input;
-
+	int life_score = 10;
+	int game_score = 99999;
+	int max_score = 99999;
 	while (game.getPhase() == PHASE_PLAYING_SCREEN && !game.isDone())
 	{
 		input = getch();
-	
+
 		if (input == 27)
 			game.setPhase(PHASE_PAUSE);
 		else
@@ -76,6 +78,9 @@ void	PlayingScreen::gameLoop(Game &game)
 			clear();
 			//std::cerr << "trying to print game" << std::endl;
 			mvprintw(0, 0, "Game playing...");
+			printGameBorder();
+			printScoreBorder();
+			printScoreInfo(life_score, game_score, max_score);
 			this->_map.getPlayer().setInput(input);
 			//std::cerr << "Inputs ok" << std::endl;
 			this->process(game);
@@ -83,8 +88,63 @@ void	PlayingScreen::gameLoop(Game &game)
 			this->_print(game);
 			//std::cerr << "Game print ok" << std::endl;
 			refresh();
-			usleep(10000);
+			usleep(15000);
 		}
 		
 	}
+}
+
+void	PlayingScreen::printGameBorder()
+{
+	/*
+		line 5 == Start of Game Border
+		Line - 1 == End of Game Border
+	*/
+		/* Print Upper Border && Print Lower Border */
+		for (unsigned int i = 0; i < COLS - 4; i++)
+		{
+			mvprintw(5, 2 + i, "-");
+			mvprintw(LINES - 1, 2 + i, "-");
+		}
+	/* Print Left Border && Print Right Border */ 
+		for (unsigned int  i = 0; i < LINES - 3; i++)
+		{
+			mvprintw(6 + i, 2, "|");
+			mvprintw(6 + i, COLS - 3, "|"); 
+		}
+}
+
+void	PlayingScreen::printScoreBorder()
+{
+	/*
+		Note: Lower border is Printed with  printGameBorder
+	*/
+	/* Print Upper Border */
+		for (unsigned int i = 0; i < COLS - 4; i++)
+			mvprintw(1, 2 + i, "-");
+	/* Print Left Border  && Print Right Border */
+		for (unsigned int  i = 0; i < 5; i++)
+		{
+			mvprintw(2 + i, 2, "|");
+			mvprintw(2 + i, COLS - 3, "|"); 
+		}
+}
+
+void	PlayingScreen::printScoreInfo(int life, int score, int maxscore)
+{
+	std::string tmp;
+	/* Print Life */
+	tmp = std::to_string(life);
+	mvprintw(3, 5, "LIFE = ");
+	mvprintw(3, 12, tmp.c_str());
+
+	/* Print Game Score */
+	tmp = std::to_string(score);
+	mvprintw(3, 20, "SCORE = ");
+	mvprintw(3, 28, tmp.c_str());
+
+	/* Print Max Score */
+	tmp = std::to_string(maxscore);
+	mvprintw(3, 40, "MAXSCORE = ");
+	mvprintw(3, 52, tmp.c_str());
 }
