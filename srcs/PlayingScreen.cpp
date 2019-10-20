@@ -134,17 +134,21 @@ void	PlayingScreen::printScoreInfo(int life, int score, int maxscore)
 {
 	std::string tmp;
 	/* Print Life */
+	attrset(COLOR_PAIR(1));
 	tmp = std::to_string(life);
 	mvprintw(3, 5, "LIFE = ");
 	mvprintw(3, 12, tmp.c_str());
 
 	/* Print Game Score */
+	attrset(COLOR_PAIR(2));
 	tmp = std::to_string(score);
 	mvprintw(3, 20, "SCORE = ");
 	mvprintw(3, 28, tmp.c_str());
 
 	/* Print Max Score */
+	attrset(COLOR_PAIR(3));
 	tmp = std::to_string(maxscore);
 	mvprintw(3, 40, "MAXSCORE = ");
 	mvprintw(3, 52, tmp.c_str());
+	attrset(COLOR_PAIR(0));
 }

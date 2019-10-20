@@ -15,6 +15,15 @@
 #include <unistd.h>
 #include <string>
 
+
+#define RED 1
+#define GREEN 2
+#define YELLOW 3
+#define BLUE 4
+#define CYAN 5
+#define MAGENTA 6
+#define WHITE 7
+
 double	currentTime;
 
 Game::Game(void): _playingScreen(nullptr), _phase(PHASE_MENU), _highscore(0), _done(false)
@@ -82,7 +91,6 @@ void	Game::loopMenuScreen(void)
 			if (c_lines < (LINES / 2) +1)
 				c_lines = (LINES / 2) +2;
 		}
-		
 	}
 	//loop (waiting for player to select PLAY)
 	//this->_playingScreen = new PlayingScreen(this->_highscore);
@@ -121,6 +129,17 @@ void	Game::launch()
 	keypad(stdscr, TRUE);
 	curs_set(FALSE);
 	noecho();
+	/* Color pair test */
+	start_color();
+	init_pair(RED, COLOR_RED, COLOR_BLACK);		// <curses.h> define color-pair
+	init_pair(GREEN, COLOR_GREEN, COLOR_BLACK);	// <curses.h> define color-pair
+	init_pair(YELLOW, COLOR_YELLOW, COLOR_BLACK);	// <curses.h> define color-pair
+	init_pair(BLUE, COLOR_BLUE, COLOR_BLACK);	// <curses.h> define color-pair
+	init_pair(CYAN, COLOR_CYAN, COLOR_BLACK);	// <curses.h> define color-pair
+	init_pair(MAGENTA, COLOR_MAGENTA, COLOR_BLACK);	// <curses.h> define color-pair
+	init_pair(WHITE, COLOR_WHITE, COLOR_BLACK);	// <curses.h> define color-pair
+
+
 	while (!this->_done)
 	{
 		(this->*Game::loopArray[this->_phase])();
@@ -202,16 +221,19 @@ void	Game::printMenusText()
 	/* Print Game Title */
 	int Cols = (COLS / 2) - 26; // 26 = lenght of text(52) / 2;
 	int Lines = (LINES / 2) / 2;
-
+	attrset(COLOR_PAIR(6));
 	mvprintw(Lines, Cols, " _____  ____       _____  _____  ____  _____  _____ ");
 	mvprintw(Lines + 1, Cols, "/   __\\/    \\ ___ /  _  \\/   __\\/    \\/  _  \\/  _  \\");
 	mvprintw(Lines + 2, Cols, "|   __|\\-  -/<___>|  _  <|   __|\\-  -/|  _  <|  |  |");
 	mvprintw(Lines + 3, Cols, "\\__/    |__|      \\__|\\_/\\_____/ |__| \\__|\\_/\\_____/");
 
 	/* Print Actions Message */
+	attrset(COLOR_PAIR(0));
 	mvprintw(LINES / 2 , (COLS / 2) - 23, "Welcome, Press ESC to quit, Press Enter to play");
+	attrset(COLOR_PAIR(5));
 	mvprintw(LINES / 2 +1, (COLS / 2) - 23, "quit");
 	mvprintw(LINES / 2 +2, (COLS / 2) - 23, "play");
+	attrset(COLOR_PAIR(0));
 
 }
 
