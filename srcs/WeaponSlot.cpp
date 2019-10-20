@@ -6,7 +6,7 @@
 /*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/19 10:48:27 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/19 16:11:35 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/19 19:24:02 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,4 +42,14 @@ WeaponSlot &	WeaponSlot::operator=(WeaponSlot const &rhs)
 AbstractWeapon	*WeaponSlot::getWeapon(void)
 {
 	return (this->_weapon);
+}
+
+Vec2			WeaponSlot::getOffset(void)
+{
+	return (this->_offset);
+}
+
+Vec2			WeaponSlot::getOrientation(void)
+{
+	return (this->_orientation);
 }

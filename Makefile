@@ -6,7 +6,7 @@
 #    By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/11 23:08:04 by ldedier           #+#    #+#              #
-#    Updated: 2019/10/19 16:56:50 by ldedier          ###   ########.fr        #
+#    Updated: 2019/10/19 22:15:12 by ldedier          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,8 +40,16 @@ INCLUDES		=	AbstractEnemy.hpp \
 					Vec2.hpp \
 					EntityContainer.hpp \
 					IShooter.hpp \
+<<<<<<< HEAD
 					GameMap.hpp	\
 					Titlemap.hpp
+=======
+					EntityFactory.hpp \
+					WeaponFactory.hpp \
+					LaserThrower.hpp \
+					Alien.hpp \
+					RegularMissile.hpp
+>>>>>>> master
 
 SRCS		=		main.cpp \
 					AbstractEnemy.cpp \
@@ -58,8 +66,18 @@ SRCS		=		main.cpp \
 					Blueprint.cpp \
 					Vec2.cpp \
 					EntityContainer.cpp \
+<<<<<<< HEAD
 					GameMap.cpp \
 					Titlemap.cpp
+=======
+					EntityFactory.cpp \
+					WeaponFactory.cpp \
+					LaserThrower.cpp \
+					Alien.cpp \
+					RegularMissile.cpp
+
+ 
+>>>>>>> master
 
 
 VPATH			=	$(INCLUDESDIR) \

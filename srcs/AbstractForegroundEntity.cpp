@@ -6,7 +6,7 @@
 /*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 17:37:47 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/19 15:11:41 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/19 20:39:52 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ AbstractForegroundEntity::AbstractForegroundEntity(void)
 	
 }
 
-AbstractForegroundEntity::AbstractForegroundEntity(Vec2 pos, Vec2 dir, Blueprint blueprint): AbstractEntity(pos, dir, blueprint)
+AbstractForegroundEntity::AbstractForegroundEntity(Vec2 pos, Vec2 dir, Blueprint *blueprint): AbstractEntity(pos, dir, blueprint)
 {
 	
 }

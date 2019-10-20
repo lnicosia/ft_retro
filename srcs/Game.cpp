@@ -6,13 +6,15 @@
 /*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 15:18:10 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/19 16:56:28 by lnicosia         ###   ########.fr       */
+/*   Updated: 2019/10/19 20:45:30 by lnicosia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/Game.hpp"
 #include <ncurses.h>
 #include <unistd.h>
+
+double	currentTime;
 
 Game::Game(void): _playingScreen(nullptr), _phase(PHASE_MENU), _highscore(0), _done(false)
 {
@@ -66,12 +68,13 @@ void	Game::loopPauseScreen(void)
 	int	input = 0;
 	//loop (waiting for player to select RESUME OR QUIT)
 	//delete this->_playingScreen;
-	mvprintw(0, 0, "Pres ESC to quit, 'P' to resume game");
-	refresh();
 	while (this->_phase == PHASE_PAUSE && !this->_done)
 	{
 		input = getch();
 	
+		clear();
+		mvprintw(0, 0, "Pres ESC to quit, 'P' to resume game");
+		refresh();
 		if (input == 27)
 			this->_done = 1;
 		else if (input == 'p')
@@ -90,9 +93,13 @@ void	Game::launch()
 	initscr();
 	nodelay(stdscr, TRUE);
 	keypad(stdscr, TRUE);
+	curs_set(FALSE);
 	noecho();
 	while (!this->_done)
+	{
 		(this->*Game::loopArray[this->_phase])();
+		currentTime = clock() / CLOCKS_PER_SEC;
+	}
 	endwin();
 }
 

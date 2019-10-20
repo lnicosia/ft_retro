@@ -1,39 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WeaponSlot.hpp                                     :+:      :+:    :+:   */
+/*   RegularMissile.hpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/19 10:41:06 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/19 19:22:33 by ldedier          ###   ########.fr       */
+/*   Created: 2019/10/19 20:25:33 by ldedier           #+#    #+#             */
+/*   Updated: 2019/10/19 22:05:08 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WEAPONSLOT_HPP
-# define WEAPONSLOT_HPP
+#ifndef REGULARMISSILE_HPP
+# define REGULARMISSILE_HPP
 
 # include <iostream>
-# include "AbstractWeapon.hpp"
+# include "AbstractProjectile.hpp"
 
-class AbstractWeapon;
-
-class WeaponSlot
+class RegularMissile : public AbstractProjectile
 {
 	public:
-		WeaponSlot(void);
-		WeaponSlot(Vec2 offset, Vec2 orientation);
-		WeaponSlot(WeaponSlot const &instance);
-		WeaponSlot &operator=(WeaponSlot const &rhs);
-		~WeaponSlot(void);
-
-		AbstractWeapon	*getWeapon(void);
-		Vec2			getOffset(void);
-		Vec2			getOrientation(void);
-
+		RegularMissile(void);
+		RegularMissile(Vec2 pos, Vec2 dir, Blueprint *blueprint);
+		RegularMissile(RegularMissile const &instance);
+		RegularMissile &operator=(RegularMissile const &rhs);
+		virtual ~RegularMissile(void);
 	private:
-		Vec2			_offset;
-		Vec2			_orientation;
-		AbstractWeapon	*_weapon;
+
 };
 #endif

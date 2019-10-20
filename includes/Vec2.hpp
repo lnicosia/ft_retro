@@ -6,7 +6,7 @@
 /*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 14:05:57 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/18 18:12:26 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/19 23:30:28 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,23 +19,29 @@ class Vec2
 {
 	public:
 		Vec2(void);
-		Vec2(int x, int y);
+		Vec2(float x, float y);
 		Vec2(Vec2 const &instance);
 		Vec2 &operator=(Vec2 const &rhs);
 		Vec2 &operator+(Vec2 const &rhs);
+		Vec2 &operator+=(Vec2 const &rhs);
 		Vec2 &operator-(Vec2 const &rhs);
 		Vec2 &operator*(Vec2 const &rhs);
 		Vec2 &operator/(Vec2 const &rhs);
+		Vec2 &operator*(float scalar);
+
 		~Vec2(void);
 
-		int getX(void) const ;
-		int getY(void) const ;
-		void setX(int x);
-		void setY(int y);
+		void norm(void);
+		float getNorm(void);
+		Vec2	normed(void);
+		float getX(void) const ;
+		float getY(void) const ;
+		void setX(float x);
+		void setY(float y);
 
 	private:
-		int _x;
-		int _y;
+		float _x;
+		float _y;
 
 };
 

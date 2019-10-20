@@ -6,11 +6,12 @@
 /*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/19 14:19:43 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/19 16:25:25 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/20 01:23:22 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "EntityContainer.hpp"
+#include <ctime>
 
 EntityContainer::EntityContainer(void): _size(0)
 {
@@ -48,7 +49,7 @@ void	EntityContainer::update(Map &map) const
 void	EntityContainer::render() const
 {
 	size_t i;
-
+	
 	i = 0;
 	while (i < this->_size)
 	{
@@ -59,6 +60,7 @@ void	EntityContainer::render() const
 
 void	EntityContainer::_shiftContainer(size_t i)
 {
+	std::cerr << "destroying entity #" << i << std::endl;
 	delete this->_entities[i];
 	while (i < this->_size)
 	{
@@ -91,4 +93,14 @@ void	EntityContainer::add(AbstractEntity *entity)
 	{
 		//throw Exception();
 	}
+}
+
+int	EntityContainer::getSize(void)
+{
+	return (this->_size);
+}
+
+AbstractEntity	*	EntityContainer::getEntity(int i)
+{
+	return (this->_entities[i]);
 }

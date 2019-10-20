@@ -6,7 +6,7 @@
 /*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/19 14:12:33 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/19 16:08:58 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/20 01:22:43 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,9 @@ class EntityContainer
 		void clean(void);
 		void render(void) const;
 		void add(AbstractEntity *entity);
+
+		int				getSize(void);
+		AbstractEntity	*getEntity(int);
 
 	private:
 		

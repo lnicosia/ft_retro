@@ -6,7 +6,7 @@
 /*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 14:01:38 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/19 15:52:32 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/20 01:10:23 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,14 @@ class AbstractEntity
 	public:
 
 		AbstractEntity(void);
-		AbstractEntity(Vec2 pos, Vec2 dir, Blueprint &blueprint);
+		AbstractEntity(Vec2 pos, Vec2 dir, Blueprint *blueprint);
 		AbstractEntity(AbstractEntity const &instance);
 		AbstractEntity &operator=(AbstractEntity const &rhs);
 		virtual ~AbstractEntity(void);
 		void render(void) const;
 
-		virtual void update(Map &map) = 0;
+		virtual void update(Map &map); //= 0;
+
 		virtual bool shouldBeCleaned() = 0;
 	
 		Vec2		getPosition(void) const;
@@ -39,6 +40,8 @@ class AbstractEntity
 		Vec2		getDirection(void) const;
 		Blueprint*	getBlueprint(void) const;
 	
+		bool	isOnScreen(void);
+		bool	isOnScreen(void) const;
 		void	setPosition(Vec2 pos);
 		void	setOrientation(Vec2 orientation);
 		void	setDirection(Vec2 dir);

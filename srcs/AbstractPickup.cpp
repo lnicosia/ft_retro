@@ -6,7 +6,7 @@
 /*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/19 15:59:52 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/19 16:00:48 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/20 01:13:10 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ AbstractPickup::AbstractPickup(void)
 	
 }
 
-AbstractPickup::AbstractPickup(Vec2 pos, Vec2 dir, Blueprint blueprint):
-	AbstractForegroundEntity(pos, dir, blueprint)
+AbstractPickup::AbstractPickup(Vec2 pos, Vec2 dir, Blueprint *blueprint):
+	AbstractForegroundEntity(pos, dir, blueprint), _used(false)
 {
 	
 }
@@ -37,4 +37,15 @@ AbstractPickup &	AbstractPickup::operator=(AbstractPickup const &rhs)
 {
 	(void)rhs;
 	return *this;
+}
+
+void	AbstractPickup::onCollide(AbstractEnemy &enemy, Map &map)
+{
+	(void)enemy;
+	(void)map;
+}
+
+bool AbstractPickup::shouldBeCleaned()
+{
+	return this->_used || !this->isOnScreen();
 }

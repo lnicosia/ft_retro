@@ -1,39 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WeaponSlot.hpp                                     :+:      :+:    :+:   */
+/*   Life.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/19 10:41:06 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/19 19:22:33 by ldedier          ###   ########.fr       */
+/*   Created: 2019/10/19 23:35:05 by ldedier           #+#    #+#             */
+/*   Updated: 2019/10/20 00:35:56 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WEAPONSLOT_HPP
-# define WEAPONSLOT_HPP
+#ifndef LIFE_HPP
+# define LIFE_HPP
 
 # include <iostream>
-# include "AbstractWeapon.hpp"
+# include "Vec2.hpp"
+# include "AbstractPickup.hpp"
 
-class AbstractWeapon;
-
-class WeaponSlot
+class Life : public AbstractPickup
 {
 	public:
-		WeaponSlot(void);
-		WeaponSlot(Vec2 offset, Vec2 orientation);
-		WeaponSlot(WeaponSlot const &instance);
-		WeaponSlot &operator=(WeaponSlot const &rhs);
-		~WeaponSlot(void);
+		Life(void);
+		Life(Vec2 pos, Blueprint *blueprint);
+		Life(Life const &instance);
+		Life &operator=(Life const &rhs);
+		virtual ~Life(void);
 
-		AbstractWeapon	*getWeapon(void);
-		Vec2			getOffset(void);
-		Vec2			getOrientation(void);
-
+		virtual void onCollide(Player &player);
 	private:
-		Vec2			_offset;
-		Vec2			_orientation;
-		AbstractWeapon	*_weapon;
+
 };
 #endif
