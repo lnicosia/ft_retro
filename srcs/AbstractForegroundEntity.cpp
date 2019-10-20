@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AbstractForegroundEntity.cpp                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
+/*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 17:37:47 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/19 20:39:52 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/20 09:25:21 by lnicosia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,10 +53,10 @@ bool	AbstractForegroundEntity::collide(const AbstractForegroundEntity &entity)
 		|| myPos.getX() > itsPos.getX() + (int)it->getSizeX() - 1
 		|| myPos.getY() > itsPos.getY() + (int)it->getSizeY() - 1)
 	{
-		std::cerr << "Bounding boxes do not intersect" << std::endl;
+		//std::cerr << "Bounding boxes do not intersect" << std::endl;
 		return false;
 	}
-	std::cerr << "Bounding boxes do intersect" << std::endl;
+	//std::cerr << "Bounding boxes do intersect" << std::endl;
 	int	mapStartX = fmax(myPos.getX(), itsPos.getX());
 	int	mapStartY = fmax(myPos.getY(), itsPos.getY());
 	int	mapEndX = fmin(myPos.getX() + me->getSizeX() - 1, itsPos.getX() + it->getSizeX() - 1);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   WeaponSlot.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
+/*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/19 10:48:27 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/19 19:24:02 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/20 09:50:44 by lnicosia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,10 @@ WeaponSlot::WeaponSlot(void): _offset(Vec2(0, 0)), _weapon(nullptr)
 	
 }
 
-WeaponSlot::WeaponSlot(Vec2 offset, Vec2 orientation): _offset(offset), _orientation(orientation), _weapon(nullptr)
+WeaponSlot::WeaponSlot(Vec2 offset, Vec2 orientation, AbstractWeapon *weapon):
+	_offset(offset), _orientation(orientation), _weapon(weapon)
 {
-
+	
 }
 
 WeaponSlot::WeaponSlot(WeaponSlot const &instance)

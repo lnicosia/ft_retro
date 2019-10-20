@@ -6,7 +6,7 @@
 /*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 15:51:29 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/20 08:57:14 by lnicosia         ###   ########.fr       */
+/*   Updated: 2019/10/20 10:06:02 by lnicosia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,10 +85,10 @@ void	Map::update()
 		this->_enemies.add(this->_factory.createRandomEnemy(Map::_randomPos(), Vec2(0, 0.08)));
 	}
  	this->_enemies.update(*this);
-// 	this->_enemiesProjectiles.update(*this);
+ 	this->_enemiesProjectiles.update(*this);
  	this->_player->update(*this);
-// 	this->_playerProjectiles.update(*this);
-// 	this->_pickups.update(*this);
+ 	this->_playerProjectiles.update(*this);
+ 	this->_pickups.update(*this);
 }
 
 void	Map::render(void) const

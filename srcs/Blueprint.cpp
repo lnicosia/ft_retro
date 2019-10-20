@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Blueprint.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
+/*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 13:40:33 by lnicosia          #+#    #+#             */
-/*   Updated: 2019/10/19 22:09:15 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/20 10:08:42 by lnicosia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,7 +120,7 @@ int	Blueprint::parseBlueprint(std::string f)
         this->_imageNoN += buff;
         i++;
     }
-    std::cerr << f << " image is [" << this->_sizeX << "][" << this->_sizeY << "]" << std::endl;
+    //std::cerr << f << " image is [" << this->_sizeX << "][" << this->_sizeY << "]" << std::endl;
     return 0;
 }
 

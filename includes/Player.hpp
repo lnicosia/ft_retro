@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Player.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
+/*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 14:41:08 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/20 01:12:25 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/20 09:49:36 by lnicosia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ class Player : public AbstractForegroundEntity, public IShooter
 		virtual void	onCollide(Player &player);
 		virtual void	onCollide(AbstractEnemy &enemy, Map &map);
 
-		WeaponSlot		getWeaponSlot(int i);
+		WeaponSlot*		getWeaponSlot(int i);
 		int				getInput(void);
 		void			setInput(int input);
 		void			looseLife();
@@ -45,7 +45,7 @@ class Player : public AbstractForegroundEntity, public IShooter
 	private:
 		int				_lives;
 		int				_score;
-		WeaponSlot		_weaponSlots[4];
+		WeaponSlot		*_weaponSlots[4];
 		int				_input;
 		float			_acceleration;
 };
