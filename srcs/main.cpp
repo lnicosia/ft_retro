@@ -6,7 +6,7 @@
 /*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 15:15:46 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/19 21:54:44 by lnicosia         ###   ########.fr       */
+/*   Updated: 2019/10/20 09:06:00 by lnicosia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,26 +16,9 @@
 #include "Game.hpp"
 #include <iostream>
 
-int main()
+int test_collide(char **av)
 {
-
-	Game game;
-
-	try {
-		game.launch();
-	}
-	catch(std::exception e)
-	{
-		std::cerr << e.what() << std::endl;
-	}
-	return 0;
-}
-
-/*int     main(int ac, char **av)
-{
-    if (ac != 3)
-        return 0;
-	AbstractForegroundEntity *player1 = new Player();
+    AbstractForegroundEntity *player1 = new Player();
 	AbstractForegroundEntity *player2 = new Player();
     Blueprint   img1(av[1]);
     Blueprint   img2(av[2]);
@@ -94,4 +77,20 @@ int main()
     }
     endwin();
     return 0;
-}*/
+}
+
+int main(int ac, char **av)
+{
+    if (ac == 3)
+        return test_collide(av);
+	Game game;
+
+	try {
+		game.launch();
+	}
+	catch(std::exception e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
+	return 0;
+}
