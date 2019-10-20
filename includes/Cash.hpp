@@ -6,7 +6,7 @@
 /*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/20 11:05:35 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/20 11:18:32 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/20 18:26:59 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ class Cash : public AbstractPickup
 		Cash &operator=(Cash const &rhs);
 		virtual ~Cash(void);
 		virtual void onCollide(Player &player);
+		virtual int		getColor(void) const;
 
 	private:
 

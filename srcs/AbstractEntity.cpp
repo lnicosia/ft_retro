@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AbstractEntity.cpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 16:39:33 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/20 18:01:58 by lnicosia         ###   ########.fr       */
+/*   Updated: 2019/10/20 18:37:50 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -195,4 +195,9 @@ bool	AbstractEntity::collide(const AbstractEntity &entity)
 	}
 	// std::cerr << std::endl << "No collision" << std::endl;
 	return false;
+}
+
+int		AbstractEntity::getColor(void) const
+{
+	return COLOR_WHITE;
 }
