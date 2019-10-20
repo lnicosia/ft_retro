@@ -1,33 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Life.hpp                                           :+:      :+:    :+:   */
+/*   Cash.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/19 23:35:05 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/20 10:33:57 by ldedier          ###   ########.fr       */
+/*   Created: 2019/10/20 11:05:35 by ldedier           #+#    #+#             */
+/*   Updated: 2019/10/20 11:18:32 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIFE_HPP
-# define LIFE_HPP
+#ifndef CASH_HPP
+# define CASH_HPP
 
 # include <iostream>
-# include "Vec2.hpp"
 # include "AbstractPickup.hpp"
 
-class Life : public AbstractPickup
+class Cash : public AbstractPickup
 {
 	public:
-		Life(void);
-		Life(Vec2 pos, Vec2 dir, Blueprint *blueprint);
-		Life(Life const &instance);
-		Life &operator=(Life const &rhs);
-		virtual ~Life(void);
-
+		Cash(void);
+		Cash(Vec2 pos, Vec2 dir, Blueprint *blueprint);
+		Cash(Cash const &instance);
+		Cash &operator=(Cash const &rhs);
+		virtual ~Cash(void);
 		virtual void onCollide(Player &player);
+
 	private:
 
 };
+
+std::ostream &operator<<(std::ostream &o, Cash const &instance);
 #endif

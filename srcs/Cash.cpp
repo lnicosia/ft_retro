@@ -1,33 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Life.hpp                                           :+:      :+:    :+:   */
+/*   Cash.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/19 23:35:05 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/20 10:33:57 by ldedier          ###   ########.fr       */
+/*   Created: 2019/10/20 11:18:04 by ldedier           #+#    #+#             */
+/*   Updated: 2019/10/20 11:20:28 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIFE_HPP
-# define LIFE_HPP
+#include "Cash.hpp"
 
-# include <iostream>
-# include "Vec2.hpp"
-# include "AbstractPickup.hpp"
-
-class Life : public AbstractPickup
+Cash::Cash(void)
 {
-	public:
-		Life(void);
-		Life(Vec2 pos, Vec2 dir, Blueprint *blueprint);
-		Life(Life const &instance);
-		Life &operator=(Life const &rhs);
-		virtual ~Life(void);
+	
+}
 
-		virtual void onCollide(Player &player);
-	private:
+Cash::Cash(Vec2 pos, Vec2 dir, Blueprint *blueprint): AbstractPickup(pos, dir, blueprint)
+{	
+}
 
-};
-#endif
+Cash::Cash(Cash const &instance)
+{
+	*this = instance;
+}
+
+Cash::~Cash(void)
+{
+	
+}
+
+Cash &	Cash::operator=(Cash const &rhs)
+{
+	(void)rhs;
+	return *this;
+}
+
+void	Cash::onCollide(Player &player)
+{
+	player.incScore(1000);
+}

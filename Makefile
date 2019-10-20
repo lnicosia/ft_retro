@@ -6,7 +6,7 @@
 #    By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/11 23:08:04 by ldedier           #+#    #+#              #
-#    Updated: 2019/10/19 22:15:12 by ldedier          ###   ########.fr        #
+#    Updated: 2019/10/20 11:20:53 by ldedier          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,7 +44,10 @@ INCLUDES		=	AbstractEnemy.hpp \
 					WeaponFactory.hpp \
 					LaserThrower.hpp \
 					Alien.hpp \
-					RegularMissile.hpp
+					RegularMissile.hpp \
+					Life.hpp \
+					Cash.hpp \
+
 
 SRCS		=		main.cpp \
 					AbstractEnemy.cpp \
@@ -65,7 +68,9 @@ SRCS		=		main.cpp \
 					WeaponFactory.cpp \
 					LaserThrower.cpp \
 					Alien.cpp \
-					RegularMissile.cpp
+					RegularMissile.cpp \
+					Life.cpp \
+					Cash.cpp \
 
  
 

@@ -6,7 +6,7 @@
 /*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 16:00:22 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/20 01:35:14 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/20 11:41:09 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,14 @@ Player::Player(void):
 	// 	i++;
 	// }	
 }
+
+
+Player::Player(Vec2 pos, Vec2 dir,Blueprint *blueprint):
+	AbstractForegroundEntity(pos, dir, blueprint), _lives(5), _score(0), _input(ERR), _acceleration(0.3)
+{
+	
+}
+
 
 Player::Player(Blueprint *blueprint):
 	AbstractForegroundEntity(Vec2(0, 0), Vec2(0, 0), blueprint), _lives(5), _score(0), _input(ERR), _acceleration(0.3)

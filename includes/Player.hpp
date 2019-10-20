@@ -6,7 +6,7 @@
 /*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 14:41:08 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/20 01:12:25 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/20 11:40:46 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ class Player : public AbstractForegroundEntity, public IShooter
 	public:
 		Player(void);
 		Player(Blueprint*);
+		Player(Vec2 pos, Vec2 dir, Blueprint*);
 		Player(Player const &instance);
 		Player &operator=(Player const &rhs);
 		virtual			~Player(void);
