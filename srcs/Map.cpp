@@ -210,3 +210,8 @@ long				Map::getTime() const
 {
 	return this->_time;
 }
+
+int		Map::getPlayerLive()
+{
+	return (_player->getLives());
+}

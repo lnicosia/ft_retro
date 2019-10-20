@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "BackgroundEntity.hpp"
+#include <ncurses.h>
 
 BackgroundEntity::BackgroundEntity(void)
 {
@@ -53,4 +54,9 @@ void	BackgroundEntity::onCollide(AbstractEnemy &enemy, Map &map)
 bool	BackgroundEntity::shouldBeCleaned(void)
 {
 	return false;
+}
+
+int		BackgroundEntity::getColor() const
+{
+	return COLOR_WHITE;
 }

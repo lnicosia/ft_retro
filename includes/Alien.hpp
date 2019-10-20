@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Alien.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
+/*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/19 20:34:27 by lnicosia          #+#    #+#             */
-/*   Updated: 2019/10/20 15:36:43 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/20 17:55:14 by lnicosia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ class Alien : public AbstractEnemy
 		Alien(Alien const &instance);
 		Alien &operator=(Alien const &rhs);
 		~Alien(void);
+		virtual int		getColor() const;
 
 		//Override la fonction si on veut donner un comportement particulier a l'alien
         // virtual void    update(Map &map);

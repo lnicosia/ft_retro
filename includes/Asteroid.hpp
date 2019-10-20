@@ -6,7 +6,7 @@
 /*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/20 08:50:17 by lnicosia          #+#    #+#             */
-/*   Updated: 2019/10/20 08:54:48 by lnicosia         ###   ########.fr       */
+/*   Updated: 2019/10/20 17:56:26 by lnicosia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ class Asteroid: public AbstractEnemy
 		Asteroid &operator=(Asteroid const &rhs);
 		~Asteroid(void);
 
+        virtual int		getColor() const;
 		//Override la fonction si on veut donner un comportement particulier a l'Asteroid
         //virtual void    update(Map &map);
 		//virtual bool    shouldBeCleaned();

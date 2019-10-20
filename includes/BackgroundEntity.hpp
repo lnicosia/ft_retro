@@ -25,6 +25,7 @@ class BackgroundEntity : public AbstractEntity
 		BackgroundEntity(BackgroundEntity const &instance);
 		BackgroundEntity &operator=(BackgroundEntity const &rhs);
 		virtual ~BackgroundEntity(void);
+		virtual int		getColor() const;
 
 		virtual void onCollide(Player &player);
 		virtual void onCollide(AbstractEnemy &enemy, Map &map);
