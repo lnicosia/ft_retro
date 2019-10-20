@@ -6,7 +6,7 @@
 /*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 17:33:44 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/20 01:19:47 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/20 14:35:22 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ AbstractEnemy::AbstractEnemy(void)
 	
 }
 
-AbstractEnemy::AbstractEnemy(Vec2 pos, Vec2 dir, Blueprint *blueprint, int health, int scoreOnDeath, WeaponSlot ws): 
-	AbstractForegroundEntity(pos, dir, blueprint), _health(health), _scoreOnDeath(scoreOnDeath), _weaponSlot(ws), _dead(false)
+AbstractEnemy::AbstractEnemy(Vec2 pos, Vec2 dir, Blueprint *blueprint, int health, int scoreOnDeath, WeaponSlot ws, float minFireRate): 
+	AbstractForegroundEntity(pos, dir, blueprint), _health(health), _scoreOnDeath(scoreOnDeath), _weaponSlot(ws), _dead(false), _minFireRate(minFireRate)
 {
 	
 }
@@ -73,10 +73,18 @@ bool AbstractEnemy::shouldBeCleaned(void)
 
 void	AbstractEnemy::shoot(Map &map)
 {
+	std::cerr << this << std::endl;
 	if (this->_weaponSlot.getWeapon())
 	{
+		std::cerr << this->_weaponSlot.getWeapon() << std::endl;
 		this->_weaponSlot.getWeapon()->beShot(*this, this->_weaponSlot, map);
 	}
+}
+
+void	AbstractEnemy::update(Map &map)
+{
+	AbstractEntity::update(map);
+	this->shoot(map);
 }
 
 // bool	AbstractEnemy::shouldBeCleaned()
@@ -117,4 +125,9 @@ void			AbstractEnemy::die(Player &player)
 {
 	this->_dead = true;
 	player.incScore(this->_scoreOnDeath);
+}
+
+float	AbstractEnemy::getMinFireRate(void)
+{
+	return (this->_minFireRate);
 }

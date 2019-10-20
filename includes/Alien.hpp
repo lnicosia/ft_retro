@@ -6,7 +6,7 @@
 /*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/19 20:34:27 by lnicosia          #+#    #+#             */
-/*   Updated: 2019/10/20 01:11:18 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/20 09:56:42 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,15 +19,13 @@ class Alien : public AbstractEnemy
 {
 	public:
 		Alien(void);
-		//Alien(** replace parameters **);
         Alien(Vec2 pos, Vec2 dir, Blueprint *blueprint);
-        // Alien(Vec2 pos, Vec2 dir, Blueprint *blueprint, int health, int scoreOnDeath, WeaponSlot ws);
 		Alien(Alien const &instance);
 		Alien &operator=(Alien const &rhs);
 		~Alien(void);
 
 		//Override la fonction si on veut donner un comportement particulier a l'alien
-        //virtual void    update(Map &map);
+        // virtual void    update(Map &map);
 		//virtual bool    shouldBeCleaned();
 
 

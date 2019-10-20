@@ -6,7 +6,7 @@
 /*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/19 23:35:05 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/20 00:35:56 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/20 10:33:57 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,12 @@ class Life : public AbstractPickup
 {
 	public:
 		Life(void);
-		Life(Vec2 pos, Blueprint *blueprint);
+		Life(Vec2 pos, Vec2 dir, Blueprint *blueprint);
 		Life(Life const &instance);
 		Life &operator=(Life const &rhs);
 		virtual ~Life(void);
 
-		//virtual void onCollide(Player &player);
+		virtual void onCollide(Player &player);
 	private:
 
 };

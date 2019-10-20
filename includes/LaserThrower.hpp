@@ -6,7 +6,7 @@
 /*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/19 18:14:58 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/19 20:06:06 by lnicosia         ###   ########.fr       */
+/*   Updated: 2019/10/20 11:28:43 by lnicosia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <iostream>
 # include "AbstractWeapon.hpp"
+# include "Map.hpp"
 
 class LaserThrower: public AbstractWeapon
 {

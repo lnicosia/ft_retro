@@ -15,7 +15,7 @@
 
 # include <iostream>
 # include "PlayingScreen.hpp"
-
+# include <ncurses.h>
 #define PHASE_MENU 0
 #define PHASE_PLAYING_SCREEN 1
 #define PHASE_PAUSE 2

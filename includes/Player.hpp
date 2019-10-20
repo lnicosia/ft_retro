@@ -6,7 +6,7 @@
 /*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 14:41:08 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/20 01:12:25 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/20 14:43:15 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ class Player : public AbstractForegroundEntity, public IShooter
 	public:
 		Player(void);
 		Player(Blueprint*);
+		Player(Vec2 pos, Vec2 dir, Blueprint*);
 		Player(Player const &instance);
 		Player &operator=(Player const &rhs);
 		virtual			~Player(void);
@@ -35,17 +36,19 @@ class Player : public AbstractForegroundEntity, public IShooter
 		virtual void	onCollide(Player &player);
 		virtual void	onCollide(AbstractEnemy &enemy, Map &map);
 
-		WeaponSlot		getWeaponSlot(int i);
+		WeaponSlot*		getWeaponSlot(int i);
 		int				getInput(void);
 		void			setInput(int input);
 		void			looseLife();
 		void			gainLife();
 		void			incScore(int score);
-
+		
 	private:
+
+		void			_init(void);
 		int				_lives;
 		int				_score;
-		WeaponSlot		_weaponSlots[4];
+		WeaponSlot		*_weaponSlots[4];
 		int				_input;
 		float			_acceleration;
 };

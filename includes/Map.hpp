@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Map.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
+/*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 14:33:41 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/20 01:06:21 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/20 11:26:36 by lnicosia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ class Map
 		EntityContainer	&getPlayerProjectiles(void);
 		EntityContainer	&getEnemiesProjectiles(void);
 		EntityContainer	&getPickups(void);
+		EntityFactory	&getEntityFactory(void);
 		Player			&getPlayer(void);
 
 	private:

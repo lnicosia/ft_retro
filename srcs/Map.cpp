@@ -6,7 +6,7 @@
 /*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 15:51:29 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/20 00:53:12 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/20 14:22:00 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ Map::Map(void):  _factory(), _background(), _enemies(),
 	_playerProjectiles(), _pickups(), _player(nullptr),
 	_enemySpawnRate(0.02), _enemySpawnTimer(0)
 {
-	this->_player = this->_factory.createPlayer();
+	this->_player = this->_factory.createPlayerAtMapCreation();
 	//this->_enemies.add(new Alien());
 }
 
@@ -81,13 +81,17 @@ void	Map::update()
 	if ((double)clock() / CLOCKS_PER_SEC - this->_enemySpawnTimer > this->_enemySpawnRate)
 	{
 		this->_enemySpawnTimer = (double)clock() / CLOCKS_PER_SEC;
-		this->_enemies.add(this->_factory.createEntity("alien", Map::_randomPos(), Vec2(0, 0.3)));
+		this->_enemies.add(this->_factory.createEntity("alien", Map::_randomPos(), Vec2(0, 0.08)));
+		// this->_enemies.add(this->_factory.createRandomEnemy(Map::_randomPos(), Vec2(0, 0.08)));
+		// this->_enemies.add(this->_factory.createEntity("asteroid", Map::_randomPos(), Vec2(0, 0.3)));
+		// this->_pickups.add(this->_factory.createEntity("life", Map::_randomPos(), Vec2(0, 0.02)));
+		// this->_pickups.add(this->_factory.createEntity("cash", Map::_randomPos(), Vec2(0, 0.03)));
 	}
  	this->_enemies.update(*this);
-// 	this->_enemiesProjectiles.update(*this);
+ 	this->_enemiesProjectiles.update(*this);
  	this->_player->update(*this);
-// 	this->_playerProjectiles.update(*this);
-// 	this->_pickups.update(*this);
+ 	this->_playerProjectiles.update(*this);
+ 	this->_pickups.update(*this);
 }
 
 void	Map::render(void) const
@@ -134,4 +138,9 @@ EntityContainer	&	Map::getEnemiesProjectiles(void)
 EntityContainer	&	Map::getPickups(void)
 {
 	return (this->_pickups);
+}
+
+EntityFactory	&	Map::getEntityFactory(void)
+{
+	return (this->_factory);
 }

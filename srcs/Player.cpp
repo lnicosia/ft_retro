@@ -6,7 +6,7 @@
 /*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 16:00:22 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/20 01:35:14 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/20 14:53:28 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,27 @@
 #include "../includes/AbstractEnemy.hpp"
 #include <ncurses.h>
 #include "Map.hpp"
+#include "LaserThrower.hpp"
+
 
 Player::Player(void):
 	AbstractForegroundEntity(Vec2(0, 0), Vec2(0, 0), nullptr), _lives(5), _score(0), _input(ERR), _acceleration(0.3)
 {
-	// int i;
-
-	// i = 0;
-	// while (i < 2)
-	// {
-	// 	this->_weaponSlots[i].setWeapon = nullptr;
-	// 	i++;
-	// }	
+	this->_init();
 }
+
+
+Player::Player(Vec2 pos, Vec2 dir,Blueprint *blueprint):
+	AbstractForegroundEntity(pos, dir, blueprint), _lives(5), _score(0), _input(ERR), _acceleration(0.3)
+{
+	this->_init();
+}
+
 
 Player::Player(Blueprint *blueprint):
 	AbstractForegroundEntity(Vec2(0, 0), Vec2(0, 0), blueprint), _lives(5), _score(0), _input(ERR), _acceleration(0.3)
 {
-	
+	this->_init();
 }
 
 //TODO
@@ -72,7 +75,6 @@ void	Player::incScore(int scoreToAdd)
 	this->_score += scoreToAdd;
 }
 
-//TODO
 std::ostream &	operator<<(std::ostream &o, Player const &instance)
 {
 	(void)instance;
@@ -96,13 +98,15 @@ void	Player::shoot(Map &map)
 	i = 0;
 	while (i < 4)
 	{
-		if (this->_weaponSlots[i].getWeapon())
-			this->_weaponSlots[i].getWeapon()->beShot(*this, this->_weaponSlots[i], map);
+		if (this->_weaponSlots[i] && this->_weaponSlots[i]->getWeapon())
+		{
+			this->_weaponSlots[i]->getWeapon()->beShot(*this, *(this->_weaponSlots[i]), map);
+		}
 		i++;
 	}
 }
 
-WeaponSlot	Player::getWeaponSlot(int i)
+WeaponSlot*	Player::getWeaponSlot(int i)
 {
 	return (this->_weaponSlots[i]);
 }
@@ -123,15 +127,18 @@ void		Player::update(Map &map)
 			break;
 		case 'd':
 		case KEY_RIGHT:
-				this->setDirection(this->getDirection() + Vec2(this->_acceleration, 0));
+			this->setDirection(this->getDirection() + Vec2(this->_acceleration, 0));
 			break;
 		case 'w':
 		case KEY_UP:
-				this->setDirection(this->getDirection() - Vec2(0, this->_acceleration));
+			this->setDirection(this->getDirection() - Vec2(0, this->_acceleration));
 			break;
 		case 's':
 		case KEY_DOWN:
-				this->setDirection(this->getDirection() + Vec2(0, this->_acceleration));
+			this->setDirection(this->getDirection() + Vec2(0, this->_acceleration));
+			break;
+		case ' ':
+			this->shoot(map);
 			break;
 	}
 
@@ -145,7 +152,7 @@ void		Player::update(Map &map)
 	Vec2 newPos = this->getPosition() + this->getDirection();
 
 	this->setDirection(this->getDirection());
-	std::cerr << this->getDirection() << std::endl;
+	//std::cerr << this->getDirection() << std::endl;
 	this->AbstractEntity::update(map);
 
 	if (this->getPosition().getX() + this->getBlueprint()->getSizeX() > COLS)
@@ -218,4 +225,19 @@ void	Player::onCollide(AbstractEnemy &enemy, Map &map)
 	enemy.takeDamage(200, map);
 	this->setDirection(this->getDirection() * 0.6);
 	this->_lives--;
+}
+
+void		Player::_init(void)
+{
+	int i;
+
+	i = 0;
+	while (i < 4)
+	{
+		this->_weaponSlots[i] = nullptr;
+		i++;
+	}
+	this->_weaponSlots[0] = new WeaponSlot(Vec2(3, 0), Vec2(0, -1), new LaserThrower());
+	this->_weaponSlots[1] = new WeaponSlot(Vec2(-1 , 3), Vec2(-1, -1), new LaserThrower());
+	this->_weaponSlots[2] = new WeaponSlot(Vec2(6, 3), Vec2(1, -1), new LaserThrower());
 }

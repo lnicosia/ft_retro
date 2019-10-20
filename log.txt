@@ -1,13 +1,18 @@
-assets/ship.ascii image is [8][5]
-assets/carré.ascii image is [8][4]
-assets/droite.ascii image is [6][5]
-assets/créneauDroite.ascii image is [5][5]
-assets/créneauGauche.ascii image is [5][5]
+New Asteroid spawned
 New alien spawned
-destroying entity #0
 New alien spawned
-destroying entity #0
 New alien spawned
-destroying entity #0
+New Asteroid spawned
+New Asteroid spawned
 New alien spawned
-destroying entity #0
+New Asteroid spawned
+New Asteroid spawned
+New alien spawned
+New Asteroid spawned
+New Asteroid spawned
+New Asteroid spawned
+New alien spawned
+New Asteroid spawned
+New alien spawned
+New Asteroid spawned
+New Asteroid spawned
