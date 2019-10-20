@@ -6,7 +6,7 @@
 /*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 14:33:41 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/20 11:26:36 by lnicosia         ###   ########.fr       */
+/*   Updated: 2019/10/20 15:42:17 by lnicosia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ class Map
 		void	render(void) const;
 
 		int		getScore() const;
+		long	getTime() const;
 
 		EntityContainer	&getBackground(void);
 		EntityContainer	&getEnemies(void);
@@ -68,8 +69,10 @@ class Map
 		Player*				_player;
 
 		int					_score;
-		double				_enemySpawnRate;
-		double				_enemySpawnTimer;
+		long				_startTime;
+		long				_time;
+		long				_enemySpawnRate;
+		long				_enemySpawnTimer;
 };
 
 std::ostream &operator<<(std::ostream &o, Map const &instance);

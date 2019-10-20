@@ -6,7 +6,7 @@
 /*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 14:46:02 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/20 09:36:47 by lnicosia         ###   ########.fr       */
+/*   Updated: 2019/10/20 16:23:23 by lnicosia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class AbstractWeapon
 {
 	public:
 		AbstractWeapon(void);
-		AbstractWeapon(double fireRate, std::string projectileName);
+		AbstractWeapon(long fireRate, std::string projectileName);
 		AbstractWeapon(AbstractWeapon const &instance);
 		AbstractWeapon &operator=(AbstractWeapon const &rhs);
 		virtual ~AbstractWeapon(void);
@@ -36,8 +36,8 @@ class AbstractWeapon
 		virtual void beShot(AbstractEnemy &enemy, WeaponSlot ws, Map &map);
 		virtual void beShot(Player &player, WeaponSlot ws, Map &map);
 	private:
-		double		_fireRate;
-		double		_fireTimer;
+		long		_fireRate;
+		long		_fireTimer;
 		std::string _projectileName;
 };
 

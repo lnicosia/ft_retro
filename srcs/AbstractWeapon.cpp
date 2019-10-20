@@ -6,14 +6,14 @@
 /*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/19 11:04:25 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/20 11:26:33 by lnicosia         ###   ########.fr       */
+/*   Updated: 2019/10/20 16:23:42 by lnicosia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AbstractWeapon.hpp"
 #include "Map.hpp"
 
-AbstractWeapon::AbstractWeapon(double fireRate, std::string projectileName):
+AbstractWeapon::AbstractWeapon(long fireRate, std::string projectileName):
 	_fireRate(fireRate), _fireTimer(0), _projectileName(projectileName)
 {
 	
@@ -57,9 +57,10 @@ void	AbstractWeapon::beShot(AbstractEnemy &enemy, WeaponSlot ws, Map &map)
 
 void	AbstractWeapon::beShot(Player &player, WeaponSlot ws, Map &map)
 {
-	if ((double)clock() / CLOCKS_PER_SEC - this->_fireTimer > this->_fireRate)
+	if (map.getTime() - this->_fireTimer > this->_fireRate)
 	{
-		this->_fireTimer = (double)clock() / CLOCKS_PER_SEC;
+		//std::cerr << "new projectile from player" << std::endl;
+		this->_fireTimer = map.getTime();
 		this->processBeShot(player, ws, map.getPlayerProjectiles(), map);
 	}
 }

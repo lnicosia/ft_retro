@@ -6,7 +6,7 @@
 /*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/19 20:37:10 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/20 10:07:42 by lnicosia         ###   ########.fr       */
+/*   Updated: 2019/10/20 14:29:38 by lnicosia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ RegularMissile::RegularMissile(void)
 	
 }
 
-RegularMissile::RegularMissile(Vec2 pos, Vec2 dir, Blueprint *blueprint): AbstractProjectile(pos, dir, blueprint, 35)
+RegularMissile::RegularMissile(Vec2 pos, Vec2 dir, Blueprint *blueprint): AbstractProjectile(pos, dir, blueprint, 500)
 {
 	
 }
