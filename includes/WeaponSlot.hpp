@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   WeaponSlot.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/19 10:41:06 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/20 09:19:21 by lnicosia         ###   ########.fr       */
+/*   Updated: 2019/10/20 12:20:31 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ class WeaponSlot
 	public:
 		WeaponSlot(void);
 		WeaponSlot(Vec2 offset, Vec2 orientation, AbstractWeapon *weapon);
+		WeaponSlot(Vec2 offset, Vec2 orientation);
 		WeaponSlot(WeaponSlot const &instance);
 		WeaponSlot &operator=(WeaponSlot const &rhs);
 		~WeaponSlot(void);

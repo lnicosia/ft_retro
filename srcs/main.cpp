@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ncurses.h>
 // #include "Blueprint.hpp"
 // #include "Player.hpp"
 #include "Game.hpp"

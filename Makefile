@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+         #
+#    By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/11 23:08:04 by ldedier           #+#    #+#              #
-#    Updated: 2019/10/20 08:51:37 by lnicosia         ###   ########.fr        #
+#    Updated: 2019/10/20 14:12:45 by ldedier          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,11 +41,13 @@ INCLUDES		=	AbstractEnemy.hpp \
 					EntityContainer.hpp \
 					IShooter.hpp \
 					EntityFactory.hpp \
-					WeaponFactory.hpp \
 					LaserThrower.hpp \
 					Alien.hpp \
 					RegularMissile.hpp \
 					Asteroid.hpp \
+					Life.hpp \
+					Cash.hpp \
+
 
 SRCS		=		main.cpp \
 					AbstractEnemy.cpp \
@@ -63,11 +65,12 @@ SRCS		=		main.cpp \
 					Vec2.cpp \
 					EntityContainer.cpp \
 					EntityFactory.cpp \
-					WeaponFactory.cpp \
 					LaserThrower.cpp \
 					Alien.cpp \
 					RegularMissile.cpp \
 					Asteroid.cpp \
+					Life.cpp \
+					Cash.cpp \
 
  
 

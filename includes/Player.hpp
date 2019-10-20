@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Player.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 14:41:08 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/20 09:49:36 by lnicosia         ###   ########.fr       */
+/*   Updated: 2019/10/20 14:43:15 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ class Player : public AbstractForegroundEntity, public IShooter
 	public:
 		Player(void);
 		Player(Blueprint*);
+		Player(Vec2 pos, Vec2 dir, Blueprint*);
 		Player(Player const &instance);
 		Player &operator=(Player const &rhs);
 		virtual			~Player(void);
@@ -41,8 +42,10 @@ class Player : public AbstractForegroundEntity, public IShooter
 		void			looseLife();
 		void			gainLife();
 		void			incScore(int score);
-
+		
 	private:
+
+		void			_init(void);
 		int				_lives;
 		int				_score;
 		WeaponSlot		*_weaponSlots[4];

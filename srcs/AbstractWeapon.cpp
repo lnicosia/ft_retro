@@ -6,7 +6,7 @@
 /*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/19 11:04:25 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/20 16:23:42 by lnicosia         ###   ########.fr       */
+/*   Updated: 2019/10/20 16:51:29 by lnicosia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,14 +44,12 @@ AbstractWeapon &	AbstractWeapon::operator=(AbstractWeapon const &rhs)
 
 void	AbstractWeapon::beShot(AbstractEnemy &enemy, WeaponSlot ws, Map &map)
 {
-	if (this->_fireRate > 2)
-	{ 
-		this->processBeShot(enemy, ws, map.getEnemiesProjectiles(), map);
-		this->_fireRate = 0; //check with time 
-	}
-	else
+	int value;
+	value = (double)clock() / CLOCKS_PER_SEC - this->_fireTimer;
+	if (value > this->_fireRate) //&& value > enemy.getMinFireRate()
 	{
-		this->_fireRate++;
+		this->_fireTimer = (double)clock() / CLOCKS_PER_SEC;
+		this->processBeShot(enemy, ws, map.getEnemiesProjectiles(), map);
 	}
 }
 

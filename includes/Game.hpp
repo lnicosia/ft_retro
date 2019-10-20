@@ -15,7 +15,7 @@
 
 # include <iostream>
 # include "PlayingScreen.hpp"
-
+# include <ncurses.h>
 #define PHASE_MENU 0
 #define PHASE_PLAYING_SCREEN 1
 #define PHASE_PAUSE 2
@@ -43,12 +43,17 @@ class Game
 		int		getHighscore(void);
 		void	setHighscore(int highscore);
 
+		/* Functions to Print menus loop */
+		void	printMenus();
+		void	printMenusBorder();
+		void	printMenusText();
+		int		printMenusCursor(int x, int y);
+
 	private:
 		PlayingScreen	*_playingScreen;
 		int				_phase;
 		int				_highscore;
 		bool			_done;
-	
 		static void (Game::*loopArray[3])(void);
 		
 };

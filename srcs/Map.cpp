@@ -6,7 +6,7 @@
 /*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 15:51:29 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/20 16:26:08 by lnicosia         ###   ########.fr       */
+/*   Updated: 2019/10/20 16:51:04 by lnicosia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ Map::Map(void):  _factory(), _background(), _enemies(),
 	struct timeval startTime;
 	gettimeofday(&startTime, NULL);
 	this->_startTime = startTime.tv_sec * 1000 + startTime.tv_usec / 1000.0;
-	this->_player = this->_factory.createPlayer();
+	this->_player = this->_factory.createPlayerAtMapCreation();
 	//this->_enemies.add(new Alien());
 }
 

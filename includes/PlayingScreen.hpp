@@ -30,7 +30,10 @@ class PlayingScreen
 		void		_printHud(Game &game) const;
 		void		_print(Game &game) const;
 		
-
+		/*	Print In-Game Border */
+		void		printGameBorder();
+		void		printScoreBorder();
+		void		printScoreInfo(int life, int score, int maxscore);
 	private:
 		PlayingScreen(void);
 		void	process(Game &game);
