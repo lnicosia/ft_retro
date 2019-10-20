@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PlayingScreen.cpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
+/*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 15:45:32 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/20 00:57:37 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/20 17:06:56 by lnicosia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,13 +71,13 @@ void	PlayingScreen::gameLoop(Game &game)
 	{
 		input = getch();
 
-		if (input == 27)
+		if (input == 'p')
 			game.setPhase(PHASE_PAUSE);
 		else
 		{
 			clear();
 			//std::cerr << "trying to print game" << std::endl;
-			mvprintw(0, 0, "Game playing...");
+			//mvprintw(0, 0, "Game playing...");
 			printGameBorder();
 			printScoreBorder();
 			printScoreInfo(life_score, game_score, max_score);

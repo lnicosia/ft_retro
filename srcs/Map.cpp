@@ -6,7 +6,7 @@
 /*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 15:51:29 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/20 16:51:04 by lnicosia         ###   ########.fr       */
+/*   Updated: 2019/10/20 17:12:27 by lnicosia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ Vec2	Map::_randomPos()
 {
 	Vec2 res;
 
-	res.setY(-2);
+	res.setY(6);
 	res.setX(rand() % (COLS - 0 + 1) + 0);
 	return res;
 }
@@ -84,7 +84,7 @@ void	Map::update()
 {
 	struct timeval currTime;
 	gettimeofday(&currTime, NULL);
-	this->_time = currTime.tv_sec * 1000 + currTime.tv_usec / 1000.0;
+	this->_time = currTime.tv_sec * 1000 + currTime.tv_usec / 1000.0 - this->_startTime;
 	//std::cerr << "time = " << this->_time << std::endl;
  	this->_background.update(*this);
 	//Generate new enemy
