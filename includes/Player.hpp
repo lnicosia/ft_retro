@@ -41,6 +41,7 @@ class Player : public AbstractForegroundEntity, public IShooter
 		void			setInput(int input);
 		void			looseLife();
 		void			gainLife();
+		int				getLives();
 		void			incScore(int score);
 		
 	private:

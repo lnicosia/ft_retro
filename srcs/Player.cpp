@@ -262,3 +262,8 @@ void		Player::_init(void)
 	this->_weaponSlots[1] = new WeaponSlot(Vec2(-1 , 3), Vec2(-1, -1), new LaserThrower());
 	this->_weaponSlots[2] = new WeaponSlot(Vec2(6, 3), Vec2(1, -1), new LaserThrower());
 }
+
+int		Player::getLives()
+{
+	return (_lives);
+}

@@ -55,6 +55,9 @@ class Map
 		EntityFactory	&getEntityFactory(void);
 		Player			&getPlayer(void);
 
+		/* For Printing Purpose */
+		int				getPlayerLive();
+
 	private:
 
 		Vec2				_randomPos(void);
