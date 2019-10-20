@@ -3,11 +3,2372 @@ assets/carré.ascii image is [8][4]
 assets/droite.ascii image is [6][5]
 assets/créneauDroite.ascii image is [5][5]
 assets/créneauGauche.ascii image is [5][5]
+0 ; 0
+0 ; 0
+0 ; 0
+0 ; 0
+0 ; 0
+0 ; 0
+0 ; 0
+0 ; 0
+0 ; 0
+0 ; 0
+0 ; 0
+0 ; 0
+0 ; 0
+0 ; 0
+0 ; 0
+0 ; 0
+0 ; 0
+0 ; 0
+0 ; 0
+0 ; 0
+0 ; 0
+New Asteroid spawned
+0 ; 0
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
 New alien spawned
-destroying entity #0
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
 New alien spawned
-destroying entity #0
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
 New alien spawned
-destroying entity #0
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+New Asteroid spawned
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+New Asteroid spawned
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
 New alien spawned
-destroying entity #0
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+New Asteroid spawned
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+New Asteroid spawned
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+New alien spawned
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+0 ; 0
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect
+Bounding boxes do not intersect

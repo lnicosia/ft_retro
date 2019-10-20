@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+         #
+#    By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/11 23:08:04 by ldedier           #+#    #+#              #
-#    Updated: 2019/10/19 22:15:12 by ldedier          ###   ########.fr        #
+#    Updated: 2019/10/20 08:51:37 by lnicosia         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,7 +44,8 @@ INCLUDES		=	AbstractEnemy.hpp \
 					WeaponFactory.hpp \
 					LaserThrower.hpp \
 					Alien.hpp \
-					RegularMissile.hpp
+					RegularMissile.hpp \
+					Asteroid.hpp \
 
 SRCS		=		main.cpp \
 					AbstractEnemy.cpp \
@@ -65,7 +66,8 @@ SRCS		=		main.cpp \
 					WeaponFactory.cpp \
 					LaserThrower.cpp \
 					Alien.cpp \
-					RegularMissile.cpp
+					RegularMissile.cpp \
+					Asteroid.cpp \
 
  
 

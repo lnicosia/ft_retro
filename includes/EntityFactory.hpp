@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   EntityFactory.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
+/*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/19 17:25:42 by lnicosia          #+#    #+#             */
-/*   Updated: 2019/10/20 00:31:28 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/20 08:57:49 by lnicosia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,11 @@
 # define ENTITYFACTORY_HPP
 
 #define MAX_BLUEPRINT 5
-#define MAX_ENEMIES 1
+#define MAX_ENEMIES 2
 
 #include "AbstractEnemy.hpp"
 #include "Alien.hpp"
+#include "Asteroid.hpp"
 
 class EntityFactory
 {
@@ -32,6 +33,7 @@ class EntityFactory
         AbstractEnemy*          createRandomEnemy(Vec2 pos, Vec2 dir);
         Player*                 createPlayer(void);
         AbstractEnemy*          createAlien(Vec2 pos, Vec2 dir);
+        AbstractEnemy*          createAsteroid(Vec2 pos, Vec2 dir);
 
 		static EntityFactory	*_instance;
 
@@ -39,7 +41,7 @@ class EntityFactory
         static Blueprint*       _blueprints[MAX_BLUEPRINT];
         static std::string      _blueprintsId[MAX_BLUEPRINT];
         static std::string      _enemyTypes[MAX_ENEMIES];
-        static AbstractEnemy*  (EntityFactory::*_createFunc[1])(Vec2 pos, Vec2 dir);
+        static AbstractEnemy*  (EntityFactory::*_createFunc[MAX_ENEMIES])(Vec2 pos, Vec2 dir);
 
 };
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   EntityFactory.cpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
+/*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/19 17:37:54 by lnicosia          #+#    #+#             */
-/*   Updated: 2019/10/20 00:37:40 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/20 09:00:11 by lnicosia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,11 +47,13 @@ std::string EntityFactory::_blueprintsId[MAX_BLUEPRINT] =
 std::string EntityFactory::_enemyTypes[MAX_ENEMIES] =
 {
     "alien",
+    "asteroid",
 };
 
-AbstractEnemy*    (EntityFactory::*EntityFactory::_createFunc[1])(Vec2 pos, Vec2 dir) = 
+AbstractEnemy*    (EntityFactory::*EntityFactory::_createFunc[MAX_ENEMIES])(Vec2 pos, Vec2 dir) = 
 {
 	&EntityFactory::createAlien,
+	&EntityFactory::createAsteroid,
 };
 
 EntityFactory &	EntityFactory::operator=(EntityFactory const &rhs)
@@ -87,13 +89,18 @@ AbstractEnemy*  EntityFactory::createAlien(Vec2 pos, Vec2 dir)
 	return alien;
 }
 
-
+AbstractEnemy*  EntityFactory::createAsteroid(Vec2 pos, Vec2 dir)
+{
+    // Alien* alien = new Alien(Vec2(COLS / 2 - this->_blueprints[1]->getSizeX() / 2, 0),
+    //     Vec2(0, 1), this->_blueprints[1], 50, 50, WeaponSlot());
+    Asteroid* asteroid = new Asteroid(pos, dir, this->_blueprints[2]);
+	return asteroid;
+}
 
 AbstractEnemy*	EntityFactory::createRandomEnemy(Vec2 pos, Vec2 dir)
 {
-	(void)pos;
-	(void)dir;
-	return 0;
+    int dice = rand() % MAX_ENEMIES;
+    return (this->*_createFunc[dice])(pos, dir);
 }
 
 Player*     EntityFactory::createPlayer()

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Map.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
+/*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 15:51:29 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/20 00:53:12 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/20 08:57:14 by lnicosia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,8 @@ void	Map::update()
 	if ((double)clock() / CLOCKS_PER_SEC - this->_enemySpawnTimer > this->_enemySpawnRate)
 	{
 		this->_enemySpawnTimer = (double)clock() / CLOCKS_PER_SEC;
-		this->_enemies.add(this->_factory.createEntity("alien", Map::_randomPos(), Vec2(0, 0.3)));
+		//this->_enemies.add(this->_factory.createEntity("alien", Map::_randomPos(), Vec2(0, 0.08)));
+		this->_enemies.add(this->_factory.createRandomEnemy(Map::_randomPos(), Vec2(0, 0.08)));
 	}
  	this->_enemies.update(*this);
 // 	this->_enemiesProjectiles.update(*this);
