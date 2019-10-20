@@ -1,38 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WeaponFactory.hpp                                  :+:      :+:    :+:   */
+/*   Cash.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/19 18:12:49 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/19 18:42:48 by ldedier          ###   ########.fr       */
+/*   Created: 2019/10/20 11:05:35 by ldedier           #+#    #+#             */
+/*   Updated: 2019/10/20 11:18:32 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WEAPONFACTORY_HPP
-# define WEAPONFACTORY_HPP
+#ifndef CASH_HPP
+# define CASH_HPP
 
 # include <iostream>
-# include "AbstractWeapon.hpp"
+# include "AbstractPickup.hpp"
 
-
-# define NB_WEAPONS 1
-
-class WeaponFactory
+class Cash : public AbstractPickup
 {
 	public:
-		WeaponFactory(void);
-		WeaponFactory(WeaponFactory const &instance);
-		WeaponFactory &operator=(WeaponFactory const &rhs);
-		~WeaponFactory(void);
+		Cash(void);
+		Cash(Vec2 pos, Vec2 dir, Blueprint *blueprint);
+		Cash(Cash const &instance);
+		Cash &operator=(Cash const &rhs);
+		virtual ~Cash(void);
+		virtual void onCollide(Player &player);
 
-				
 	private:
 
-		AbstractWeapon *_createLaserThrower(void);
-
-		static std::string _factoryIdentifiers[NB_WEAPONS];
-		static AbstractWeapon *(WeaponFactory::*_factoryFuncs[NB_WEAPONS])(void);
 };
+
+std::ostream &operator<<(std::ostream &o, Cash const &instance);
 #endif

@@ -6,7 +6,7 @@
 /*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/19 15:59:52 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/20 01:13:10 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/20 13:16:08 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,11 @@ void	AbstractPickup::onCollide(AbstractEnemy &enemy, Map &map)
 {
 	(void)enemy;
 	(void)map;
+}
+
+void	AbstractPickup::setUsed(void)
+{
+	this->_used = true;
 }
 
 bool AbstractPickup::shouldBeCleaned()

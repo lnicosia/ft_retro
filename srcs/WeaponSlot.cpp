@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   WeaponSlot.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/19 10:48:27 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/20 09:50:44 by lnicosia         ###   ########.fr       */
+/*   Updated: 2019/10/20 14:54:07 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "WeaponSlot.hpp"
 
-WeaponSlot::WeaponSlot(void): _offset(Vec2(0, 0)), _weapon(nullptr)
+WeaponSlot::WeaponSlot(void): _offset(Vec2(0, 0)), _orientation(Vec2(0, 0)), _weapon(nullptr)
 {
 	
 }
@@ -37,6 +37,7 @@ WeaponSlot &	WeaponSlot::operator=(WeaponSlot const &rhs)
 {
 	this->_offset = rhs._offset;
 	this->_orientation = rhs._orientation;
+	this->_weapon = rhs._weapon;
 	return *this;
 }
 
@@ -54,3 +55,4 @@ Vec2			WeaponSlot::getOrientation(void)
 {
 	return (this->_orientation);
 }
+

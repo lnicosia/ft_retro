@@ -1,46 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WeaponFactory.cpp                                  :+:      :+:    :+:   */
+/*   Cash.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/19 18:31:05 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/19 18:42:52 by ldedier          ###   ########.fr       */
+/*   Created: 2019/10/20 11:18:04 by ldedier           #+#    #+#             */
+/*   Updated: 2019/10/20 13:18:03 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "WeaponFactory.hpp"
-#include "LaserThrower.hpp"
+#include "Cash.hpp"
 
-WeaponFactory::WeaponFactory(void)
-{
-
-}
-
-WeaponFactory::WeaponFactory(WeaponFactory const &instance)
-{
-	*this = instance;
-}
-
-WeaponFactory::~WeaponFactory(void)
+Cash::Cash(void)
 {
 	
 }
 
-WeaponFactory &	WeaponFactory::operator=(WeaponFactory const &rhs)
+Cash::Cash(Vec2 pos, Vec2 dir, Blueprint *blueprint): AbstractPickup(pos, dir, blueprint)
+{	
+}
+
+Cash::Cash(Cash const &instance)
+{
+	*this = instance;
+}
+
+Cash::~Cash(void)
+{
+	
+}
+
+Cash &	Cash::operator=(Cash const &rhs)
 {
 	(void)rhs;
 	return *this;
 }
 
-std::string WeaponFactory::_factoryIdentifiers[NB_WEAPONS] =
+void	Cash::onCollide(Player &player)
 {
-	"laser thrower"
-};
-
-
-AbstractWeapon *	WeaponFactory::_createLaserThrower(void)
-{
-	return new LaserThrower();
+	player.incScore(1000);
+	this->setUsed();
 }
