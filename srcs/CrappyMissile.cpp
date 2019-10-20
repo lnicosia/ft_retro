@@ -6,11 +6,12 @@
 /*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/20 15:26:10 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/20 15:38:45 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/20 18:30:38 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "CrappyMissile.hpp"
+#include <ncurses.h>
 
 CrappyMissile::CrappyMissile(void)
 {
@@ -35,4 +36,9 @@ CrappyMissile &	CrappyMissile::operator=(CrappyMissile const &rhs)
 {
 	(void)rhs;
 	return *this;
+}
+
+int		CrappyMissile::getColor() const
+{
+	return COLOR_RED;
 }

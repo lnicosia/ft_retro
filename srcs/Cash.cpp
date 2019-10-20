@@ -6,11 +6,12 @@
 /*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/20 11:18:04 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/20 13:18:03 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/20 18:26:28 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cash.hpp"
+#include <ncurses.h>
 
 Cash::Cash(void)
 {
@@ -41,4 +42,9 @@ void	Cash::onCollide(Player &player)
 {
 	player.incScore(1000);
 	this->setUsed();
+}
+
+int		Cash::getColor() const
+{
+    return COLOR_GREEN;
 }

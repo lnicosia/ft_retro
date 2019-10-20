@@ -6,7 +6,7 @@
 /*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/19 20:25:33 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/20 15:24:07 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/20 18:27:22 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ class RegularMissile : public AbstractProjectile
 		RegularMissile(RegularMissile const &instance);
 		RegularMissile &operator=(RegularMissile const &rhs);
 		virtual ~RegularMissile(void);
+		virtual int		getColor(void) const;
+
 	private:
 
 };

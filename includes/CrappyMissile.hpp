@@ -6,7 +6,7 @@
 /*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/20 15:23:41 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/20 15:38:51 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/20 18:27:09 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ class CrappyMissile : public AbstractProjectile
 		CrappyMissile(CrappyMissile const &instance);
 		CrappyMissile &operator=(CrappyMissile const &rhs);
 		~CrappyMissile(void);
+		virtual int		getColor(void) const;
+
 
 	private:
 
