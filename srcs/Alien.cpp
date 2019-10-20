@@ -6,12 +6,13 @@
 /*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/19 20:53:25 by lnicosia          #+#    #+#             */
-/*   Updated: 2019/10/20 16:51:23 by lnicosia         ###   ########.fr       */
+/*   Updated: 2019/10/20 17:57:20 by lnicosia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Alien.hpp"
-#include "LaserThrower.hpp"
+#include "CrappyThrower.hpp"
+#include <ncurses.h>
 
 Alien::Alien(void): AbstractEnemy()
 {
@@ -19,7 +20,7 @@ Alien::Alien(void): AbstractEnemy()
 }
 
 Alien::Alien(Vec2 pos, Vec2 dir, Blueprint *blueprint):
-    AbstractEnemy(pos, dir, blueprint, 50, 100, WeaponSlot(Vec2(0,0), Vec2(0,1), new LaserThrower()), 0.01)
+    AbstractEnemy(pos, dir, blueprint, 50, 100, WeaponSlot(Vec2(0,0), Vec2(0,1), new CrappyThrower()), 0.01)
 {
     
 }
@@ -63,3 +64,8 @@ Alien &	Alien::operator=(Alien const &rhs)
 // {
 //     (void)enemy;
 // }
+
+int		Alien::getColor() const
+{
+    return COLOR_GREEN;
+}

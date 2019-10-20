@@ -6,11 +6,12 @@
 /*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/20 08:52:21 by lnicosia          #+#    #+#             */
-/*   Updated: 2019/10/20 16:51:25 by lnicosia         ###   ########.fr       */
+/*   Updated: 2019/10/20 17:59:25 by lnicosia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Asteroid.hpp"
+#include <ncurses.h>
 
 Asteroid::Asteroid(void): AbstractEnemy()
 {
@@ -53,3 +54,8 @@ Asteroid &	Asteroid::operator=(Asteroid const &rhs)
 {
     return false;
 }*/
+
+int		Asteroid::getColor() const
+{
+    return COLOR_WHITE;
+}

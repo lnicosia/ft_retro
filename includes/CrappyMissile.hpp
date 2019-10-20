@@ -1,31 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   LaserThrower.hpp                                   :+:      :+:    :+:   */
+/*   CrappyMissile.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/19 18:14:58 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/20 16:26:27 by ldedier          ###   ########.fr       */
+/*   Created: 2019/10/20 15:23:41 by ldedier           #+#    #+#             */
+/*   Updated: 2019/10/20 15:38:51 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LASERTHROWER_HPP
-# define LASERTHROWER_HPP
+#ifndef CRAPPYMISSILE_HPP
+# define CRAPPYMISSILE_HPP
 
 # include <iostream>
-# include "AbstractWeapon.hpp"
-# include "Map.hpp"
+# include "AbstractProjectile.hpp"
+# include "Blueprint.hpp"
 
-class LaserThrower: public AbstractWeapon
+class CrappyMissile : public AbstractProjectile
 {
 	public:
-		LaserThrower(void);
-		LaserThrower(LaserThrower const &instance);
-		LaserThrower &operator=(LaserThrower const &rhs);
-		virtual ~LaserThrower(void);
-		// virtual void processBeShot(AbstractEntity &entity, WeaponSlot ws, EntityContainer &container, Map &map);
-		
+		CrappyMissile(void);
+		CrappyMissile(Vec2 pos, Vec2 dir, Blueprint *blueprint);
+		CrappyMissile(CrappyMissile const &instance);
+		CrappyMissile &operator=(CrappyMissile const &rhs);
+		~CrappyMissile(void);
 
 	private:
 

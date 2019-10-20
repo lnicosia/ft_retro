@@ -6,7 +6,7 @@
 /*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/19 14:12:33 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/20 01:22:43 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/20 17:16:40 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ class EntityContainer
 
 		void update(Map &map) const;
 		void clean(void);
+		bool collide(AbstractEntity &entity);
 		void render(void) const;
 		void add(AbstractEntity *entity);
 
@@ -37,7 +38,7 @@ class EntityContainer
 		AbstractEntity	*getEntity(int);
 
 	private:
-		
+
 		void _shiftContainer(size_t index);
 		AbstractEntity				*_entities[MAX_ENTITIES];
 		size_t						_size;

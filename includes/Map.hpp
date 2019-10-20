@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Map.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 14:33:41 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/20 15:42:17 by lnicosia         ###   ########.fr       */
+/*   Updated: 2019/10/20 17:36:31 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,8 +60,9 @@ class Map
 
 	private:
 
-		Vec2				_randomPos(void);
-
+		static Vec2			_randomPos(void);
+		static Vec2			_randomPosWholeScreen(void);
+		void				_init(void);
 		EntityFactory		_factory;
 
 		EntityContainer		_background;
