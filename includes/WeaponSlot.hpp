@@ -6,7 +6,7 @@
 /*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/19 10:41:06 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/19 19:22:33 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/20 09:53:44 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ class WeaponSlot
 {
 	public:
 		WeaponSlot(void);
+		WeaponSlot(Vec2 offset, Vec2 orientation, AbstractWeapon *weapon);
 		WeaponSlot(Vec2 offset, Vec2 orientation);
 		WeaponSlot(WeaponSlot const &instance);
 		WeaponSlot &operator=(WeaponSlot const &rhs);

@@ -6,7 +6,7 @@
 /*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 14:20:54 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/20 01:17:43 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/20 09:57:13 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ class AbstractEnemy : public AbstractForegroundEntity, public IShooter
 		void			die(Player &player);
 		void			drop(Map &map);
 
+		virtual void	update(Map &map);
 		virtual void	shoot(Map &map);
 		virtual bool	shouldBeCleaned(void);
 		virtual void	onCollide(Player &player);

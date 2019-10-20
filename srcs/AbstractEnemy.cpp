@@ -6,7 +6,7 @@
 /*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 17:33:44 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/20 01:19:47 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/20 09:58:55 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,12 @@ void	AbstractEnemy::shoot(Map &map)
 	{
 		this->_weaponSlot.getWeapon()->beShot(*this, this->_weaponSlot, map);
 	}
+}
+
+void	AbstractEnemy::update(Map &map)
+{
+	AbstractEntity::update(map);
+	this->shoot(map);
 }
 
 // bool	AbstractEnemy::shouldBeCleaned()
