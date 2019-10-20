@@ -40,16 +40,11 @@ INCLUDES		=	AbstractEnemy.hpp \
 					Vec2.hpp \
 					EntityContainer.hpp \
 					IShooter.hpp \
-<<<<<<< HEAD
-					GameMap.hpp	\
-					Titlemap.hpp
-=======
 					EntityFactory.hpp \
 					WeaponFactory.hpp \
 					LaserThrower.hpp \
 					Alien.hpp \
 					RegularMissile.hpp
->>>>>>> master
 
 SRCS		=		main.cpp \
 					AbstractEnemy.cpp \
@@ -66,10 +61,6 @@ SRCS		=		main.cpp \
 					Blueprint.cpp \
 					Vec2.cpp \
 					EntityContainer.cpp \
-<<<<<<< HEAD
-					GameMap.cpp \
-					Titlemap.cpp
-=======
 					EntityFactory.cpp \
 					WeaponFactory.cpp \
 					LaserThrower.cpp \
@@ -77,7 +68,6 @@ SRCS		=		main.cpp \
 					RegularMissile.cpp
 
  
->>>>>>> master
 
 
 VPATH			=	$(INCLUDESDIR) \

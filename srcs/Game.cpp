@@ -13,6 +13,7 @@
 #include "../includes/Game.hpp"
 #include <ncurses.h>
 #include <unistd.h>
+#include <string>
 
 double	currentTime;
 
@@ -48,19 +49,24 @@ void	Game::loopMenuScreen(void)
 {
 	int input = 0;
 	int i = 0;
+	std::string tmp;
 	while (!this->_done)
 	{	
 		printMenus();
 		refresh();
 		input = getch();
+		tmp = std::to_string(input);
+		mvprintw(0,50,tmp.c_str());
 		if (input == 10)
 		{
-			//START GAME
+			clear();
+			this->_playingScreen = new PlayingScreen(this->_highscore);
+			this->_phase = PHASE_PLAYING_SCREEN;
 		}
 	}
 	//loop (waiting for player to select PLAY)
-	this->_playingScreen = new PlayingScreen(this->_highscore);
-	this->_phase = PHASE_PLAYING_SCREEN;
+	//this->_playingScreen = new PlayingScreen(this->_highscore);
+	//this->_phase = PHASE_PLAYING_SCREEN;
 }
 
 void	Game::loopPauseScreen(void)
@@ -73,7 +79,7 @@ void	Game::loopPauseScreen(void)
 		input = getch();
 	
 		clear();
-		mvprintw(0, 0, "Pres ESC to quit, 'P' to resume game");
+		mvprintw(0, 0, "Press ESC to quit, 'P' to resume game");
 		refresh();
 		if (input == 27)
 			this->_done = 1;
@@ -149,23 +155,40 @@ void	Game::printMenus()
 
 void	Game::printMenusBorder()
 {
-	int i = 0;
-	if (LINES/2-5 > 0 && COLS / 2 - 5)
+	std::string lines = std::to_string(LINES);
+	std::string cols = std::to_string(COLS);
+	int i;
+	if (LINES > 10 && COLS > 10) // Random value
 	{
-		mvprintw(LINES / 2 - 5, COLS / 2, "--------------------------------------------------");
-		mvprintw(LINES / 2 + 5, COLS / 2, "--------------------------------------------------");
-		while (i < 5)
-		{
-			mvprintw(LINES / 2 + i, COLS / 2, "|");
-			mvprintw(LINES / 2 - i, COLS / 2, "|");
-			mvprintw(LINES / 2 - i, COLS / 2 + 49, "|");
-			mvprintw(LINES / 2 + i, COLS / 2 + 49, "|");
-			i++;
-		}
+		mvprintw(0 , 0, lines.c_str());
+		mvprintw(0 , 5, cols.c_str());
+
+	/* Print Upper Border */
+		for (unsigned int i = 0; i < COLS - 4; i++)
+			mvprintw(1, 2 + i, "-");
+	/* Print Lower Border */
+		for (unsigned int  i = 0; i < COLS - 4; i++)
+			mvprintw(LINES - 1, 2 + i, "-");
+	/* Print Left Border */
+		for (unsigned int  i = 0; i < LINES - 3; i++)
+			mvprintw(2 + i, 2, "|");
+	/* Print Right Border */
+		for (unsigned int  i = 0; i < LINES - 3; i++)
+			mvprintw(2 + i, COLS - 3, "|");
 	}
 }
 
 void	Game::printMenusText()
 {
-	mvprintw(LINES / 2 , COLS / 2 + 1, "Welcome, Press ESC to quit, Press ENTER to play");
+	/* Print Game Title */
+	int Cols = (COLS / 2) - 26; // 26 = lenght of text(52) / 2;
+	int Lines = (LINES / 2) / 2;
+
+	mvprintw(Lines, Cols, " _____  ____       _____  _____  ____  _____  _____ ");
+	mvprintw(Lines + 1, Cols, "/   __\\/    \\ ___ /  _  \\/   __\\/    \\/  _  \\/  _  \\");
+	mvprintw(Lines + 2, Cols, "|   __|\\-  -/<___>|  _  <|   __|\\-  -/|  _  <|  |  |");
+	mvprintw(Lines + 3, Cols, "\\__/    |__|      \\__|\\_/\\_____/ |__| \\__|\\_/\\_____/");
+
+	/* Print Actions Message */
+	mvprintw(LINES / 2 , (COLS / 2) - 23, "Welcome, Press ESC to quit, Press Enter to play");
 }

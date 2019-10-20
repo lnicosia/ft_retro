@@ -26,7 +26,7 @@ class Life : public AbstractPickup
 		Life &operator=(Life const &rhs);
 		virtual ~Life(void);
 
-		virtual void onCollide(Player &player);
+		//virtual void onCollide(Player &player);
 	private:
 
 };
