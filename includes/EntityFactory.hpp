@@ -6,7 +6,7 @@
 /*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/19 17:25:42 by lnicosia          #+#    #+#             */
-/*   Updated: 2019/10/20 12:40:37 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/20 17:30:05 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,20 @@
 #include "Asteroid.hpp"
 
 # define NB_ENEMIES 2
+# define NB_BACKGROUND 4
 
 enum {
 	ALIEN,
 	ASTEROID,
 	SPACESHIP,
 	REGULAR_MISSILE,
+	CRAPPY_MISSILE,
 	LIFE,
 	CASH,
+	MOON,
+	STAR1,
+	STAR2,
+	STAR3,
 	NB_ENTITIES
 };
 
@@ -40,21 +46,30 @@ class EntityFactory
         AbstractEntity*         createEntity(std::string type, Vec2 pos, Vec2 dir);
         AbstractEntity*         createEnemy(Vec2 pos, Vec2 dir);
         AbstractEntity*         createRandomEnemy(Vec2 pos, Vec2 dir);
+		
+        AbstractEntity*         createRandomBackground(Vec2 pos, Vec2 dir);
 
 		Player*                 createPlayerAtMapCreation(void);
         
 		AbstractEntity*         createAlien(Vec2 pos, Vec2 dir);
         AbstractEntity*         createAsteroid(Vec2 pos, Vec2 dir);
         AbstractEntity*         createRegularMissile(Vec2 pos, Vec2 dir);
+        AbstractEntity*         createCrappyMissile(Vec2 pos, Vec2 dir);
         AbstractEntity*			createLife(Vec2 pos, Vec2 dir);
         AbstractEntity*			createCash(Vec2 pos, Vec2 dir);
 		AbstractEntity*         createPlayer(Vec2 pos, Vec2 dir);
+
+		AbstractEntity*         createMoon(Vec2 pos, Vec2 dir);
+		AbstractEntity*         createStar1(Vec2 pos, Vec2 dir);
+		AbstractEntity*         createStar2(Vec2 pos, Vec2 dir);
+		AbstractEntity*         createStar3(Vec2 pos, Vec2 dir);
 
 	private:
         static Blueprint*       _blueprints[NB_ENTITIES];
         static std::string      _entityTypes[NB_ENTITIES];
 		
         static AbstractEntity*  (EntityFactory::*_createFunc[NB_ENTITIES])(Vec2 pos, Vec2 dir);
+        static AbstractEntity*  (EntityFactory::*_createBackgroundFunc[NB_BACKGROUND])(Vec2 pos, Vec2 dir);
 };
 
 #endif

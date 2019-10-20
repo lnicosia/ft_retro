@@ -1,34 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   LaserThrower.cpp                                   :+:      :+:    :+:   */
+/*   CrappyMissile.cpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/19 18:17:12 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/20 15:51:43 by ldedier          ###   ########.fr       */
+/*   Created: 2019/10/20 15:26:10 by ldedier           #+#    #+#             */
+/*   Updated: 2019/10/20 15:38:45 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "LaserThrower.hpp"
-#include "RegularMissile.hpp"
+#include "CrappyMissile.hpp"
 
-LaserThrower::LaserThrower(void): AbstractWeapon(0.005, 1, "regular missile")
+CrappyMissile::CrappyMissile(void)
+{
+	
+}
+CrappyMissile::CrappyMissile(Vec2 pos, Vec2 dir, Blueprint *blueprint): AbstractProjectile(pos, dir, blueprint, 10)
 {
 	
 }
 
-LaserThrower::LaserThrower(LaserThrower const &instance)
+CrappyMissile::CrappyMissile(CrappyMissile const &instance)
 {
 	*this = instance;
 }
 
-LaserThrower::~LaserThrower(void)
+CrappyMissile::~CrappyMissile(void)
 {
 	
 }
 
-LaserThrower &	LaserThrower::operator=(LaserThrower const &rhs)
+CrappyMissile &	CrappyMissile::operator=(CrappyMissile const &rhs)
 {
 	(void)rhs;
 	return *this;

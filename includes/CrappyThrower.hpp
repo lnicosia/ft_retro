@@ -1,31 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   LaserThrower.hpp                                   :+:      :+:    :+:   */
+/*   CrappyThrower.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/19 18:14:58 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/20 16:26:27 by ldedier          ###   ########.fr       */
+/*   Created: 2019/10/20 15:16:56 by ldedier           #+#    #+#             */
+/*   Updated: 2019/10/20 15:39:40 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LASERTHROWER_HPP
-# define LASERTHROWER_HPP
+#ifndef CRAPPYTHROWER_HPP
+# define CRAPPYTHROWER_HPP
 
 # include <iostream>
-# include "AbstractWeapon.hpp"
-# include "Map.hpp"
+#include "AbstractEnemy.hpp"
 
-class LaserThrower: public AbstractWeapon
+class CrappyThrower : public AbstractWeapon
 {
 	public:
-		LaserThrower(void);
-		LaserThrower(LaserThrower const &instance);
-		LaserThrower &operator=(LaserThrower const &rhs);
-		virtual ~LaserThrower(void);
+		CrappyThrower(void);
+		CrappyThrower(CrappyThrower const &instance);
+		CrappyThrower &operator=(CrappyThrower const &rhs);
+		~CrappyThrower(void);
 		// virtual void processBeShot(AbstractEntity &entity, WeaponSlot ws, EntityContainer &container, Map &map);
-		
 
 	private:
 

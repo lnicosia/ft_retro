@@ -6,7 +6,7 @@
 /*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 14:01:38 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/20 10:46:05 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/20 16:10:49 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,8 @@ class AbstractEntity
 		Vec2		getOrientation(void) const;
 		Vec2		getDirection(void) const;
 		Blueprint*	getBlueprint(void) const;
+		
+		bool collide(const AbstractEntity &entity);
 	
 		bool	isOnScreen(void);
 		bool	isOnScreen(void) const;

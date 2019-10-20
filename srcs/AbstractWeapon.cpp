@@ -6,15 +6,15 @@
 /*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/19 11:04:25 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/20 14:50:07 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/20 15:52:52 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AbstractWeapon.hpp"
 #include "Map.hpp"
 
-AbstractWeapon::AbstractWeapon(double fireRate, std::string projectileName):
-	_fireRate(fireRate), _fireTimer(0), _projectileName(projectileName)
+AbstractWeapon::AbstractWeapon(double fireRate, float launchPower, std::string projectileName):
+	_fireRate(fireRate), _launchPower(launchPower), _fireTimer(0), _projectileName(projectileName)
 {
 	
 }
@@ -44,9 +44,9 @@ AbstractWeapon &	AbstractWeapon::operator=(AbstractWeapon const &rhs)
 
 void	AbstractWeapon::beShot(AbstractEnemy &enemy, WeaponSlot ws, Map &map)
 {
-	int value;
+	double value;
 	value = (double)clock() / CLOCKS_PER_SEC - this->_fireTimer;
-	if (value > this->_fireRate) //&& value > enemy.getMinFireRate()
+	if (value > this->_fireTimer && value > enemy.getMinFireRate())
 	{
 		this->_fireTimer = (double)clock() / CLOCKS_PER_SEC;
 		this->processBeShot(enemy, ws, map.getEnemiesProjectiles(), map);
@@ -60,4 +60,15 @@ void	AbstractWeapon::beShot(Player &player, WeaponSlot ws, Map &map)
 		this->_fireTimer = (double)clock() / CLOCKS_PER_SEC;
 		this->processBeShot(player, ws, map.getPlayerProjectiles(), map);
 	}
+}
+
+void	AbstractWeapon::processBeShot(AbstractEntity &entity, WeaponSlot ws, EntityContainer &container, Map &map)
+{
+	AbstractEntity *projectile = map.getEntityFactory().createEntity(this->_projectileName, entity.getPosition() + ws.getOffset(), ws.getOrientation() * this->_launchPower);
+	container.add(projectile);
+}
+
+float	AbstractWeapon::getLaunchPower(void)
+{
+	return (this->_launchPower);
 }

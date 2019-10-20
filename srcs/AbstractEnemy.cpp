@@ -6,7 +6,7 @@
 /*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 17:33:44 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/20 14:35:22 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/20 17:21:05 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 #include <ncurses.h>
 #include "Player.hpp"
 #include "Map.hpp"
+#include "Life.hpp"
+#include "Cash.hpp"
 
 AbstractEnemy::AbstractEnemy(void)
 {
@@ -54,6 +56,15 @@ int	AbstractEnemy::getScoreOnDeath(void)
 	return (this->_scoreOnDeath);
 }
 
+void	AbstractEnemy::drop(Map &map)
+{
+	int val = rand() % 100;
+	if (val > 98)
+		map.getPickups().add(map.getEntityFactory().createLife(getPosition(), getDirection()));
+	else if (val >= 50)
+		map.getPickups().add(map.getEntityFactory().createCash(getPosition(), getDirection()));
+}
+
 void	AbstractEnemy::takeDamage(int damage, Map &map)
 {
 	if (damage >= 0)
@@ -87,19 +98,6 @@ void	AbstractEnemy::update(Map &map)
 	this->shoot(map);
 }
 
-// bool	AbstractEnemy::shouldBeCleaned()
-// {
-// 	if (this->getPosition().getY() > LINES)
-// 		return true;
-// 	return false;
-// }
-
-// void	AbstractEnemy::update(Map &map)
-// {
-// 	(void)map;
-// 	this->setPosition(this->getPosition() + this->getDirection());
-// }
-
 void AbstractEnemy::onCollide(Player &player)
 {
 	(void)player;
@@ -109,16 +107,6 @@ void AbstractEnemy::onCollide(AbstractEnemy &enemy, Map &map)
 {
 	(void)enemy;
 	(void)map;
-}
-
-void	AbstractEnemy::drop(Map &map)
-{
-	(void)map;
-}
-
-bool AbstractEnemy::isDead()
-{
-	return this->_dead;
 }
 
 void			AbstractEnemy::die(Player &player)

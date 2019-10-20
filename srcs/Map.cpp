@@ -6,7 +6,7 @@
 /*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 15:51:29 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/20 14:22:00 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/20 17:25:34 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,34 @@
 //-> will need a list of
 // pickups, enemies, enemy projectiles, own projectiles
 
+void Map::_init(void)
+{
+	this->_player = this->_factory.createPlayerAtMapCreation();
+	AbstractEntity *entity;
+	bool end = false;
+	int i;
+
+	while (!end)
+	{
+		entity = this->_factory.createRandomBackground(Map::_randomPosWholeScreen(), Vec2(0, 0));
+		i = 0;
+		while (this->_background.collide(*entity) && !end)
+		{
+			if (i++ >= 3)
+				end = true;
+		}
+		if (!end)
+			this->_background.add(entity);
+		else
+			delete entity;
+	}
+}
+
 Map::Map(void):  _factory(), _background(), _enemies(),
 	_playerProjectiles(), _pickups(), _player(nullptr),
 	_enemySpawnRate(0.02), _enemySpawnTimer(0)
 {
-	this->_player = this->_factory.createPlayerAtMapCreation();
+	this->_init();
 	//this->_enemies.add(new Alien());
 }
 
@@ -69,6 +92,15 @@ Vec2	Map::_randomPos()
 	Vec2 res;
 
 	res.setY(-2);
+	res.setX(rand() % (COLS - 0 + 1) + 0);
+	return res;
+}
+
+Vec2	Map::_randomPosWholeScreen()
+{
+	Vec2 res;
+
+	res.setY(rand() % (LINES - 0 + 1) + 0);
 	res.setX(rand() % (COLS - 0 + 1) + 0);
 	return res;
 }
