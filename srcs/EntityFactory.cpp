@@ -6,7 +6,7 @@
 /*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/19 17:37:54 by lnicosia          #+#    #+#             */
-/*   Updated: 2019/10/20 17:33:47 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/20 18:08:40 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,8 +50,8 @@ EntityFactory::~EntityFactory(void)
 
 Blueprint* EntityFactory::_blueprints[NB_ENTITIES] =
 {
-    new Blueprint("assets/carré.ascii"),
-    new Blueprint("assets/droite.ascii"),
+    new Blueprint("assets/alien.ascii"),
+    new Blueprint("assets/asteroid.ascii"),
     new Blueprint("assets/ship.ascii"), 
     new Blueprint("assets/regularMissile.ascii"),
     new Blueprint("assets/crappyMissile.ascii"),
@@ -116,7 +116,6 @@ AbstractEntity*	EntityFactory::createEntity(std::string type, Vec2 pos, Vec2 dir
             return (this->*_createFunc[i])(pos, dir);
         i++;
     }
-	exit(1);
     return 0;
 }
 
@@ -168,7 +167,6 @@ AbstractEntity	*EntityFactory::createCrappyMissile(Vec2 pos, Vec2 dir)
 	return new CrappyMissile(pos, dir, this->_blueprints[CRAPPY_MISSILE]);
 }
 
-//TODO
 AbstractEntity	*EntityFactory::createMoon(Vec2 pos, Vec2 dir)
 {
 	return new BackgroundEntity(pos, dir, this->_blueprints[MOON]);

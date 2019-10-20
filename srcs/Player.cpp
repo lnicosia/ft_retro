@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Player.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 16:00:22 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/20 17:54:42 by lnicosia         ###   ########.fr       */
+/*   Updated: 2019/10/20 18:19:11 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -174,25 +174,25 @@ void		Player::update(Map &map)
 	//std::cerr << this->getDirection() << std::endl;
 	this->AbstractEntity::update(map);
 
-	if (this->getPosition().getX() + this->getBlueprint()->getSizeX() > COLS)
+	if (this->getPosition().getX() + this->getBlueprint()->getSizeX() > COLS - 2)
 	{
 		this->setDirection(Vec2(0, this->getDirection().getY()));
-		this->setPosition(Vec2(COLS - this->getBlueprint()->getSizeX() - 1, this->getPosition().getY()));
+		this->setPosition(Vec2(COLS - 2 - this->getBlueprint()->getSizeX() - 1, this->getPosition().getY()));
 	}
-	else if (this->getPosition().getX() < 0)
+	else if (this->getPosition().getX() < 0 + 3)
 	{
 		this->setDirection(Vec2(0, this->getDirection().getY()));
-		this->setPosition(Vec2(0, this->getPosition().getY()));
+		this->setPosition(Vec2(3, this->getPosition().getY()));
 	}
 	if (this->getPosition().getY() + this->getBlueprint()->getSizeY() > LINES)
 	{
 		this->setDirection(Vec2(this->getDirection().getX(), 0));
-		this->setPosition(Vec2(this->getPosition().getX(), LINES - this->getBlueprint()->getSizeY() - 1));
+		this->setPosition(Vec2(this->getPosition().getX(), LINES - this->getBlueprint()->getSizeY()));
 	}
-	else if (this->getPosition().getY() < 0)
+	else if (this->getPosition().getY() < 6)
 	{
 		this->setDirection(Vec2(this->getDirection().getX(), 0));
-		this->setPosition(Vec2(this->getPosition().getX(), 0));
+		this->setPosition(Vec2(this->getPosition().getX(), 6));
 	}
 	int i;
 
@@ -259,8 +259,8 @@ void		Player::_init(void)
 		i++;
 	}
 	this->_weaponSlots[0] = new WeaponSlot(Vec2(3, 0), Vec2(0, -1), new LaserThrower());
-	// this->_weaponSlots[1] = new WeaponSlot(Vec2(-1 , 3), Vec2(-1, -1), new LaserThrower());
-	// this->_weaponSlots[2] = new WeaponSlot(Vec2(6, 3), Vec2(1, -1), new LaserThrower());
+	this->_weaponSlots[1] = new WeaponSlot(Vec2(-1 , 3), Vec2(-1, -1), new LaserThrower());
+	this->_weaponSlots[2] = new WeaponSlot(Vec2(6, 3), Vec2(1, -1), new LaserThrower());
 }
 
 int		Player::getLives()
