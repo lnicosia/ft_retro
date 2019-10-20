@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AbstractEnemy.cpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
+/*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 17:33:44 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/20 14:35:22 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/20 16:55:10 by lnicosia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,10 +73,10 @@ bool AbstractEnemy::shouldBeCleaned(void)
 
 void	AbstractEnemy::shoot(Map &map)
 {
-	std::cerr << this << std::endl;
+	//std::cerr << this << std::endl;
 	if (this->_weaponSlot.getWeapon())
 	{
-		std::cerr << this->_weaponSlot.getWeapon() << std::endl;
+		//std::cerr << this->_weaponSlot.getWeapon() << std::endl;
 		this->_weaponSlot.getWeapon()->beShot(*this, this->_weaponSlot, map);
 	}
 }
