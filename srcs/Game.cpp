@@ -6,7 +6,7 @@
 /*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 15:18:10 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/20 15:17:21 by lnicosia         ###   ########.fr       */
+/*   Updated: 2019/10/20 17:07:36 by lnicosia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -176,8 +176,8 @@ void	Game::printMenusBorder()
 	std::string cols = std::to_string(COLS);
 	if (LINES > 10 && COLS > 10) // Random value
 	{
-		mvprintw(0 , 0, lines.c_str());
-		mvprintw(0 , 5, cols.c_str());
+		//mvprintw(0 , 0, lines.c_str());
+		//mvprintw(0 , 5, cols.c_str());
 
 	/* Print Upper Border */
 		for (int i = 0; i < COLS - 4; i++)
