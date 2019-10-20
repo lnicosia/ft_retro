@@ -143,11 +143,11 @@ void	Game::setHighscore(int highscore)
 
 void	Game::printMenus()
 {
-	printMenusRectangle();
+	printMenusBorder();
 	printMenusText();
 }
 
-void	Game::printMenusRectangle()
+void	Game::printMenusBorder()
 {
 	int i = 0;
 	if (LINES/2-5 > 0 && COLS / 2 - 5)

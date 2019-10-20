@@ -45,8 +45,9 @@ class Game
 
 		/* Functions to Print menus loop */
 		void	printMenus();
-		void	printMenusRectangle();
+		void	printMenusBorder();
 		void	printMenusText();
+
 	private:
 		PlayingScreen	*_playingScreen;
 		int				_phase;
