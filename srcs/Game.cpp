@@ -48,7 +48,6 @@ void	Game::loopPlayingScreen(void)
 void	Game::loopMenuScreen(void)
 {
 	int input = 0;
-	int i = 0;
 	int c_lines = (LINES / 2) +1; // (LINES / 2) + x, x = number of options, 1 being the first one;
 	int c_cols  = (COLS / 2) - 27;
 	std::string tmp;
@@ -178,23 +177,22 @@ void	Game::printMenusBorder()
 {
 	std::string lines = std::to_string(LINES);
 	std::string cols = std::to_string(COLS);
-	int i;
 	if (LINES > 10 && COLS > 10) // Random value
 	{
 		mvprintw(0 , 0, lines.c_str());
 		mvprintw(0 , 5, cols.c_str());
 
 	/* Print Upper Border */
-		for (unsigned int i = 0; i < COLS - 4; i++)
+		for (int i = 0; i < COLS - 4; i++)
 			mvprintw(1, 2 + i, "-");
 	/* Print Lower Border */
-		for (unsigned int  i = 0; i < COLS - 4; i++)
+		for (int  i = 0; i < COLS - 4; i++)
 			mvprintw(LINES - 1, 2 + i, "-");
 	/* Print Left Border */
-		for (unsigned int  i = 0; i < LINES - 3; i++)
+		for (int  i = 0; i < LINES - 3; i++)
 			mvprintw(2 + i, 2, "|");
 	/* Print Right Border */
-		for (unsigned int  i = 0; i < LINES - 3; i++)
+		for (int  i = 0; i < LINES - 3; i++)
 			mvprintw(2 + i, COLS - 3, "|");
 	}
 }

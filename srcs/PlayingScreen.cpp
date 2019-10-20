@@ -101,13 +101,13 @@ void	PlayingScreen::printGameBorder()
 		Line - 1 == End of Game Border
 	*/
 		/* Print Upper Border && Print Lower Border */
-		for (unsigned int i = 0; i < COLS - 4; i++)
+		for (int i = 0; i < COLS - 4; i++)
 		{
 			mvprintw(5, 2 + i, "-");
 			mvprintw(LINES - 1, 2 + i, "-");
 		}
 	/* Print Left Border && Print Right Border */ 
-		for (unsigned int  i = 0; i < LINES - 3; i++)
+		for (int  i = 0; i < LINES - 3; i++)
 		{
 			mvprintw(6 + i, 2, "|");
 			mvprintw(6 + i, COLS - 3, "|"); 
@@ -120,10 +120,10 @@ void	PlayingScreen::printScoreBorder()
 		Note: Lower border is Printed with  printGameBorder
 	*/
 	/* Print Upper Border */
-		for (unsigned int i = 0; i < COLS - 4; i++)
+		for (int i = 0; i < COLS - 4; i++)
 			mvprintw(1, 2 + i, "-");
 	/* Print Left Border  && Print Right Border */
-		for (unsigned int  i = 0; i < 5; i++)
+		for (int  i = 0; i < 5; i++)
 		{
 			mvprintw(2 + i, 2, "|");
 			mvprintw(2 + i, COLS - 3, "|"); 
