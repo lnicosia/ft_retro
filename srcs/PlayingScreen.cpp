@@ -104,7 +104,7 @@ void	PlayingScreen::printGameBorder()
 		for (int i = 0; i < COLS - 4; i++)
 		{
 			mvprintw(5, 2 + i, "-");
-			mvprintw(LINES - 1, 2 + i, "-");
+			//mvprintw(LINES - 1, 2 + i, "-");
 		}
 	/* Print Left Border && Print Right Border */ 
 		for (int  i = 0; i < LINES - 3; i++)
