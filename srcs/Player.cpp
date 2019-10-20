@@ -6,7 +6,7 @@
 /*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 16:00:22 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/20 17:31:32 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/20 17:53:52 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -174,25 +174,25 @@ void		Player::update(Map &map)
 	//std::cerr << this->getDirection() << std::endl;
 	this->AbstractEntity::update(map);
 
-	if (this->getPosition().getX() + this->getBlueprint()->getSizeX() > COLS)
+	if (this->getPosition().getX() + this->getBlueprint()->getSizeX() > COLS - 2)
 	{
 		this->setDirection(Vec2(0, this->getDirection().getY()));
-		this->setPosition(Vec2(COLS - this->getBlueprint()->getSizeX() - 1, this->getPosition().getY()));
+		this->setPosition(Vec2(COLS - 2 - this->getBlueprint()->getSizeX() - 1, this->getPosition().getY()));
 	}
-	else if (this->getPosition().getX() < 0)
+	else if (this->getPosition().getX() < 0 + 3)
 	{
 		this->setDirection(Vec2(0, this->getDirection().getY()));
-		this->setPosition(Vec2(0, this->getPosition().getY()));
+		this->setPosition(Vec2(3, this->getPosition().getY()));
 	}
 	if (this->getPosition().getY() + this->getBlueprint()->getSizeY() > LINES)
 	{
 		this->setDirection(Vec2(this->getDirection().getX(), 0));
-		this->setPosition(Vec2(this->getPosition().getX(), LINES - this->getBlueprint()->getSizeY() - 1));
+		this->setPosition(Vec2(this->getPosition().getX(), LINES - this->getBlueprint()->getSizeY()));
 	}
-	else if (this->getPosition().getY() < 0)
+	else if (this->getPosition().getY() < 6)
 	{
 		this->setDirection(Vec2(this->getDirection().getX(), 0));
-		this->setPosition(Vec2(this->getPosition().getX(), 0));
+		this->setPosition(Vec2(this->getPosition().getX(), 6));
 	}
 	int i;
 

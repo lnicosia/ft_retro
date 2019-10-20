@@ -6,7 +6,7 @@
 /*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 15:51:29 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/20 17:42:33 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/20 18:14:03 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,8 +107,8 @@ Vec2	Map::_randomPosWholeScreen()
 {
 	Vec2 res;
 
-	res.setY(rand() % (LINES - 0 + 1) + 6);
-	res.setX(rand() % (COLS - 0 + 1) + 1);
+	res.setY(rand() % (LINES - 6 + 1) + 6);
+	res.setX(rand() % (COLS - 4 - 2 + 1) + 2);
 	return res;
 }
 
@@ -125,8 +125,6 @@ void	Map::update()
 	{
 		this->_enemySpawnTimer = this->_time;
 		this->_enemies.add(this->_factory.createRandomEnemy(Map::_randomPos(), Vec2(0, 0.08)));
-		//this->_enemies.add(this->_factory.createRandomEnemy(Vec2(this->_player->getPosition().getX(), 0), Vec2(0, 0.08)));
-		//this->_enemies.add(this->_factory.createEntity("asteroid", Map::_randomPos(), Vec2(0, 0.02)));
 	}
 	// Use to debug one enemy at a time (uncomment global var count)
 	// if (!count)
