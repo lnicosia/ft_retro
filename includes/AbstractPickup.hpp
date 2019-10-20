@@ -6,7 +6,7 @@
 /*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/19 08:53:33 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/20 13:15:36 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/20 16:49:23 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ class AbstractPickup : public AbstractForegroundEntity
 
 		virtual bool shouldBeCleaned(void);
 		virtual void onCollide(AbstractEnemy &enemy, Map &map);
-
 		virtual void onCollide(Player &player) = 0;
 
 		void setUsed(void);

@@ -6,7 +6,7 @@
 #    By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/11 23:08:04 by ldedier           #+#    #+#              #
-#    Updated: 2019/10/20 14:12:45 by ldedier          ###   ########.fr        #
+#    Updated: 2019/10/20 16:28:58 by ldedier          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,6 +47,9 @@ INCLUDES		=	AbstractEnemy.hpp \
 					Asteroid.hpp \
 					Life.hpp \
 					Cash.hpp \
+					CrappyMissile.hpp \
+					CrappyThrower.hpp \
+					BackgroundEntity.hpp
 
 
 SRCS		=		main.cpp \
@@ -71,6 +74,12 @@ SRCS		=		main.cpp \
 					Asteroid.cpp \
 					Life.cpp \
 					Cash.cpp \
+					CrappyMissile.cpp \
+					CrappyThrower.cpp \
+					BackgroundEntity.cpp
+
+
+
 
  
 

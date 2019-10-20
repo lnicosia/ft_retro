@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   EntityContainer.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/19 14:19:43 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/20 16:51:19 by lnicosia         ###   ########.fr       */
+/*   Updated: 2019/10/20 17:33:53 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,6 @@ void	EntityContainer::_shiftContainer(size_t i)
 		i++;
 	}
 	this->_size--;
-
 }
 
 void	EntityContainer::clean(void)
@@ -83,6 +82,20 @@ void	EntityContainer::clean(void)
 		else
 			i++;
 	}
+}
+
+bool	EntityContainer::collide(AbstractEntity &entity)
+{
+	size_t i;
+
+	i = 0;
+	while (i < this->_size)
+	{
+		if (this->_entities[i]->collide(entity))
+			return (true);
+		i++;
+	}
+	return (false);
 }
 
 void	EntityContainer::add(AbstractEntity *entity)
