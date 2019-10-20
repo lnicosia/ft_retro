@@ -6,7 +6,7 @@
 /*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/19 18:17:12 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/20 11:01:27 by lnicosia         ###   ########.fr       */
+/*   Updated: 2019/10/20 11:29:09 by lnicosia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,14 +36,15 @@ LaserThrower &	LaserThrower::operator=(LaserThrower const &rhs)
 
 void	LaserThrower::processBeShot(AbstractEntity &entity, WeaponSlot ws, EntityContainer &container, Map &map)
 {
-	AbstractEntity *projectile = new RegularMissile(entity.getPosition() + Vec2(entity.getBlueprint()->getSizeX() / 2, 0) + ws.getOrientation(),
-		ws.getOrientation(), new Blueprint("assets/regularMissile.ascii"));
+	// AbstractEntity *projectile = new RegularMissile(entity.getPosition() + Vec2(entity.getBlueprint()->getSizeX() / 2, 0) + ws.getOrientation(),
+	// 	ws.getOrientation(), new Blueprint("assets/regularMissile.ascii"));
+	AbstractEntity *projectile = map.getEntityFactory().createEntity("regular missile",
+		entity.getPosition() + Vec2(entity.getBlueprint()->getSizeX() / 2, 0) + ws.getOrientation(),
+		ws.getOrientation());
 	//map.getEntityFactory().createEntity("laser", entity.getPosition() + ws.getOffset(), ws.getOrientation());
 	container.add(projectile);
 	(void)entity;
 	(void)ws;
 	(void)container;
 	(void)map;
-
-
 }

@@ -6,7 +6,7 @@
 /*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 15:51:29 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/20 10:06:02 by lnicosia         ###   ########.fr       */
+/*   Updated: 2019/10/20 11:26:55 by lnicosia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -135,4 +135,9 @@ EntityContainer	&	Map::getEnemiesProjectiles(void)
 EntityContainer	&	Map::getPickups(void)
 {
 	return (this->_pickups);
+}
+
+EntityFactory	&	Map::getEntityFactory(void)
+{
+	return (this->_factory);
 }

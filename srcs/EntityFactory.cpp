@@ -6,13 +6,14 @@
 /*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/19 17:37:54 by lnicosia          #+#    #+#             */
-/*   Updated: 2019/10/20 09:14:31 by lnicosia         ###   ########.fr       */
+/*   Updated: 2019/10/20 11:30:34 by lnicosia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "EntityFactory.hpp"
 #include "Player.hpp"
 #include "LaserThrower.hpp"
+#include "RegularMissile.hpp"
 #include <ncurses.h>
 
 EntityFactory::EntityFactory(void)
@@ -36,7 +37,8 @@ Blueprint* EntityFactory::_blueprints[MAX_BLUEPRINT] =
     new Blueprint("assets/carré.ascii"),
     new Blueprint("assets/droite.ascii"),
     new Blueprint("assets/créneauDroite.ascii"),
-    new Blueprint("assets/créneauGauche.ascii")
+    new Blueprint("assets/créneauGauche.ascii"),
+    new Blueprint("assets/regularMissile.ascii"),
 };
 
 std::string EntityFactory::_blueprintsId[MAX_BLUEPRINT] =
@@ -44,16 +46,19 @@ std::string EntityFactory::_blueprintsId[MAX_BLUEPRINT] =
     "droite",
 };
 
-std::string EntityFactory::_enemyTypes[MAX_ENEMIES] =
+std::string EntityFactory::_entityTypes[ENTITY_TYPES] =
 {
     "alien",
     "asteroid",
+    "regular missile",
+    "random enemy"
 };
 
-AbstractEnemy*    (EntityFactory::*EntityFactory::_createFunc[MAX_ENEMIES])(Vec2 pos, Vec2 dir) = 
+AbstractEntity*    (EntityFactory::*EntityFactory::_createFunc[ENTITY_TYPES])(Vec2 pos, Vec2 dir) = 
 {
 	&EntityFactory::createAlien,
 	&EntityFactory::createAsteroid,
+    &EntityFactory::createRegularMissile,
 };
 
 EntityFactory &	EntityFactory::operator=(EntityFactory const &rhs)
@@ -65,23 +70,23 @@ EntityFactory &	EntityFactory::operator=(EntityFactory const &rhs)
 AbstractEntity*	EntityFactory::createEntity(std::string type, Vec2 pos, Vec2 dir)
 {
     size_t  i = 0;
-    while (i < MAX_ENEMIES)
+    while (i < ENTITY_TYPES)
     {
-        if (!this->_enemyTypes[i].compare(type))
+        if (!this->_entityTypes[i].compare(type))
             return (this->*_createFunc[i])(pos, dir);
         i++;
     }
     return 0;
 }
 
-AbstractEnemy*	EntityFactory::createEnemy(Vec2 pos, Vec2 dir)
+AbstractEntity*	EntityFactory::createEnemy(Vec2 pos, Vec2 dir)
 {
 	(void)pos;
 	(void)dir;
 	return 0;
 }
 
-AbstractEnemy*  EntityFactory::createAlien(Vec2 pos, Vec2 dir)
+AbstractEntity*  EntityFactory::createAlien(Vec2 pos, Vec2 dir)
 {
     // Alien* alien = new Alien(Vec2(COLS / 2 - this->_blueprints[1]->getSizeX() / 2, 0),
     //     Vec2(0, 1), this->_blueprints[1], 50, 50, WeaponSlot());
@@ -89,7 +94,7 @@ AbstractEnemy*  EntityFactory::createAlien(Vec2 pos, Vec2 dir)
 	return alien;
 }
 
-AbstractEnemy*  EntityFactory::createAsteroid(Vec2 pos, Vec2 dir)
+AbstractEntity*  EntityFactory::createAsteroid(Vec2 pos, Vec2 dir)
 {
     // Alien* alien = new Alien(Vec2(COLS / 2 - this->_blueprints[1]->getSizeX() / 2, 0),
     //     Vec2(0, 1), this->_blueprints[1], 50, 50, WeaponSlot());
@@ -97,9 +102,15 @@ AbstractEnemy*  EntityFactory::createAsteroid(Vec2 pos, Vec2 dir)
 	return asteroid;
 }
 
-AbstractEnemy*	EntityFactory::createRandomEnemy(Vec2 pos, Vec2 dir)
+AbstractEntity* EntityFactory::createRegularMissile(Vec2 pos, Vec2 dir)
 {
-    int dice = rand() % MAX_ENEMIES;
+    RegularMissile *missile = new RegularMissile(pos, dir, this->_blueprints[5]);
+    return missile;
+}
+
+AbstractEntity*	EntityFactory::createRandomEnemy(Vec2 pos, Vec2 dir)
+{
+    int dice = rand() % ENEMY_TYPES;
     return (this->*_createFunc[dice])(pos, dir);
 }
 
