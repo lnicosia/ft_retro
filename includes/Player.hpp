@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Player.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
+/*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 14:41:08 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/20 14:43:15 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/20 17:53:48 by lnicosia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,8 @@ class Player : public AbstractForegroundEntity, public IShooter
 		virtual bool	shouldBeCleaned();
 		virtual void	onCollide(Player &player);
 		virtual void	onCollide(AbstractEnemy &enemy, Map &map);
-
+		virtual int		getColor() const;
+		
 		WeaponSlot*		getWeaponSlot(int i);
 		int				getInput(void);
 		void			setInput(int input);

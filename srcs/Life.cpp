@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "Life.hpp"
+#include <ncurses.h>
 
 Life::Life(void)
 {
@@ -43,4 +44,9 @@ void Life::onCollide(Player &player)
 {
 	player.gainLife();
 	this->setUsed();
+}
+
+int		Life::getColor() const
+{
+	return COLOR_WHITE;
 }

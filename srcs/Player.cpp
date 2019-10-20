@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Player.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
+/*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 16:00:22 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/20 17:31:32 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/20 17:54:42 by lnicosia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -261,4 +261,9 @@ void		Player::_init(void)
 	this->_weaponSlots[0] = new WeaponSlot(Vec2(3, 0), Vec2(0, -1), new LaserThrower());
 	// this->_weaponSlots[1] = new WeaponSlot(Vec2(-1 , 3), Vec2(-1, -1), new LaserThrower());
 	// this->_weaponSlots[2] = new WeaponSlot(Vec2(6, 3), Vec2(1, -1), new LaserThrower());
+}
+
+int		Player::getColor() const
+{
+	return COLOR_WHITE;
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Life.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
+/*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/19 23:35:05 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/20 10:33:57 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/20 17:59:52 by lnicosia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ class Life : public AbstractPickup
 		Life(Life const &instance);
 		Life &operator=(Life const &rhs);
 		virtual ~Life(void);
+		virtual int		getColor() const;
 
 		virtual void onCollide(Player &player);
 	private:

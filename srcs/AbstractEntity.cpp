@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AbstractEntity.cpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
+/*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 16:39:33 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/20 17:35:56 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/20 18:01:58 by lnicosia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,11 @@ AbstractEntity &	AbstractEntity::operator=(AbstractEntity const &rhs)
 void	AbstractEntity::render(void) const
 {
 	if (this->isOnScreen())
+	{
+		attrset(COLOR_PAIR(this->getColor()));
 		this->_blueprint->print(this->_position);
+		attrset(COLOR_PAIR(0));
+	}
 }
 
 Blueprint*	AbstractEntity::getBlueprint(void) const

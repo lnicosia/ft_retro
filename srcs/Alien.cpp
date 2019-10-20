@@ -3,15 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   Alien.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
+/*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/19 20:53:25 by lnicosia          #+#    #+#             */
-/*   Updated: 2019/10/20 17:34:01 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/20 17:57:20 by lnicosia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Alien.hpp"
 #include "CrappyThrower.hpp"
+#include <ncurses.h>
 
 Alien::Alien(void): AbstractEnemy()
 {
@@ -63,3 +64,8 @@ Alien &	Alien::operator=(Alien const &rhs)
 // {
 //     (void)enemy;
 // }
+
+int		Alien::getColor() const
+{
+    return COLOR_GREEN;
+}

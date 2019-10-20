@@ -6,7 +6,7 @@
 /*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 15:18:10 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/20 17:07:36 by lnicosia         ###   ########.fr       */
+/*   Updated: 2019/10/20 17:52:59 by lnicosia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -218,7 +218,7 @@ void	Game::printMenusText()
 	int Cols = (COLS / 2) - 26; // 26 = lenght of text(52) / 2;
 	int Lines = (LINES / 2) / 2;
 	attrset(COLOR_PAIR(6));
-	mvprintw(Lines, Cols, " _____  ____       _____  _____  ____  _____  _____ ");
+	mvprintw(Lines, Cols, "\033[40m _____  ____       _____  _____  ____  _____  _____ ");
 	mvprintw(Lines + 1, Cols, "/   __\\/    \\ ___ /  _  \\/   __\\/    \\/  _  \\/  _  \\");
 	mvprintw(Lines + 2, Cols, "|   __|\\-  -/<___>|  _  <|   __|\\-  -/|  _  <|  |  |");
 	mvprintw(Lines + 3, Cols, "\\__/    |__|      \\__|\\_/\\_____/ |__| \\__|\\_/\\_____/");

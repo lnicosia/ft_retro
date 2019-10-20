@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AbstractEntity.hpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
+/*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 14:01:38 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/20 16:10:49 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/20 17:53:55 by lnicosia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,9 @@ class AbstractEntity
 		virtual ~AbstractEntity(void);
 		void render(void) const;
 
-		virtual void update(Map &map); //= 0;
-
-		virtual bool shouldBeCleaned() = 0;
+		virtual void	update(Map &map); //= 0;
+		virtual bool	shouldBeCleaned() = 0;
+		virtual int		getColor() const = 0;
 	
 		Vec2		getPosition(void) const;
 		Vec2		getOrientation(void) const;
