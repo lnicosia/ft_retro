@@ -6,7 +6,7 @@
 /*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 15:45:32 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/20 18:05:30 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/20 22:05:20 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,20 +45,8 @@ PlayingScreen &	PlayingScreen::operator=(PlayingScreen const &rhs)
 void	PlayingScreen::process(Game &game)
 {
 	(void)game;
-	//factory add randomly Entities;
 	this->_map.update();
 	this->_map.clean();
-}
-
-void	PlayingScreen::_printHud(Game &game) const
-{
-		(void)game;
-}
-
-void	PlayingScreen::_print(Game &game) const
-{
-	this->_map.render();
-	this->_printHud(game);
 }
 
 void	PlayingScreen::gameLoop(Game &game)
@@ -66,6 +54,14 @@ void	PlayingScreen::gameLoop(Game &game)
 	int input;
 	while (game.getPhase() == PHASE_PLAYING_SCREEN && !game.isDone())
 	{
+		if (_map.getPlayerLive() <= 0)
+		{
+			printGameOver();
+			setHighScore(_map.getPlayerScore());
+			refresh();
+			sleep(2);
+			game.setPhase(PHASE_MENU);
+		}
 		input = getch();
 
 		if (input == 'p')
@@ -77,17 +73,16 @@ void	PlayingScreen::gameLoop(Game &game)
 			//mvprintw(0, 0, "Game playing...");
 			printGameBorder();
 			printScoreBorder();
-			printScoreInfo(_map.getPlayerLive(), _map.getPlayerScore(), getHighScore());
+			printScoreInfo(_map.getPlayerLive(), _map.getPlayerScore(), getHighScore(), _map.getTime());
 			this->_map.getPlayer().setInput(input);
 			//std::cerr << "Inputs ok" << std::endl;
 			this->process(game);
 			//std::cerr << "Game process ok" << std::endl;
-			this->_print(game);
+			this->_map.render();
 			//std::cerr << "Game print ok" << std::endl;
 			refresh();
 			usleep(15000);
 		}
-		
 	}
 }
 
@@ -127,7 +122,7 @@ void	PlayingScreen::printScoreBorder()
 		}
 }
 
-void	PlayingScreen::printScoreInfo(int life, int score, int maxscore)
+void	PlayingScreen::printScoreInfo(int life, int score, int maxscore, long timer)
 {
 	std::string tmp;
 	/* Print Life */
@@ -148,9 +143,39 @@ void	PlayingScreen::printScoreInfo(int life, int score, int maxscore)
 	mvprintw(3, 40, "MAXSCORE = ");
 	mvprintw(3, 52, tmp.c_str());
 	attrset(COLOR_PAIR(0));
+
+	/* Print Tiner */
+
+	attrset(COLOR_PAIR(4));
+	tmp = std::to_string(timer);
+	mvprintw(3, 60, "TIMER = ");
+	mvprintw(3, 68, tmp.c_str());
+	attrset(COLOR_PAIR(0));
 }
 
 int			PlayingScreen::getHighScore()
 {
 	return (*_highscore);
+}
+
+void		PlayingScreen::printGameOver()
+{
+	mvprintw(LINES / 2 - 6 , COLS / 2 - 15,"                               ");
+	mvprintw(LINES / 2 - 5, COLS / 2 - 15, "  #####   ####  ##   ## ###### ");
+	mvprintw(LINES / 2 - 4, COLS / 2 - 15, " ##      ##  ## ####### ##     ");
+	mvprintw(LINES / 2 - 3, COLS / 2 - 15, " ## ###  ###### ## # ## #####  ");
+	mvprintw(LINES / 2 - 2, COLS / 2 - 15, " ##  ##  ##  ## ##   ## ##     ");
+	mvprintw(LINES / 2 - 1, COLS / 2 - 15, "  #####  ##  ## ##   ## ###### ");
+	mvprintw(LINES / 2 , COLS / 2 - 15,    "                               ");
+	mvprintw(LINES / 2 + 1, COLS / 2 - 15, "  ####  ##   ## ###### ######  ");
+	mvprintw(LINES / 2 + 2, COLS / 2 - 15, " ##  ## ##   ## ##     ##   ## ");
+	mvprintw(LINES / 2 + 3, COLS / 2 - 15, " ##  ##  ## ##  #####  ######  ");
+	mvprintw(LINES / 2 + 4, COLS / 2 - 15, " ##  ##  ## ##  ##     ##  ##  ");
+	mvprintw(LINES / 2 + 5, COLS / 2 - 15, "  ####    ###   ###### ##   ## ");
+}
+
+void	PlayingScreen::setHighScore(int HighScore)
+{
+	if (*_highscore < HighScore)
+		*_highscore = HighScore;
 }

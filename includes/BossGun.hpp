@@ -1,30 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   BossGun.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/18 15:15:46 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/20 22:45:55 by ldedier          ###   ########.fr       */
+/*   Created: 2019/10/20 19:47:01 by ldedier           #+#    #+#             */
+/*   Updated: 2019/10/20 21:52:54 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Game.hpp"
-#include <iostream>
-#include <time.h>
+#ifndef BOSSGUN_HPP
+# define BOSSGUN_HPP
 
-int main(void)
+# include <iostream>
+# include "AbstractEnemy.hpp"
+
+class BossGun : public AbstractWeapon
 {
-	srand(time(nullptr)); 
-	Game game;
-	try {
-		game.launch();
-	}
-	catch(std::exception e)
-	{
-		std::cerr << e.what() << std::endl;
-		return (1);
-	}
-	return (0);
-}
+	public:
+		BossGun(void);
+		BossGun(BossGun const &instance);
+		BossGun &operator=(BossGun const &rhs);
+		~BossGun(void);
+		virtual void processBeShot(AbstractEntity &entity, WeaponSlot &ws, EntityContainer &container, Map &map);
+	
+	private:
+
+};
+#endif

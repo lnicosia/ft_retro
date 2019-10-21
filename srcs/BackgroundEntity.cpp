@@ -12,6 +12,7 @@
 
 #include "BackgroundEntity.hpp"
 #include <ncurses.h>
+#include "Game.hpp"
 
 BackgroundEntity::BackgroundEntity(void)
 {

@@ -6,12 +6,13 @@
 /*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/20 11:18:04 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/20 18:26:28 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/20 19:44:09 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cash.hpp"
 #include <ncurses.h>
+#include "Game.hpp"
 
 Cash::Cash(void)
 {
@@ -40,11 +41,14 @@ Cash &	Cash::operator=(Cash const &rhs)
 
 void	Cash::onCollide(Player &player)
 {
-	player.incScore(1000);
-	this->setUsed();
+	if (!this->isUsed())
+	{
+		player.incScore(1000);
+		this->setUsed();
+	}
 }
 
 int		Cash::getColor() const
 {
-    return COLOR_GREEN;
+    return GREEN;
 }

@@ -6,7 +6,7 @@
 /*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 14:01:38 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/20 18:36:54 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/20 19:01:03 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,10 @@ class AbstractEntity
 	
 		bool	isOnScreen(void);
 		bool	isOnScreen(void) const;
+
+
+		bool	isOnScreenShouldPrint(void);
+		bool	isOnScreenShouldPrint(void) const;
 		void	setPosition(Vec2 pos);
 		void	setOrientation(Vec2 orientation);
 		void	setDirection(Vec2 dir);

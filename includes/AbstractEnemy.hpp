@@ -6,7 +6,7 @@
 /*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 14:20:54 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/20 16:09:23 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/20 21:56:25 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ class AbstractEnemy : public AbstractForegroundEntity, public IShooter
 
 		int				getHealth(void);
 		int				getScoreOnDeath(void);
-		WeaponSlot		getSlot(void);
+		WeaponSlot		&getSlot(void);
 		bool			isDead(void);
 		void			die(Player &player);
 		void			drop(Map &map);
@@ -54,7 +54,7 @@ class AbstractEnemy : public AbstractForegroundEntity, public IShooter
 		int				_scoreOnDeath;
 		WeaponSlot		_weaponSlot;
 		bool			_dead;
-		float			_minFireRate;
+		long			_minFireRate;
 
 };
 #endif

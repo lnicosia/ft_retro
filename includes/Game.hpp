@@ -6,7 +6,7 @@
 /*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 22:39:31 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/19 15:15:50 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/20 19:14:45 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,16 @@
 # include <iostream>
 # include "PlayingScreen.hpp"
 # include <ncurses.h>
-#define PHASE_MENU 0
-#define PHASE_PLAYING_SCREEN 1
-#define PHASE_PAUSE 2
+# define PHASE_MENU 0
+# define PHASE_PLAYING_SCREEN 1
+# define PHASE_PAUSE 2
+# define RED 1
+# define GREEN 2
+# define YELLOW 3
+# define BLUE 4
+# define CYAN 5
+# define MAGENTA 6
+# define WHITE 7
 
 class PlayingScreen;
 

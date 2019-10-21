@@ -6,7 +6,7 @@
 /*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/19 11:04:25 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/20 17:38:00 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/20 21:52:38 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,18 +42,19 @@ AbstractWeapon &	AbstractWeapon::operator=(AbstractWeapon const &rhs)
 	return *this;
 }
 
-void	AbstractWeapon::beShot(AbstractEnemy &enemy, WeaponSlot ws, Map &map)
+void	AbstractWeapon::beShot(AbstractEnemy &enemy, WeaponSlot &ws, Map &map)
 {
-	double value;
-	value = (double)clock() / CLOCKS_PER_SEC - this->_fireTimer;
-	if (value > this->_fireTimer && value > enemy.getMinFireRate())
+	long value;
+	
+	value = map.getTime() - this->_fireTimer;
+	if ( value > this->_fireRate && value > enemy.getMinFireRate())
 	{
-		this->_fireTimer = (double)clock() / CLOCKS_PER_SEC;
+		this->_fireTimer = map.getTime();
 		this->processBeShot(enemy, ws, map.getEnemiesProjectiles(), map);
 	}
 }
 
-void	AbstractWeapon::beShot(Player &player, WeaponSlot ws, Map &map)
+void	AbstractWeapon::beShot(Player &player, WeaponSlot &ws, Map &map)
 {
 	if (map.getTime() - this->_fireTimer > this->_fireRate)
 	{
@@ -63,8 +64,9 @@ void	AbstractWeapon::beShot(Player &player, WeaponSlot ws, Map &map)
 	}
 }
 
-void	AbstractWeapon::processBeShot(AbstractEntity &entity, WeaponSlot ws, EntityContainer &container, Map &map)
+void	AbstractWeapon::processBeShot(AbstractEntity &entity, WeaponSlot &ws, EntityContainer &container, Map &map)
 {
+	
 	AbstractEntity *projectile = map.getEntityFactory().createEntity(this->_projectileName, entity.getPosition() + ws.getOffset(), ws.getOrientation() * this->_launchPower);
 	container.add(projectile);
 }

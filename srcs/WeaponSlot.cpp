@@ -6,7 +6,7 @@
 /*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/19 10:48:27 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/20 14:54:07 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/20 22:31:09 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,11 @@ WeaponSlot::WeaponSlot(WeaponSlot const &instance)
 
 WeaponSlot::~WeaponSlot(void)
 {
-	
+	if (this->_weapon)
+	{
+		delete this->_weapon;
+		this->_weapon = nullptr;
+	}
 }
 
 WeaponSlot &	WeaponSlot::operator=(WeaponSlot const &rhs)
@@ -56,3 +60,7 @@ Vec2			WeaponSlot::getOrientation(void)
 	return (this->_orientation);
 }
 
+void	WeaponSlot::setWeapon(AbstractWeapon *aw)
+{
+	this->_weapon = aw;
+}

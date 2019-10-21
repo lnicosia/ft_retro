@@ -1,55 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Life.cpp                                           :+:      :+:    :+:   */
+/*   Star1.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/20 00:06:26 by ldedier `          #+#    #+#             */
-/*   Updated: 2019/10/20 10:17:28 by ldedier          ###   ########.fr       */
+/*   Created: 2019/10/20 21:18:27 by ldedier           #+#    #+#             */
+/*   Updated: 2019/10/20 21:18:44 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Life.hpp"
-#include <ncurses.h>
+#include "Star1.hpp"
+#include "Game.hpp"
 
-Life::Life(void)
+Star1::Star1(void)
 {
 	
 }
 
-
-Life::Life(Vec2 pos, Vec2 dir, Blueprint *blueprint): AbstractPickup(pos, dir, blueprint)
+Star1::Star1(Vec2 pos, Vec2 dir, Blueprint *blueprint): BackgroundEntity(pos, dir, blueprint)
 {
 	
 }
 
-Life::Life(Life const &instance)
+Star1::Star1(Star1 const &instance)
 {
 	*this = instance;
 }
 
-Life::~Life(void)
+Star1::~Star1(void)
 {
 	
 }
 
-Life &	Life::operator=(Life const &rhs)
+Star1 &	Star1::operator=(Star1 const &rhs)
 {
 	(void)rhs;
-	return *this;	
+	return *this;
 }
 
-void Life::onCollide(Player &player)
+int	Star1::getColor(void) const
 {
-	if (!this->isUsed())
-	{
-		player.gainLife();
-		this->setUsed();
-	}
-}
-
-int		Life::getColor() const
-{
-	return COLOR_WHITE;
+	return (COLOR_WHITE);
 }

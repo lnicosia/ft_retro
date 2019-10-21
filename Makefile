@@ -6,7 +6,7 @@
 #    By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/11 23:08:04 by ldedier           #+#    #+#              #
-#    Updated: 2019/10/20 16:28:58 by ldedier          ###   ########.fr        #
+#    Updated: 2019/10/20 21:22:36 by ldedier          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,7 +49,14 @@ INCLUDES		=	AbstractEnemy.hpp \
 					Cash.hpp \
 					CrappyMissile.hpp \
 					CrappyThrower.hpp \
-					BackgroundEntity.hpp
+					BackgroundEntity.hpp \
+					Moon.hpp \
+					Boss.hpp \
+					BossGun.hpp\
+					Star1.hpp\
+					Star2.hpp\
+					Star3.hpp\
+
 
 
 SRCS		=		main.cpp \
@@ -76,7 +83,13 @@ SRCS		=		main.cpp \
 					Cash.cpp \
 					CrappyMissile.cpp \
 					CrappyThrower.cpp \
-					BackgroundEntity.cpp
+					BackgroundEntity.cpp \
+					Moon.cpp \
+					Boss.cpp \
+					BossGun.cpp \
+					Star1.cpp \
+					Star2.cpp \
+					Star3.cpp \
 
 
 

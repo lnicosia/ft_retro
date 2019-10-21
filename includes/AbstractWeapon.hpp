@@ -6,7 +6,7 @@
 /*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 14:46:02 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/20 17:37:15 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/20 21:52:07 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,10 @@ class AbstractWeapon
 		AbstractWeapon &operator=(AbstractWeapon const &rhs);
 		virtual ~AbstractWeapon(void);
 		
-		virtual void processBeShot(AbstractEntity &entity, WeaponSlot ws, EntityContainer &container, Map &map);
+		virtual void processBeShot(AbstractEntity &entity, WeaponSlot &ws, EntityContainer &container, Map &map);
 
-		virtual void beShot(AbstractEnemy &enemy, WeaponSlot ws, Map &map);
-		virtual void beShot(Player &player, WeaponSlot ws, Map &map);
+		virtual void beShot(AbstractEnemy &enemy, WeaponSlot &ws, Map &map);
+		virtual void beShot(Player &player, WeaponSlot &ws, Map &map);
 
 		float getLaunchPower(void);
 		

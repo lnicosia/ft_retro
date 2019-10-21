@@ -33,8 +33,10 @@ class PlayingScreen
 		/*	Print In-Game Border */
 		void		printGameBorder();
 		void		printScoreBorder();
-		void		printScoreInfo(int life, int score, int maxscore);
+		void		printScoreInfo(int life, int score, int maxscore, long timer);
+		void		printGameOver();
 		int			getHighScore();
+		void		setHighScore(int	highscore);
 	private:
 		PlayingScreen(void);
 		void	process(Game &game);

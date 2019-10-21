@@ -6,12 +6,13 @@
 /*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/19 20:37:10 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/20 18:30:27 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/20 19:15:19 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RegularMissile.hpp"
 #include <ncurses.h>
+#include "Game.hpp"
 
 RegularMissile::RegularMissile(void)
 {
@@ -41,5 +42,5 @@ RegularMissile &	RegularMissile::operator=(RegularMissile const &rhs)
 
 int		RegularMissile::getColor() const
 {
-	return COLOR_CYAN;
+	return CYAN;
 }

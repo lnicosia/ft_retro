@@ -1,30 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Star1.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/18 15:15:46 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/20 22:45:55 by ldedier          ###   ########.fr       */
+/*   Created: 2019/10/20 21:17:54 by ldedier           #+#    #+#             */
+/*   Updated: 2019/10/20 21:18:48 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Game.hpp"
-#include <iostream>
-#include <time.h>
+#ifndef STAR1_HPP
+# define STAR1_HPP
 
-int main(void)
+# include <iostream>
+# include "BackgroundEntity.hpp"
+
+	
+class Star1 : public  BackgroundEntity
 {
-	srand(time(nullptr)); 
-	Game game;
-	try {
-		game.launch();
-	}
-	catch(std::exception e)
-	{
-		std::cerr << e.what() << std::endl;
-		return (1);
-	}
-	return (0);
-}
+	public:
+		Star1(void);
+		Star1(Vec2 pos, Vec2 dir, Blueprint *blueprint);
+		Star1(Star1 const &instance);
+		Star1 &operator=(Star1 const &rhs);
+		virtual ~Star1(void);
+
+		virtual int getColor(void) const;
+	private:
+
+};
+
+#endif

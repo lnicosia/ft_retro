@@ -6,13 +6,14 @@
 /*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 16:39:33 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/20 18:37:50 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/20 19:17:57 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/AbstractEntity.hpp"
 #include <ncurses.h>
 #include <math.h>
+#include "Game.hpp"
 
 AbstractEntity::AbstractEntity(): _position(Vec2(0,0)), _direction(Vec2(0,0)), _blueprint(nullptr)
 {
@@ -47,7 +48,7 @@ AbstractEntity &	AbstractEntity::operator=(AbstractEntity const &rhs)
 
 void	AbstractEntity::render(void) const
 {
-	if (this->isOnScreen())
+	if (this->isOnScreenShouldPrint())
 	{
 		attrset(COLOR_PAIR(this->getColor()));
 		this->_blueprint->print(this->_position);
@@ -98,6 +99,23 @@ bool	AbstractEntity::isOnScreen(void)
 	return this->_position.getX() + this->_blueprint->getSizeX() > 0
 		&& this->_position.getX() < COLS
 		&& this->_position.getY() + this->_blueprint->getSizeY() + 30 > 0 // +30 for initialising in this area 
+		&& this->_position.getY() < LINES; 
+}
+
+
+bool	AbstractEntity::isOnScreenShouldPrint(void) const
+{
+	return this->_position.getX() + this->_blueprint->getSizeX() > 0
+		&& this->_position.getX() < COLS
+		&& this->_position.getY() + this->_blueprint->getSizeY() - 6 > 0 // +30 for initialising in this area 
+		&& this->_position.getY() < LINES; 
+}
+
+bool	AbstractEntity::isOnScreenShouldPrint(void)
+{
+	return this->_position.getX() + this->_blueprint->getSizeX() > 0
+		&& this->_position.getX() < COLS
+		&& this->_position.getY() + this->_blueprint->getSizeY() - 6 > 0 // +30 for initialising in this area 
 		&& this->_position.getY() < LINES; 
 }
 
@@ -199,5 +217,5 @@ bool	AbstractEntity::collide(const AbstractEntity &entity)
 
 int		AbstractEntity::getColor(void) const
 {
-	return COLOR_WHITE;
+	return WHITE;
 }

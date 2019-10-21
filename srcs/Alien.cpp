@@ -6,7 +6,7 @@
 /*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/20 18:41:53 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/20 18:41:55 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/20 21:56:17 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ Alien::Alien(void): AbstractEnemy()
 }
 
 Alien::Alien(Vec2 pos, Vec2 dir, Blueprint *blueprint):
-    AbstractEnemy(pos, dir, blueprint, 50, 100, WeaponSlot(Vec2(0,0), Vec2(0,1), new CrappyThrower()), 0.01)
+    AbstractEnemy(pos, dir, blueprint, 50, 100, WeaponSlot(Vec2(8,3), Vec2(0,1), nullptr), 1000)
 {
-    
+	this->getSlot().setWeapon(new CrappyThrower());
 }
 
 Alien::Alien(Alien const &instance)

@@ -1,30 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Moon.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/18 15:15:46 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/20 22:45:55 by ldedier          ###   ########.fr       */
+/*   Created: 2019/10/20 19:20:09 by ldedier           #+#    #+#             */
+/*   Updated: 2019/10/20 19:38:45 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Game.hpp"
-#include <iostream>
-#include <time.h>
+#ifndef MOON_HPP
+# define MOON_HPP
 
-int main(void)
+# include <iostream>
+# include "BackgroundEntity.hpp"
+
+	
+class Moon : public  BackgroundEntity
 {
-	srand(time(nullptr)); 
-	Game game;
-	try {
-		game.launch();
-	}
-	catch(std::exception e)
-	{
-		std::cerr << e.what() << std::endl;
-		return (1);
-	}
-	return (0);
-}
+	public:
+		Moon(void);
+		Moon(Vec2 pos, Vec2 dir, Blueprint *blueprint);
+		Moon(Moon const &instance);
+		Moon &operator=(Moon const &rhs);
+		virtual ~Moon(void);
+
+		virtual int getColor(void) const;
+	private:
+
+};
+
+#endif

@@ -6,7 +6,7 @@
 /*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/19 15:59:52 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/20 13:16:08 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/20 19:52:41 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,4 +53,9 @@ void	AbstractPickup::setUsed(void)
 bool AbstractPickup::shouldBeCleaned()
 {
 	return this->_used || !this->isOnScreen();
+}
+
+bool	AbstractPickup::isUsed(void)
+{
+	return this->_used;	
 }

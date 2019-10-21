@@ -6,7 +6,7 @@
 /*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/19 10:41:06 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/20 12:20:31 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/20 22:30:40 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ class WeaponSlot
 		AbstractWeapon	*getWeapon(void);
 		Vec2			getOffset(void);
 		Vec2			getOrientation(void);
+		void			setWeapon(AbstractWeapon *aw);
 
 	private:
 		Vec2			_offset;

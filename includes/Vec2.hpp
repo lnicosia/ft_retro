@@ -6,7 +6,7 @@
 /*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 14:05:57 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/19 23:30:28 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/20 20:16:55 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ class Vec2
 		float getY(void) const ;
 		void setX(float x);
 		void setY(float y);
-
+		static Vec2 randomVect(void);
 	private:
 		float _x;
 		float _y;

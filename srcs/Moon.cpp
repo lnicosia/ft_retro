@@ -1,55 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Life.cpp                                           :+:      :+:    :+:   */
+/*   Moon.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/20 00:06:26 by ldedier `          #+#    #+#             */
-/*   Updated: 2019/10/20 10:17:28 by ldedier          ###   ########.fr       */
+/*   Created: 2019/10/20 19:22:21 by ldedier           #+#    #+#             */
+/*   Updated: 2019/10/20 19:38:23 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Life.hpp"
-#include <ncurses.h>
+#include "Moon.hpp"
+#include "Game.hpp"
 
-Life::Life(void)
+Moon::Moon(void)
 {
 	
 }
 
-
-Life::Life(Vec2 pos, Vec2 dir, Blueprint *blueprint): AbstractPickup(pos, dir, blueprint)
+Moon::Moon(Vec2 pos, Vec2 dir, Blueprint *blueprint): BackgroundEntity(pos, dir, blueprint)
 {
 	
 }
 
-Life::Life(Life const &instance)
+Moon::Moon(Moon const &instance)
 {
 	*this = instance;
 }
 
-Life::~Life(void)
+Moon::~Moon(void)
 {
 	
 }
 
-Life &	Life::operator=(Life const &rhs)
+Moon &	Moon::operator=(Moon const &rhs)
 {
 	(void)rhs;
-	return *this;	
+	return *this;
 }
 
-void Life::onCollide(Player &player)
+int	Moon::getColor(void) const
 {
-	if (!this->isUsed())
-	{
-		player.gainLife();
-		this->setUsed();
-	}
-}
-
-int		Life::getColor() const
-{
-	return COLOR_WHITE;
+	return (YELLOW);
 }

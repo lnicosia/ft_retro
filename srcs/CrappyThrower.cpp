@@ -6,14 +6,14 @@
 /*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/20 15:17:50 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/20 17:41:21 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/20 19:49:54 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "CrappyThrower.hpp"
 
 
-CrappyThrower::CrappyThrower(void): AbstractWeapon(2000, 0.2, "crappy missile")
+CrappyThrower::CrappyThrower(void): AbstractWeapon(500, 0.2, "crappy missile")
 {
 	
 }

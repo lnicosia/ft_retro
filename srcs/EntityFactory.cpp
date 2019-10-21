@@ -6,7 +6,7 @@
 /*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/20 18:42:08 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/20 18:42:09 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/20 21:25:22 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,12 @@
 #include "BackgroundEntity.hpp"
 #include "RegularMissile.hpp"
 #include "CrappyMissile.hpp"
-#include "BackgroundEntity.hpp"
+#include "Moon.hpp"
+#include "Star1.hpp"
+#include "Star2.hpp"
+#include "Star3.hpp"
 #include "Life.hpp"
+#include "Boss.hpp"
 #include "Cash.hpp"
 #include <ncurses.h>
        
@@ -52,13 +56,14 @@ Blueprint* EntityFactory::_blueprints[NB_ENTITIES] =
 {
     new Blueprint("assets/alien.ascii"),
     new Blueprint("assets/asteroid.ascii"),
+    new Blueprint("assets/boss.ascii"),
     new Blueprint("assets/ship.ascii"), 
     new Blueprint("assets/regularMissile.ascii"),
     new Blueprint("assets/crappyMissile.ascii"),
     new Blueprint("assets/life.ascii"),
     new Blueprint("assets/cash.ascii"),
     new Blueprint("assets/moon.ascii"),
-    new Blueprint("assets/star1.ascii"),
+    new Blueprint("assets/star.ascii"),
     new Blueprint("assets/star2.ascii"),
     new Blueprint("assets/star3.ascii"),
 };
@@ -67,6 +72,7 @@ std::string EntityFactory::_entityTypes[NB_ENTITIES] =
 {
     "alien",
     "asteroid",
+    "boss",
 	"player",
     "regular missile",
     "crappy missile",
@@ -82,6 +88,7 @@ AbstractEntity*    (EntityFactory::*EntityFactory::_createFunc[NB_ENTITIES])(Vec
 {
 	&EntityFactory::createAlien,
 	&EntityFactory::createAsteroid,
+	&EntityFactory::createBoss,
 	&EntityFactory::createPlayer,
 	&EntityFactory::createRegularMissile,
 	&EntityFactory::createCrappyMissile,
@@ -149,7 +156,19 @@ AbstractEntity* EntityFactory::createRegularMissile(Vec2 pos, Vec2 dir)
 
 AbstractEntity*	EntityFactory::createRandomEnemy(Vec2 pos, Vec2 dir)
 {
-    return (this->*_createFunc[rand() % NB_ENEMIES])(pos, dir);
+	int rando = random() % NB_ENEMIES;
+	if (rando == BOSS)
+	{
+		if (random() % 100 > 80)
+		{
+			AbstractEntity *boss = (this->*_createFunc[BOSS])(pos, dir);
+			boss->setPosition(Vec2(COLS / 2 - boss->getBlueprint()->getSizeX(), pos.getY()));
+			return boss;
+		}
+		else
+    		return (this->*_createFunc[ALIEN])(pos, dir);
+	}
+    return (this->*_createFunc[rando])(pos, dir);
 }
 
 AbstractEntity	*EntityFactory::createCash(Vec2 pos, Vec2 dir)
@@ -169,29 +188,33 @@ AbstractEntity	*EntityFactory::createCrappyMissile(Vec2 pos, Vec2 dir)
 
 AbstractEntity	*EntityFactory::createMoon(Vec2 pos, Vec2 dir)
 {
-	return new BackgroundEntity(pos, dir, this->_blueprints[MOON]);
+	return new Moon(pos, dir, this->_blueprints[MOON]);
 }
 
 AbstractEntity	*EntityFactory::createStar1(Vec2 pos, Vec2 dir)
 {
-	return new CrappyMissile(pos, dir, this->_blueprints[STAR1]);
+	return new Star1(pos, dir, this->_blueprints[STAR1]);
 }
 
 AbstractEntity	*EntityFactory::createStar2(Vec2 pos, Vec2 dir)
 {
-	return new CrappyMissile(pos, dir, this->_blueprints[STAR2]);
+	return new Star2(pos, dir, this->_blueprints[STAR2]);
 }
 
 AbstractEntity	*EntityFactory::createStar3(Vec2 pos, Vec2 dir)
 {
-	return new CrappyMissile(pos, dir, this->_blueprints[STAR3]);
+	return new Star3(pos, dir, this->_blueprints[STAR3]);
+}
+
+AbstractEntity	*EntityFactory::createBoss(Vec2 pos, Vec2 dir)
+{
+	return new Boss(pos, dir, this->_blueprints[BOSS]);
 }
 
 AbstractEntity	*EntityFactory::createRandomBackground(Vec2 pos, Vec2 dir)
 {
 	return (this->*_createBackgroundFunc[rand() % NB_BACKGROUND])(pos, dir);
 }
-
 
 Player*     EntityFactory::createPlayerAtMapCreation()
 {

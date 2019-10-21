@@ -6,7 +6,7 @@
 /*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/20 18:41:42 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/20 18:41:44 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/20 21:48:23 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ class Player : public AbstractForegroundEntity, public IShooter
 		virtual void	onCollide(AbstractEnemy &enemy, Map &map);
 		virtual int		getColor() const;
 		
-		WeaponSlot*		getWeaponSlot(int i);
+		WeaponSlot		getWeaponSlot(int i);
 		int				getInput(void);
 		void			setInput(int input);
 		void			looseLife();
@@ -45,13 +45,12 @@ class Player : public AbstractForegroundEntity, public IShooter
 		int				getLives();
 		int				getScore();
 		void			incScore(int score);
-		
 	private:
 
 		void			_init(void);
 		int				_lives;
 		int				_score;
-		WeaponSlot		*_weaponSlots[4];
+		WeaponSlot		_weaponSlots[4];
 		int				_input;
 		float			_acceleration;
 };

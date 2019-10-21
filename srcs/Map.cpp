@@ -6,12 +6,13 @@
 /*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 15:51:29 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/20 18:14:03 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/20 22:28:39 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/Map.hpp"
 #include "Alien.hpp"
+#include <ncurses.h>
 #include <ncurses.h>
 #include <sys/time.h>
 
@@ -66,7 +67,11 @@ Map::Map(Map const &instance)
 
 Map::~Map(void)
 {
-	
+	if (this->_player)
+	{
+		delete this->_player;
+		this->_player = nullptr;
+	}
 }
 
 Map &	Map::operator=(Map const &rhs)
@@ -96,7 +101,7 @@ Vec2	Map::_randomPos()
 	Vec2 res;
 
 	res.setY(6);
-	res.setX(rand() % (COLS - 0 + 1) + 1);
+	res.setX(rand() % (COLS - 20 - 2 + 1) + 4);
 	return res;
 }
 
@@ -108,7 +113,7 @@ Vec2	Map::_randomPosWholeScreen()
 	Vec2 res;
 
 	res.setY(rand() % (LINES - 6 + 1) + 6);
-	res.setX(rand() % (COLS - 4 - 2 + 1) + 2);
+	res.setX(rand() % (COLS - 20 - 2 + 1) + 4);
 	return res;
 }
 

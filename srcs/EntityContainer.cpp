@@ -6,7 +6,7 @@
 /*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/19 14:19:43 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/20 17:33:53 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/20 21:33:43 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,11 @@ EntityContainer::EntityContainer(EntityContainer const &instance)
 
 EntityContainer::~EntityContainer(void)
 {
-	//TODO
+	size_t i;
+
+	i = 0;
+	while (i < this->_size)
+		delete this->_entities[i++];
 }
 
 EntityContainer &	EntityContainer::operator=(EntityContainer const &rhs)
@@ -104,7 +108,7 @@ void	EntityContainer::add(AbstractEntity *entity)
 		this->_entities[this->_size++] = entity;
 	else
 	{
-		//throw Exception();
+		delete entity;
 	}
 }
 

@@ -1,30 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Boss.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/18 15:15:46 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/20 22:45:55 by ldedier          ###   ########.fr       */
+/*   Created: 2019/10/20 19:25:54 by ldedier           #+#    #+#             */
+/*   Updated: 2019/10/20 19:52:47 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Game.hpp"
-#include <iostream>
-#include <time.h>
+#ifndef BOSS_HPP
+# define BOSS_HPP
 
-int main(void)
+# include <iostream>
+# include "AbstractEnemy.hpp"
+
+class Boss : public AbstractEnemy
 {
-	srand(time(nullptr)); 
-	Game game;
-	try {
-		game.launch();
-	}
-	catch(std::exception e)
-	{
-		std::cerr << e.what() << std::endl;
-		return (1);
-	}
-	return (0);
-}
+	public:
+		Boss(void);
+		Boss(Vec2 pos, Vec2 dir, Blueprint *blueprint);
+		Boss(Boss const &instance);
+		Boss &operator=(Boss const &rhs);
+		virtual ~Boss(void);
+		virtual int		getColor() const;
+		virtual void 	update(Map &map);
+	
+	private:
+		
+};
+#endif

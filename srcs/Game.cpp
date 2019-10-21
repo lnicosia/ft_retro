@@ -6,7 +6,7 @@
 /*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 15:18:10 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/20 18:25:08 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/20 22:12:34 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,6 @@
 #include <unistd.h>
 #include <string>
 
-#define RED 1
-#define GREEN 2
-#define YELLOW 3
-#define BLUE 4
-#define CYAN 5
-#define MAGENTA 6
-#define WHITE 7
 
 Game::Game(void): _playingScreen(nullptr), _phase(PHASE_MENU), _highscore(0), _done(false)
 {
@@ -72,6 +65,8 @@ void	Game::loopMenuScreen(void)
 				this->_done = true;
 			if (c_lines == (LINES / 2) +2)
 			{
+				if (this->_playingScreen)
+					delete this->_playingScreen;
 				this->_playingScreen = new PlayingScreen(this->_highscore);
 				this->_phase = PHASE_PLAYING_SCREEN;
 			}
@@ -90,16 +85,11 @@ void	Game::loopMenuScreen(void)
 		}
 		usleep(10000);
 	}
-	//loop (waiting for player to select PLAY)
-	//this->_playingScreen = new PlayingScreen(this->_highscore);
-	//this->_phase = PHASE_PLAYING_SCREEN;
 }
 
 void	Game::loopPauseScreen(void)
 {
 	int	input = 0;
-	//loop (waiting for player to select RESUME OR QUIT)
-	//delete this->_playingScreen;
 	while (this->_phase == PHASE_PAUSE && !this->_done)
 	{
 		input = getch();
@@ -136,7 +126,6 @@ void	Game::launch()
 	init_pair(CYAN, COLOR_CYAN, COLOR_BLACK);	// <curses.h> define color-pair
 	init_pair(MAGENTA, COLOR_MAGENTA, COLOR_BLACK);	// <curses.h> define color-pair
 	init_pair(WHITE, COLOR_WHITE, COLOR_BLACK);	// <curses.h> define color-pair
-
 
 	while (!this->_done)
 	{

@@ -6,13 +6,14 @@
 /*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/20 18:41:47 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/20 18:41:48 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/20 19:08:11 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AbstractProjectile.hpp"
 #include "AbstractEnemy.hpp"
 #include "Player.hpp"
+#include <ncurses.h>
 
 AbstractProjectile::AbstractProjectile(void)
 {
@@ -49,6 +50,11 @@ bool AbstractProjectile::shouldBeCleaned(void)
 int	AbstractProjectile::getDamage(void)
 {
 	return (this->_damage);
+}
+
+int		AbstractProjectile::getColor(void) const
+{
+	return COLOR_RED;	
 }
 
 void	AbstractProjectile::onCollide(Player &player)

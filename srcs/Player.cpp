@@ -6,7 +6,7 @@
 /*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 16:00:22 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/20 18:19:11 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/20 22:33:55 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,18 @@ Player::Player(Player const &instance)
 
 Player::~Player(void)
 {
-	
+	int i;
+
+	i = 0;
+	while (i < 4)
+	{
+		if (this->_weaponSlots[i].getWeapon())
+		{
+			delete this->_weaponSlots[i].getWeapon();
+			this->_weaponSlots[i].setWeapon(nullptr);
+		}
+		i++;
+	}
 }
 
 Player &	Player::operator=(Player const &rhs)
@@ -98,15 +109,15 @@ void	Player::shoot(Map &map)
 	i = 0;
 	while (i < 4)
 	{
-		if (this->_weaponSlots[i] && this->_weaponSlots[i]->getWeapon())
+		if (this->_weaponSlots[i].getWeapon())
 		{
-			this->_weaponSlots[i]->getWeapon()->beShot(*this, *(this->_weaponSlots[i]), map);
+			this->_weaponSlots[i].getWeapon()->beShot(*this, this->_weaponSlots[i], map);
 		}
 		i++;
 	}
 }
 
-WeaponSlot*	Player::getWeaponSlot(int i)
+WeaponSlot	Player::getWeaponSlot(int i)
 {
 	return (this->_weaponSlots[i]);
 }
@@ -250,17 +261,14 @@ void	Player::onCollide(AbstractEnemy &enemy, Map &map)
 
 void		Player::_init(void)
 {
-	int i;
+	this->_weaponSlots[0] = WeaponSlot(Vec2(3, 0), Vec2(0, -1), nullptr);
+	this->_weaponSlots[1] = WeaponSlot(Vec2(-1 , 3), Vec2(-1, -1), nullptr);
+	this->_weaponSlots[2] = WeaponSlot(Vec2(6, 3), Vec2(1, -1),  nullptr);
+	this->_weaponSlots[3] = WeaponSlot();
 
-	i = 0;
-	while (i < 4)
-	{
-		this->_weaponSlots[i] = nullptr;
-		i++;
-	}
-	this->_weaponSlots[0] = new WeaponSlot(Vec2(3, 0), Vec2(0, -1), new LaserThrower());
-	this->_weaponSlots[1] = new WeaponSlot(Vec2(-1 , 3), Vec2(-1, -1), new LaserThrower());
-	this->_weaponSlots[2] = new WeaponSlot(Vec2(6, 3), Vec2(1, -1), new LaserThrower());
+	this->_weaponSlots[0].setWeapon(new LaserThrower());
+	this->_weaponSlots[1].setWeapon(new LaserThrower());
+	this->_weaponSlots[2].setWeapon(new LaserThrower());
 }
 
 int		Player::getLives()

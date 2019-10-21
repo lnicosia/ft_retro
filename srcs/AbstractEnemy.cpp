@@ -6,7 +6,7 @@
 /*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 17:33:44 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/20 17:37:26 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/20 21:57:39 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,4 +118,9 @@ void			AbstractEnemy::die(Player &player)
 float	AbstractEnemy::getMinFireRate(void)
 {
 	return (this->_minFireRate);
+}
+
+WeaponSlot		&	AbstractEnemy::getSlot(void)
+{
+	return (this->_weaponSlot);
 }

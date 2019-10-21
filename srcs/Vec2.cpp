@@ -6,7 +6,7 @@
 /*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 17:47:15 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/19 23:21:41 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/20 20:47:19 by ldedier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -137,4 +137,15 @@ std::ostream &	operator<<(std::ostream &o, Vec2 const &instance)
 {
 	o << instance.getX() << " ; " << instance.getY();
 	return o;
+}
+
+Vec2	Vec2::randomVect(void)
+{
+	Vec2 res;
+
+	double val = double(rand()) / (double(RAND_MAX));
+	val  = val * M_PI * 2;
+	res.setX(sin(val));
+	res.setY(cos(val));
+	return res;
 }
