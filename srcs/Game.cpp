@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Game.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
+/*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 15:18:10 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/20 22:12:34 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/24 16:55:25 by lnicosia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void	Game::loopMenuScreen(void)
 	std::string tmp;
 	while (this->_phase == PHASE_MENU && !this->_done)
 	{
-		clear();
+		erase();
 		printMenus();
 		printMenusCursor(c_lines, c_cols);
 		refresh();
@@ -94,7 +94,7 @@ void	Game::loopPauseScreen(void)
 	{
 		input = getch();
 	
-		clear();
+		erase();
 		mvprintw(0, 0, "Press ESC to quit, 'P' to resume game");
 		refresh();
 		if (input == 27)

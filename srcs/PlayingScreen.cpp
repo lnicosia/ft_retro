@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PlayingScreen.cpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+        */
+/*   By: lnicosia <lnicosia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 15:45:32 by ldedier           #+#    #+#             */
-/*   Updated: 2019/10/20 22:05:20 by ldedier          ###   ########.fr       */
+/*   Updated: 2019/10/24 16:55:07 by lnicosia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ void	PlayingScreen::gameLoop(Game &game)
 			game.setPhase(PHASE_PAUSE);
 		else
 		{
-			clear();
+			erase();
 			//std::cerr << "trying to print game" << std::endl;
 			//mvprintw(0, 0, "Game playing...");
 			printGameBorder();
@@ -81,7 +81,7 @@ void	PlayingScreen::gameLoop(Game &game)
 			this->_map.render();
 			//std::cerr << "Game print ok" << std::endl;
 			refresh();
-			usleep(15000);
+			usleep(10000);
 		}
 	}
 }
