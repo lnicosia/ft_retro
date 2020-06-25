@@ -102,7 +102,7 @@ VPATH			=	$(INCLUDESDIR) \
 
 OBJECTS			=	$(addprefix $(OBJ_DIR), $(SRCS:.cpp=.o))
 
-CFLAGS			= -I $(INCLUDESDIR) -Wall -Wextra -Werror -std=c++98
+CFLAGS			= -I $(INCLUDESDIR) -Wall -Wextra -Werror
 
 OK_COLOR	=	\x1b[32;01m
 EOC			=	\033[0m
